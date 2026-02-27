@@ -10,6 +10,24 @@ export function Particles() {
     const { isDevMode } = useAppStore();
     const count = 400; // Total particles
 
+    // Generate soft circular glowing texture for realistic dust
+    const dustTexture = useMemo(() => {
+        if (typeof window === 'undefined') return null;
+        const canvas = document.createElement('canvas');
+        canvas.width = 32;
+        canvas.height = 32;
+        const context = canvas.getContext('2d');
+        if (context) {
+            const gradient = context.createRadialGradient(16, 16, 0, 16, 16, 16);
+            gradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
+            gradient.addColorStop(0.2, 'rgba(0, 240, 255, 0.8)');
+            gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+            context.fillStyle = gradient;
+            context.fillRect(0, 0, 32, 32);
+        }
+        return new THREE.CanvasTexture(canvas);
+    }, []);
+
     // Generate random positions and initial velocities
     const [positions, phases] = useMemo(() => {
         const pos = new Float32Array(count * 3);
@@ -60,14 +78,15 @@ export function Particles() {
                 />
             </bufferGeometry>
             <pointsMaterial
+                map={dustTexture || undefined}
                 color="#00F0FF"
-                transparent
+                transparent={true}
                 opacity={0.6}
                 sizeAttenuation={true}
                 depthWrite={false}
                 blending={THREE.AdditiveBlending}
                 // Dev mode shows much larger prominent dots for debugging bounding boxes
-                size={isDevMode ? 0.2 : 0.04}
+                size={isDevMode ? 0.2 : 0.08}
             />
         </points>
     );
