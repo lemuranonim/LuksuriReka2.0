@@ -13,8 +13,8 @@ export default function ContentOverlay() {
             mockup: "TECH_STACK_GRID_MOCKUP_DATA"
         },
         'case-study': {
-            title: "AGRICULTURAL TECH AT SCALE",
-            description: "Highlighting our comprehensive digital transformation work for PT Advanta Seeds Indonesia.",
+            title: "PROJECTS CASE STUDY",
+            description: "Highlighting our comprehensive digital transformation work across various successful projects.",
             mockup: "SYSTEM_ARCHITECTURE_METRICS_MOCKUP"
         },
         'services': {

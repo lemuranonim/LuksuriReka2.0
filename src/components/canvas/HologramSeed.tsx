@@ -22,7 +22,7 @@ export function HologramSeed({ position }: HologramSeedProps) {
             seedRef.current.rotation.y += rotationSpeed * delta;
             seedRef.current.rotation.x += (rotationSpeed * 0.5) * delta;
 
-            const targetEmissive = hovered ? 2 : 0.8;
+            const targetEmissive = hovered ? 5 : 2;
             const material = seedRef.current.material as THREE.MeshStandardMaterial;
             material.emissiveIntensity = THREE.MathUtils.lerp(
                 material.emissiveIntensity,
@@ -63,7 +63,7 @@ export function HologramSeed({ position }: HologramSeedProps) {
                 <meshStandardMaterial
                     color="#00F0FF"
                     emissive="#00F0FF"
-                    emissiveIntensity={1}
+                    emissiveIntensity={2}
                     side={THREE.DoubleSide}
                     wireframe={isDevMode}
                 />
@@ -76,7 +76,7 @@ export function HologramSeed({ position }: HologramSeedProps) {
                     <meshStandardMaterial
                         color="#00F0FF"
                         emissive="#00F0FF"
-                        emissiveIntensity={0.8}
+                        emissiveIntensity={2}
                         wireframe={true}
                         transparent={true}
                         opacity={0.8}
@@ -88,7 +88,7 @@ export function HologramSeed({ position }: HologramSeedProps) {
             {hovered && (
                 <Html position={[0, 2.2, 0]} center className="pointer-events-none">
                     <div className="bg-black/80 text-neon-cyan border border-neon-cyan px-3 py-1 rounded font-mono text-sm whitespace-nowrap backdrop-blur-sm">
-                        Advanta Case Study
+                        Projects Case Study
                     </div>
                 </Html>
             )}

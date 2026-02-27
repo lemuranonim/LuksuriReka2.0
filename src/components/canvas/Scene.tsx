@@ -2,8 +2,10 @@
 
 import { Canvas } from "@react-three/fiber";
 import { Environment, ContactShadows } from "@react-three/drei";
+import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import { TechHub } from "./TechHub";
 import { CameraRig } from "./CameraRig";
+import { Particles } from "./Particles";
 import { Suspense } from "react";
 
 export default function Scene() {
@@ -24,8 +26,12 @@ export default function Scene() {
                 <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={1} />
                 <Suspense fallback={null}>
                     <TechHub />
+                    <Particles />
                     <Environment preset="city" />
                     <ContactShadows position={[0, -1.5, 0]} opacity={0.4} scale={20} blur={2} far={4} />
+                    <EffectComposer>
+                        <Bloom intensity={1.5} luminanceThreshold={1} mipmapBlur={true} />
+                    </EffectComposer>
                 </Suspense>
                 <CameraRig />
             </Canvas>

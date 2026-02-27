@@ -18,7 +18,7 @@ export function Desk({ position }: DeskProps) {
 
     useFrame((state, delta) => {
         if (monitorRef.current) {
-            const targetEmissive = hovered ? 1.5 : 0.5;
+            const targetEmissive = hovered ? 4 : 2;
             const material = monitorRef.current.material as THREE.MeshStandardMaterial;
             material.emissiveIntensity = THREE.MathUtils.lerp(
                 material.emissiveIntensity,
@@ -83,7 +83,7 @@ export function Desk({ position }: DeskProps) {
                 <meshStandardMaterial
                     color="#000000"
                     emissive="#00F0FF"
-                    emissiveIntensity={0.5}
+                    emissiveIntensity={2}
                     wireframe={isDevMode}
                 />
             </mesh>
