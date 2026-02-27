@@ -1,120 +1,51 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useAppStore } from "@/store/useAppStore";
-import { Text } from "@react-three/drei";
 import * as THREE from "three";
 
+import { Desk } from "./Desk";
+import { HologramSeed } from "./HologramSeed";
+import { ServerRack } from "./ServerRack";
+
 export function TechHub() {
-    const { isDevMode, setActiveSection } = useAppStore();
+    const { isDevMode } = useAppStore();
     const groupRef = useRef<THREE.Group>(null);
 
     useFrame((state) => {
         if (groupRef.current) {
-            groupRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.2) * 0.1;
+            groupRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.1) * 0.05;
         }
     });
 
     return (
         <group ref={groupRef}>
+            {/* Dynamic Point Lights for glows */}
+            <pointLight position={[-3, 1.5, 0]} intensity={0.5} color="#00F0FF" distance={3} />
+            <pointLight position={[0, 1.5, 0]} intensity={1} color="#00F0FF" distance={4} />
+            <pointLight position={[3, 1.5, 1]} intensity={0.5} color="#00F0FF" distance={3} />
+
             {/* CEO Portfolio Desk */}
-            <InteractiveObject
-                position={[-3, 0, 0]}
-                color="#00F0FF"
-                label="CEO PORTFOLIO"
-                onClick={() => setActiveSection('desk')}
-            >
-                <boxGeometry args={[1.5, 1, 1]} />
-            </InteractiveObject>
+            <Desk position={[-3, 0, 0]} />
 
             {/* Holographic Plant */}
-            <InteractiveObject
-                position={[0, 0.5, 0]}
-                color="#00FF88"
-                label="ENTERPRISE"
-                onClick={() => setActiveSection('plant')}
-            >
-                <cylinderGeometry args={[0.5, 0.5, 2, 8]} />
-            </InteractiveObject>
+            <HologramSeed position={[0, 0, 0]} />
 
-      /* Server Rack */
-            <InteractiveObject
-                position={[3, 0, 0]}
-                color="#FF0055"
-                label="STARTUP/UMKM"
-                onClick={() => setActiveSection('server')}
-            >
-                <boxGeometry args={[1, 2, 1]} />
-            </InteractiveObject>
+            {/* Server Rack */}
+            <ServerRack position={[3, 0, 0]} />
 
-            {/* Base */}
-            <mesh position={[0, -1.1, 0]}>
-                <boxGeometry args={[10, 0.2, 4]} />
-                <meshStandardMaterial color="#0b1b2b" wireframe={isDevMode} />
+            {/* Main Base Platform */}
+            <mesh position={[0, -0.1, 0]}>
+                <cylinderGeometry args={[5, 5, 0.2, 64]} />
+                <meshStandardMaterial color="#0b1b2b" wireframe={isDevMode} roughness={0.8} metalness={0.2} />
             </mesh>
-        </group>
-    );
-}
 
-function InteractiveObject({ children, position, color, label, onClick }: any) {
-    const { isDevMode } = useAppStore();
-    const [hovered, setHovered] = useState(false);
-    const ref = useRef<THREE.Mesh>(null);
-
-    useFrame((state) => {
-        if (ref.current) {
-            const targetY = hovered ? position[1] + 0.2 : position[1];
-            const targetScale = hovered ? 1.05 : 1.0;
-
-            ref.current.position.y = THREE.MathUtils.lerp(ref.current.position.y, targetY, 0.1);
-            ref.current.scale.setScalar(THREE.MathUtils.lerp(ref.current.scale.x, targetScale, 0.1));
-
-            if (hovered) {
-                ref.current.rotation.y += 0.01;
-            } else {
-                ref.current.rotation.y = THREE.MathUtils.lerp(ref.current.rotation.y, 0, 0.05);
-            }
-        }
-    });
-
-    return (
-        <group position={[position[0], 0, position[2]]}>
-            <mesh
-                ref={ref}
-                position={[0, position[1], 0]}
-                onPointerOver={(e) => {
-                    e.stopPropagation();
-                    setHovered(true);
-                    document.body.style.cursor = 'pointer';
-                }}
-                onPointerOut={(e) => {
-                    e.stopPropagation();
-                    setHovered(false);
-                    document.body.style.cursor = 'auto';
-                }}
-                onClick={(e) => {
-                    e.stopPropagation();
-                    onClick();
-                }}
-            >
-                {children}
-                <meshStandardMaterial
-                    color={color}
-                    emissive={color}
-                    emissiveIntensity={hovered ? 0.8 : 0.2}
-                    wireframe={isDevMode}
-                />
+            {/* Inner Glowing Ring on Base */}
+            <mesh position={[0, 0.01, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+                <ringGeometry args={[4.8, 4.9, 64]} />
+                <meshStandardMaterial color="#00F0FF" emissive="#00F0FF" emissiveIntensity={0.5} wireframe={isDevMode} />
             </mesh>
-            <Text
-                position={[0, -1.5, 1]}
-                fontSize={0.2}
-                color={hovered ? color : "white"}
-                anchorX="center"
-                anchorY="middle"
-            >
-                {label}
-            </Text>
         </group>
     );
 }

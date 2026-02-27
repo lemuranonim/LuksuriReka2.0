@@ -2,9 +2,9 @@ import { create } from 'zustand';
 
 interface AppState {
     isDevMode: boolean;
-    activeSection: 'hub' | 'desk' | 'plant' | 'server';
+    activeSection: 'hub' | 'ceo-portfolio' | 'case-study' | 'services';
     toggleDevMode: () => void;
-    setActiveSection: (section: 'hub' | 'desk' | 'plant' | 'server') => void;
+    setActiveSection: (section: 'hub' | 'ceo-portfolio' | 'case-study' | 'services') => void;
 }
 
 export const useAppStore = create<AppState>((set) => ({

@@ -29,9 +29,9 @@ export default function Home() {
             <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-2xl w-full max-w-4xl shadow-2xl pointer-events-auto">
               <div className="flex justify-between items-center mb-6">
                 <h2 className="text-3xl font-bold font-sans">
-                  {activeSection === 'desk' && "CEO PORTFOLIO"}
-                  {activeSection === 'plant' && "ENTERPRISE CASE STUDY"}
-                  {activeSection === 'server' && "STARTUP/UMKM SOLUTIONS"}
+                  {activeSection === 'ceo-portfolio' && "CEO PORTFOLIO"}
+                  {activeSection === 'case-study' && "ENTERPRISE CASE STUDY"}
+                  {activeSection === 'services' && "STARTUP/UMKM SOLUTIONS"}
                 </h2>
                 <button
                   onClick={() => setActiveSection('hub')}
@@ -42,13 +42,13 @@ export default function Home() {
               </div>
 
               <div className="space-y-4 font-sans text-gray-200">
-                {activeSection === 'desk' && (
+                {activeSection === 'ceo-portfolio' && (
                   <p>A deep dive into the visionary leadership and technical expertise driving Luksuri Reka Digital Solutions.</p>
                 )}
-                {activeSection === 'plant' && (
+                {activeSection === 'case-study' && (
                   <p>Highlighting our comprehensive digital transformation work for PT Advanta Seeds Indonesia.</p>
                 )}
-                {activeSection === 'server' && (
+                {activeSection === 'services' && (
                   <p>Scalable, high-performance software packages tailored for upcoming startups and UMKM enterprises.</p>
                 )}
                 <div className="h-40 border border-white/10 rounded-lg bg-black/20 flex items-center justify-center font-mono text-sm text-white/50">
