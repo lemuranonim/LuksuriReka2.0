@@ -1,13 +1,13 @@
 "use client";
 
 import { useAppStore } from "@/store/useAppStore";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, Variants } from "framer-motion";
 
 export default function ContentOverlay() {
     const { activeSection, setActiveSection } = useAppStore();
 
     // Animation variants
-    const containerVariants = {
+    const containerVariants: Variants = {
         hidden: { opacity: 0, x: 50 },
         visible: {
             opacity: 1,
@@ -26,7 +26,7 @@ export default function ContentOverlay() {
         }
     };
 
-    const itemVariants = {
+    const itemVariants: Variants = {
         hidden: { opacity: 0, y: 20 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
     };
