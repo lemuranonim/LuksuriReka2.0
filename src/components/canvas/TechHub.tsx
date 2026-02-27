@@ -8,6 +8,7 @@ import * as THREE from "three";
 import { Desk } from "./Desk";
 import { HologramSeed } from "./HologramSeed";
 import { ServerRack } from "./ServerRack";
+import { LuksuriAssistant } from "./LuksuriAssistant";
 
 export function TechHub() {
     const { isDevMode } = useAppStore();
@@ -34,6 +35,9 @@ export function TechHub() {
 
             {/* Server Rack */}
             <ServerRack position={[3, 0, 0]} />
+
+            {/* Luksuri Assistant Mascot */}
+            <LuksuriAssistant position={[-3.5, 1, 2.5]} />
 
             {/* Main Base Platform */}
             <mesh position={[0, -0.1, 0]}>

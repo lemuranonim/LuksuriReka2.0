@@ -193,7 +193,7 @@ export function ServerRack({ position }: ServerRackProps) {
 
             {/* Tooltip */}
             {hovered && (
-                <Html position={[0, 2.5, 0]} center className="pointer-events-none">
+                <Html position={[0, 2.3, 0]} center className="pointer-events-none">
                     <div className="bg-black/90 text-neon-cyan border border-neon-cyan/50 px-4 py-1.5 rounded-lg font-mono text-sm shadow-[0_0_15px_rgba(0,240,255,0.3)] whitespace-nowrap backdrop-blur-md">
                         Data Center Solutions
                     </div>

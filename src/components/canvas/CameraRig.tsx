@@ -25,6 +25,15 @@ export function CameraRig() {
                 // Move closer to the Server Rack
                 controls.setLookAt(3, 1.5, 3, 3, 1, 0, true);
                 break;
+            case 'mascot':
+                // Memposisikan kamera agar Luksuri Assistant berada di sebelah kiri layar (kamera geser kanan, memandang kiri)
+                // Posisi asli Mascot: -3.5, 1, 2.5
+                controls.setLookAt(-3.5, 1.2, 4.5, -2.5, 1.2, 2.5, true);
+                break;
+            case 'about':
+                // Zoom out and pan up to show the entire tech hub scene symmetrically
+                controls.setLookAt(0, 4, 10, 0, 0, 0, true);
+                break;
             case 'hub':
             default:
                 // Default isometric-ish view

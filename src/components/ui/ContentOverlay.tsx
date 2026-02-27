@@ -158,6 +158,73 @@ export default function ContentOverlay() {
         </div>
     );
 
+    const renderMascot = () => (
+        <div className="space-y-6">
+            <motion.div variants={itemVariants}>
+                <h3 className="text-2xl md:text-3xl font-bold text-white font-sans leading-tight">
+                    Hello, I'm <span className="text-neon-cyan">Luksuri Assistant</span>
+                </h3>
+                <p className="text-gray-300 mt-2 text-sm max-w-2xl">
+                    I'm here to help you connect with Luksuri Reka Digital Solutions. Feel free to reach out through any of the channels below if you have questions or want to start a project.
+                </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <motion.div variants={itemVariants} className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md shadow-lg flex flex-col gap-2">
+                    <span className="text-xs font-mono text-gray-400 uppercase tracking-widest">Email</span>
+                    <a href="mailto:hello@luksurireka.com" className="text-lg font-bold text-neon-cyan hover:text-white transition-colors">hello@luksurireka.com</a>
+                </motion.div>
+
+                <motion.div variants={itemVariants} className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md shadow-lg flex flex-col gap-2">
+                    <span className="text-xs font-mono text-gray-400 uppercase tracking-widest">Telepon / Whatsapp</span>
+                    <a href="https://wa.me/6282143706440" target="_blank" rel="noopener noreferrer" className="text-lg font-bold text-neon-cyan hover:text-white transition-colors">+62 821 4370 6440</a>
+                </motion.div>
+
+                <motion.div variants={itemVariants} className="md:col-span-2 p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md shadow-lg flex flex-col gap-2">
+                    <span className="text-xs font-mono text-gray-400 uppercase tracking-widest">Kantor</span>
+                    <p className="text-lg font-medium text-white leading-relaxed">
+                        Kedungwilut, Bandung, <br />
+                        Tulungagung, Jawa Timur 66247
+                    </p>
+                </motion.div>
+            </div>
+        </div>
+    );
+
+    const renderAbout = () => (
+        <div className="space-y-6">
+            <motion.div variants={itemVariants}>
+                <h3 className="text-2xl md:text-3xl font-bold text-white font-sans leading-tight">
+                    Shaping The Future of <br className="hidden md:block" />
+                    <span className="text-neon-cyan drop-shadow-[0_0_8px_rgba(0,240,255,0.4)]">Digital Interaction</span>
+                </h3>
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md shadow-lg">
+                <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                    Luksuri Reka Digital is a cutting-edge creative and engineering lab based in Tulungagung, Jawa Timur. We specialize in building immersive web experiences, scalable cloud systems, and modern SaaS platforms that merge aesthetic brilliance with deep technical performance.
+                </p>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                    By leveraging state-of-the-art technologies such as <strong>React Three Fiber</strong>, <strong>Next.js</strong>, and robust microservice architectures, we empower brands to captivate users and automate complex workflows seamlessly.
+                </p>
+            </motion.div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {[
+                    { label: "Founded", val: "2023" },
+                    { label: "Focus", val: "WebGL & SaaS" },
+                    { label: "Location", val: "Indonesia" },
+                    { label: "Status", val: "Pioneering" },
+                ].map((stat, i) => (
+                    <motion.div key={i} variants={itemVariants} className="p-4 rounded-xl bg-[#0A2540]/60 border border-white/10 text-center flex flex-col justify-center items-center shadow-inner">
+                        <span className="text-[0.65rem] font-mono text-gray-400 uppercase tracking-widest mb-1">{stat.label}</span>
+                        <span className="text-lg font-bold text-white">{stat.val}</span>
+                    </motion.div>
+                ))}
+            </div>
+        </div>
+    );
+
     const activeContent = activeSection !== 'hub' ? true : null;
 
     return (
@@ -179,6 +246,8 @@ export default function ContentOverlay() {
                                 {activeSection === 'ceo-portfolio' && "Luksuri Reka Digital"}
                                 {activeSection === 'case-study' && "Project Case Studies"}
                                 {activeSection === 'services' && "Digital Software Solutions"}
+                                {activeSection === 'mascot' && "Contact Us"}
+                                {activeSection === 'about' && "About Luksuri Reka"}
                             </motion.h2>
                             <button
                                 onClick={() => setActiveSection('hub')}
@@ -193,6 +262,8 @@ export default function ContentOverlay() {
                             {activeSection === 'ceo-portfolio' && renderCeoPortfolio()}
                             {activeSection === 'case-study' && renderCaseStudy()}
                             {activeSection === 'services' && renderServices()}
+                            {activeSection === 'mascot' && renderMascot()}
+                            {activeSection === 'about' && renderAbout()}
                         </div>
                     </div>
                 </motion.div>
