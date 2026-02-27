@@ -1,8 +1,9 @@
 "use client";
 
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Environment, ContactShadows } from "@react-three/drei";
+import { Environment, ContactShadows } from "@react-three/drei";
 import { TechHub } from "./TechHub";
+import { CameraRig } from "./CameraRig";
 import { Suspense } from "react";
 
 export default function Scene() {
@@ -26,12 +27,7 @@ export default function Scene() {
                     <Environment preset="city" />
                     <ContactShadows position={[0, -1.5, 0]} opacity={0.4} scale={20} blur={2} far={4} />
                 </Suspense>
-                <OrbitControls
-                    enablePan={false}
-                    enableZoom={false}
-                    minPolarAngle={Math.PI / 4}
-                    maxPolarAngle={Math.PI / 2.1}
-                />
+                <CameraRig />
             </Canvas>
         </div>
     );
