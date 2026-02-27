@@ -7,8 +7,11 @@ import { TechHub } from "./TechHub";
 import { CameraRig } from "./CameraRig";
 import { Particles } from "./Particles";
 import { Suspense } from "react";
+import { useTablet } from "@/hooks/useMobile";
 
 export default function Scene() {
+    const isTablet = useTablet();
+
     return (
         <div className="w-full h-screen absolute inset-0 z-0 bg-trust-blue text-neon-cyan flex items-center justify-center font-mono">
             <Canvas
@@ -29,9 +32,12 @@ export default function Scene() {
                     <Particles />
                     <Environment preset="city" />
                     <ContactShadows position={[0, -1.5, 0]} opacity={0.4} scale={20} blur={2} far={4} />
-                    <EffectComposer>
-                        <Bloom intensity={1.5} luminanceThreshold={1} mipmapBlur={true} />
-                    </EffectComposer>
+
+                    {!isTablet && (
+                        <EffectComposer>
+                            <Bloom intensity={1.5} luminanceThreshold={1} mipmapBlur={true} />
+                        </EffectComposer>
+                    )}
                 </Suspense>
                 <CameraRig />
             </Canvas>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useMemo } from 'react';
+import { useRef, useMemo, useState, useEffect } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import { useAppStore } from '@/store/useAppStore';
@@ -28,22 +28,17 @@ export function Particles() {
         return new THREE.CanvasTexture(canvas);
     }, []);
 
-    // Generate random positions and initial velocities
-    const [positions, phases] = useMemo(() => {
+    // State for positions via lazy initialization
+    const [positions] = useState<Float32Array>(() => {
         const pos = new Float32Array(count * 3);
-        const phs = new Float32Array(count); // Random phases for twinkling
-
         for (let i = 0; i < count; i++) {
             // Spread them across the area (x: -10 to 10, y: 0 to 8, z: -10 to 10)
             pos[i * 3 + 0] = (Math.random() - 0.5) * 20;     // X
             pos[i * 3 + 1] = Math.random() * 8;              // Y
             pos[i * 3 + 2] = (Math.random() - 0.5) * 20;     // Z
-
-            phs[i] = Math.random() * Math.PI * 2;
         }
-
-        return [pos, phs];
-    }, [count]);
+        return pos;
+    });
 
     useFrame((state, delta) => {
         if (!pointsRef.current) return;
@@ -51,7 +46,6 @@ export function Particles() {
         // Very slowly rotate the entire particle cloud
         pointsRef.current.rotation.y += delta * 0.02;
 
-        const time = state.clock.elapsedTime;
         const geometry = pointsRef.current.geometry;
         const positionsAttribute = geometry.attributes.position;
 

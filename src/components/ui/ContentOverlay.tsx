@@ -162,10 +162,10 @@ export default function ContentOverlay() {
         <div className="space-y-6">
             <motion.div variants={itemVariants}>
                 <h3 className="text-2xl md:text-3xl font-bold text-white font-sans leading-tight">
-                    Hello, I'm <span className="text-neon-cyan">Luksuri Assistant</span>
+                    Hello, I&apos;m <span className="text-neon-cyan">Luksuri Assistant</span>
                 </h3>
                 <p className="text-gray-300 mt-2 text-sm max-w-2xl">
-                    I'm here to help you connect with Luksuri Reka Digital Solutions. Feel free to reach out through any of the channels below if you have questions or want to start a project.
+                    I&apos;m here to help you connect with Luksuri Reka Digital Solutions. Feel free to reach out through any of the channels below if you have questions or want to start a project.
                 </p>
             </motion.div>
 

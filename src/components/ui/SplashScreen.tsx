@@ -8,7 +8,6 @@ import { useAppStore } from "@/store/useAppStore";
 export default function SplashScreen() {
     const { progress } = useProgress();
     const setAppLoaded = useAppStore((state) => state.setAppLoaded);
-    const isAppLoaded = useAppStore((state) => state.isAppLoaded);
 
     // We manage an internal state to handle the delayed dismount
     const [showSplash, setShowSplash] = useState(true);

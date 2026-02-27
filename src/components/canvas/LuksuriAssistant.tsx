@@ -5,8 +5,9 @@ import { useFrame } from "@react-three/fiber";
 import { Float, Html, Billboard } from "@react-three/drei";
 import { useAppStore } from "@/store/useAppStore";
 import * as THREE from "three";
+import { ThreeElements } from "@react-three/fiber";
 
-export function LuksuriAssistant(props: any) {
+export function LuksuriAssistant(props: ThreeElements['group']) {
     const { isMascotSpeaking, toggleMascotSpeaking, isDevMode, setActiveSection, activeSection } = useAppStore();
     const groupRef = useRef<THREE.Group>(null);
     const eyeRef1 = useRef<THREE.MeshPhysicalMaterial>(null);
@@ -23,7 +24,7 @@ export function LuksuriAssistant(props: any) {
                 setMascotTexture(tex);
             },
             undefined,
-            (err) => {
+            () => {
                 console.warn("Mascot image not found. Fallback to primitive.");
             }
         );
