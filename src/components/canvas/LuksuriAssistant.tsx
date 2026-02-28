@@ -81,9 +81,9 @@ export function LuksuriAssistant(props: ThreeElements['group']) {
             }}
         >
             <Float
-                speed={isMascotSpeaking ? 4 : 2}
-                rotationIntensity={isMascotSpeaking ? (mascotTexture ? 0.2 : 1) : (mascotTexture ? 0.1 : 0.5)}
-                floatIntensity={isMascotSpeaking ? 2 : 1}
+                speed={isMascotSpeaking ? 2 : 1}
+                rotationIntensity={isMascotSpeaking ? (mascotTexture ? 0.1 : 0.5) : (mascotTexture ? 0.02 : 0.15)}
+                floatIntensity={isMascotSpeaking ? 0.35 : 0.12}
             >
                 <group ref={groupRef}>
                     {mascotTexture ? (

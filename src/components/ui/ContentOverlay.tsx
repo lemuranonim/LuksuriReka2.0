@@ -64,47 +64,134 @@ export default function ContentOverlay() {
         </div>
     );
 
+    // ── Typed project data for the Advanta case study ──────────────────────────
+    interface CaseProject {
+        name: string;
+        type: string;
+        accentColor: string;
+        borderColor: string;
+        badgeColor: string;
+        stack: string[];
+        highlights: { label: string; text: string }[];
+    }
+
+    const advantaProjects: CaseProject[] = [
+        {
+            name: "KrosCekApps",
+            type: "Cross-Platform Mobile Application",
+            accentColor: "from-emerald-500/10 to-teal-500/5",
+            borderColor: "border-emerald-400/20",
+            badgeColor: "bg-emerald-500/15 text-emerald-300 border-emerald-400/25",
+            stack: ["Flutter", "Dart", "Hive (NoSQL)", "Firebase", "Supabase", "Google Sheets API"],
+            highlights: [
+                {
+                    label: "Offline-First",
+                    text: "Built for remote agricultural areas with unstable internet. Uses Hive for rapid local caching of vegetative, generative, and harvest inspection data."
+                },
+                {
+                    label: "Hybrid Cloud Sync",
+                    text: "Automatically synchronises local data with Firebase Firestore and Supabase once a connection is re-established."
+                },
+                {
+                    label: "Geo-Tagging",
+                    text: "Integrates maps_flutter and flutter_map for precise real-time location tracking of field workers."
+                }
+            ]
+        },
+        {
+            name: "Scify CompFeed",
+            type: "Modern Fullstack Web Application",
+            accentColor: "from-blue-500/10 to-cyan-500/5",
+            borderColor: "border-neon-cyan/20",
+            badgeColor: "bg-neon-cyan/10 text-neon-cyan border-neon-cyan/25",
+            stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL", "WhatsApp API"],
+            highlights: [
+                {
+                    label: "Serverless Architecture",
+                    text: "Utilises Next.js Server Components and Server Actions for fast, SEO-friendly performance and direct database mutations without a traditional backend."
+                },
+                {
+                    label: "QR Code Verification",
+                    text: "Farmers and customers scan seed bags for instant product verification and automated complaint submissions."
+                },
+                {
+                    label: "Automated Ticketing & SLA",
+                    text: "WhatsApp and Email integration auto-notifies stakeholders at each investigation stage: Investigation → Lab Testing → Resolve."
+                }
+            ]
+        }
+    ];
+
     const renderCaseStudy = () => (
         <div className="space-y-6">
+            {/* Section Header */}
             <motion.div variants={itemVariants}>
                 <h3 className="text-2xl md:text-3xl font-bold text-white font-sans leading-tight">
-                    Transforming Agricultural Tech for <br className="hidden md:block" />
+                    Transforming Agricultural Tech for{" "}
+                    <br className="hidden md:block" />
                     <span className="text-neon-cyan">PT Advanta Seeds Indonesia</span>
                 </h3>
             </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4">
-                {["Multi-Platform Integration", "Scalable Data Architecture", "High Performance"].map((metric, i) => (
-                    <motion.div key={i} variants={itemVariants} className="p-4 rounded-xl bg-[#0A2540]/40 border border-neon-cyan/30 shadow-[0_0_15px_rgba(0,240,255,0.1)] text-center flex items-center justify-center min-h-[80px]">
+            {/* Key-metric pills */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {["Multi-Platform Integration", "Offline-First Architecture", "Automated SLA Ticketing"].map((metric, i) => (
+                    <motion.div
+                        key={i}
+                        variants={itemVariants}
+                        className="p-4 rounded-xl bg-[#0A2540]/40 border border-neon-cyan/30 shadow-[0_0_15px_rgba(0,240,255,0.08)] text-center flex items-center justify-center min-h-[70px]"
+                    >
                         <span className="text-xs font-semibold text-neon-cyan tracking-wide">{metric}</span>
                     </motion.div>
                 ))}
             </div>
 
-            <motion.div variants={itemVariants} className="p-6 md:p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md shadow-lg">
-                <h4 className="text-xs font-bold text-gray-400 mb-6 uppercase tracking-widest">System Architecture</h4>
-                <div className="relative h-56 md:h-48 border border-dashed border-white/20 rounded-xl p-4 md:p-6 flex flex-col justify-between items-center group overflow-hidden bg-black/20">
-                    <div className="absolute inset-0 bg-gradient-to-br from-neon-cyan/5 to-transparent"></div>
+            {/* Project Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                {advantaProjects.map((project) => (
+                    <motion.div
+                        key={project.name}
+                        variants={itemVariants}
+                        className={`flex flex-col rounded-2xl border bg-gradient-to-br ${project.accentColor} ${project.borderColor} backdrop-blur-md shadow-lg overflow-hidden`}
+                    >
+                        {/* Card Header */}
+                        <div className="px-6 pt-6 pb-4 border-b border-white/5">
+                            <span className="text-[0.65rem] font-mono uppercase tracking-widest text-gray-400 block mb-1">
+                                {project.type}
+                            </span>
+                            <h4 className="text-lg font-bold text-white leading-tight">{project.name}</h4>
 
-                    <div className="flex justify-between w-full max-w-sm z-10">
-                        <div className="px-4 py-2 border border-neon-cyan/50 bg-[#0A2540]/80 rounded shadow-lg text-xs font-mono text-neon-cyan">Frontend (Next.js)</div>
-                        <div className="px-4 py-2 border border-white/30 bg-[#0A2540]/80 rounded shadow-lg text-xs font-mono text-white">App Mobile</div>
-                    </div>
+                            {/* Tech Stack Badges */}
+                            <div className="flex flex-wrap gap-1.5 mt-3">
+                                {project.stack.map((tech) => (
+                                    <span
+                                        key={tech}
+                                        className={`px-2 py-0.5 text-[0.6rem] font-mono rounded-full border ${project.badgeColor}`}
+                                    >
+                                        {tech}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
 
-                    <div className="w-0.5 h-10 border-l-2 border-dashed border-neon-cyan/50 z-10 self-center"></div>
-
-                    <div className="px-6 py-2.5 border border-white/40 bg-[#0A2540]/90 rounded-lg shadow-lg text-xs font-mono text-white z-10 w-full max-w-sm text-center">
-                        Backend API (Node.js/Express)
-                    </div>
-
-                    <div className="w-0.5 h-10 border-l-2 border-dashed border-white/30 z-10 self-center"></div>
-
-                    <div className="flex gap-4 z-10 justify-center w-full max-w-sm">
-                        <div className="px-5 py-2 border border-white/10 bg-black/60 rounded-full text-xs font-mono text-gray-300">PostgreSQL</div>
-                        <div className="px-5 py-2 border border-white/10 bg-black/60 rounded-full text-xs font-mono text-gray-300">Redis</div>
-                    </div>
-                </div>
-            </motion.div>
+                        {/* Architecture Highlights */}
+                        <div className="px-6 py-5 flex flex-col gap-4 flex-grow">
+                            {project.highlights.map((h) => (
+                                <div key={h.label} className="flex gap-3">
+                                    {/* Accent line */}
+                                    <div className="mt-1 w-0.5 shrink-0 rounded-full bg-neon-cyan/40 self-stretch" />
+                                    <div>
+                                        <span className="text-xs font-bold text-neon-cyan uppercase tracking-wider block mb-0.5">
+                                            {h.label}
+                                        </span>
+                                        <p className="text-xs text-gray-300 leading-relaxed">{h.text}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </motion.div>
+                ))}
+            </div>
         </div>
     );
 
@@ -176,12 +263,12 @@ export default function ContentOverlay() {
                 </motion.div>
 
                 <motion.div variants={itemVariants} className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md shadow-lg flex flex-col gap-2">
-                    <span className="text-xs font-mono text-gray-400 uppercase tracking-widest">Telepon / Whatsapp</span>
+                    <span className="text-xs font-mono text-gray-400 uppercase tracking-widest">Call / Whatsapp</span>
                     <a href="https://wa.me/6282143706440" target="_blank" rel="noopener noreferrer" className="text-lg font-bold text-neon-cyan hover:text-white transition-colors">+62 821 4370 6440</a>
                 </motion.div>
 
                 <motion.div variants={itemVariants} className="md:col-span-2 p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md shadow-lg flex flex-col gap-2">
-                    <span className="text-xs font-mono text-gray-400 uppercase tracking-widest">Kantor</span>
+                    <span className="text-xs font-mono text-gray-400 uppercase tracking-widest">Based in</span>
                     <p className="text-lg font-medium text-white leading-relaxed">
                         Kedungwilut, Bandung, <br />
                         Tulungagung, Jawa Timur 66247
