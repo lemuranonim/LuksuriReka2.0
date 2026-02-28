@@ -37,7 +37,13 @@ export default function Home() {
   const showHubUI = !renderMultiverse;
 
   return (
-    <main className="relative w-full h-screen overflow-hidden bg-trust-blue text-crisp-white">
+    <main
+      className={[
+        "relative w-full bg-trust-blue text-crisp-white",
+        // 3D view needs a locked viewport; 2D mobile must scroll freely
+        isMobile ? "min-h-screen" : "h-screen overflow-hidden",
+      ].join(" ")}
+    >
       <SplashScreen />
 
       {/* Always-on warp flash — renders above everything at z-[70] */}

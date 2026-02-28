@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useAppStore } from "@/store/useAppStore";
 import { Terminal, Code2 } from "lucide-react";
 
@@ -19,14 +20,15 @@ export default function Navbar() {
                 }}
                 className="flex items-center gap-3 group transition-all duration-300"
             >
-                {/* SVG Component for the Logo */}
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="group-hover:drop-shadow-[0_0_8px_rgba(0,240,255,0.8)] transition-all duration-300">
-                    <path d="M16 2L2 10V22L16 30L30 22V10L16 2Z" stroke="#00F0FF" strokeWidth="2" strokeLinejoin="round" />
-                    <path d="M16 8L8 12.5V19.5L16 24L24 19.5V12.5L16 8Z" fill="#00F0FF" fillOpacity="0.2" stroke="#00F0FF" strokeWidth="1.5" strokeLinejoin="round" />
-                    <path d="M16 8V24" stroke="#00F0FF" strokeWidth="1.5" strokeLinecap="round" />
-                    <path d="M8 12.5L24 19.5" stroke="#00F0FF" strokeWidth="1.5" strokeLinecap="round" />
-                    <path d="M24 12.5L8 19.5" stroke="#00F0FF" strokeWidth="1.5" strokeLinecap="round" />
-                </svg>
+                {/* Logo image */}
+                <Image
+                    src="/logo.png"
+                    alt="Luksuri Reka Logo"
+                    width={36}
+                    height={36}
+                    className="object-contain group-hover:drop-shadow-[0_0_8px_rgba(0,240,255,0.9)] transition-all duration-300"
+                    priority
+                />
 
                 <div className="flex flex-col text-left">
                     <div className="font-sans font-bold text-xl tracking-tighter group-hover:text-neon-cyan transition-colors duration-300 group-hover:drop-shadow-[0_0_8px_rgba(0,240,255,0.5)]">

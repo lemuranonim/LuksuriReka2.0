@@ -1,30 +1,10 @@
 "use client";
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Briefcase, Code2, Zap, MessageSquare, Info } from 'lucide-react';
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Logo — mirrors the SVG in Navbar.tsx for brand consistency
-// ─────────────────────────────────────────────────────────────────────────────
-function LuksuriLogo({ size = 40 }: { size?: number }) {
-    return (
-        <svg
-            width={size}
-            height={size}
-            viewBox="0 0 32 32"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ filter: "drop-shadow(0 0 8px rgba(0,240,255,0.7))" }}
-        >
-            <path d="M16 2L2 10V22L16 30L30 22V10L16 2Z" stroke="#00F0FF" strokeWidth="2" strokeLinejoin="round" />
-            <path d="M16 8L8 12.5V19.5L16 24L24 19.5V12.5L16 8Z" fill="#00F0FF" fillOpacity="0.2" stroke="#00F0FF" strokeWidth="1.5" strokeLinejoin="round" />
-            <path d="M16 8V24" stroke="#00F0FF" strokeWidth="1.5" strokeLinecap="round" />
-            <path d="M8 12.5L24 19.5" stroke="#00F0FF" strokeWidth="1.5" strokeLinecap="round" />
-            <path d="M24 12.5L8 19.5" stroke="#00F0FF" strokeWidth="1.5" strokeLinecap="round" />
-        </svg>
-    );
-}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Section data
@@ -32,8 +12,8 @@ function LuksuriLogo({ size = 40 }: { size?: number }) {
 const sections = [
     {
         id: 'ceo',
-        title: 'CEO Portfolio',
-        subtitle: 'Ahmad Fajar',
+        title: 'CEO/CTO Portfolio',
+        subtitle: 'Ludtanza Wijaya',
         icon: <Briefcase className="w-5 h-5" />,
         accentFrom: 'from-blue-500/25',
         accentTo: 'to-cyan-500/10',
@@ -77,8 +57,8 @@ const sections = [
     },
     {
         id: 'case-study',
-        title: 'Advanta Case Study',
-        subtitle: 'PT Advanta Seeds',
+        title: 'Project Case Studies',
+        subtitle: 'Our Projects',
         icon: <Code2 className="w-5 h-5" />,
         accentFrom: 'from-purple-500/25',
         accentTo: 'to-pink-500/10',
@@ -91,33 +71,103 @@ const sections = [
                     <span className="text-neon-cyan">PT Advanta Seeds Indonesia</span>
                 </h4>
 
-                {/* Metrics */}
-                <div className="grid grid-cols-1 gap-3">
-                    {["Multi-Platform Integration", "Scalable Data Architecture", "High Performance"].map((metric) => (
-                        <div key={metric} className="p-3 rounded-xl bg-[#0A2540]/40 border border-neon-cyan/30 text-center shadow-[0_0_15px_rgba(0,240,255,0.08)]">
+                {/* Key metric pills — matches ContentOverlay exactly */}
+                <div className="grid grid-cols-1 gap-2.5">
+                    {["Multi-Platform Integration", "Offline-First Architecture", "Automated SLA Ticketing"].map((metric) => (
+                        <div
+                            key={metric}
+                            className="p-3 rounded-xl bg-[#0A2540]/40 border border-neon-cyan/30 text-center shadow-[0_0_15px_rgba(0,240,255,0.08)]"
+                        >
                             <span className="text-xs font-semibold text-neon-cyan tracking-wide">{metric}</span>
                         </div>
                     ))}
                 </div>
 
-                {/* Architecture Diagram */}
-                <div className="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
-                    <h4 className="text-xs font-mono text-gray-400 uppercase tracking-widest mb-4">System Architecture</h4>
-                    <div className="relative border border-dashed border-white/20 rounded-xl p-4 flex flex-col items-center gap-3 bg-black/20">
-                        <div className="absolute inset-0 bg-gradient-to-br from-neon-cyan/5 to-transparent rounded-xl" />
-                        <div className="flex justify-between w-full z-10">
-                            <span className="px-3 py-1.5 border border-neon-cyan/50 bg-[#0A2540]/80 rounded text-xs font-mono text-neon-cyan">Frontend (Next.js)</span>
-                            <span className="px-3 py-1.5 border border-white/30 bg-[#0A2540]/80 rounded text-xs font-mono text-white">App Mobile</span>
-                        </div>
-                        <div className="w-0.5 h-6 border-l-2 border-dashed border-neon-cyan/50 z-10" />
-                        <span className="px-6 py-2 border border-white/40 bg-[#0A2540]/90 rounded-lg text-xs font-mono text-white z-10 w-full text-center">
-                            Backend API (Node.js/Express)
+                {/* KrosCekApps */}
+                <div className="flex flex-col rounded-2xl border bg-gradient-to-br from-emerald-500/10 to-teal-500/5 border-emerald-400/20 backdrop-blur-md shadow-lg overflow-hidden">
+                    <div className="px-5 pt-5 pb-4 border-b border-white/5">
+                        <span className="text-[0.6rem] font-mono uppercase tracking-widest text-gray-400 block mb-1">
+                            Cross-Platform Mobile Application
                         </span>
-                        <div className="w-0.5 h-6 border-l-2 border-dashed border-white/30 z-10" />
-                        <div className="flex gap-3 z-10">
-                            <span className="px-4 py-1.5 border border-white/10 bg-black/60 rounded-full text-xs font-mono text-gray-300">PostgreSQL</span>
-                            <span className="px-4 py-1.5 border border-white/10 bg-black/60 rounded-full text-xs font-mono text-gray-300">Redis</span>
+                        <h5 className="text-base font-bold text-white">KrosCekApps</h5>
+                        <div className="flex flex-wrap gap-1.5 mt-3">
+                            {["Flutter", "Dart", "Hive (NoSQL)", "Firebase", "Supabase", "Google Sheets API"].map((tech) => (
+                                <span
+                                    key={tech}
+                                    className="px-2 py-0.5 text-[0.6rem] font-mono rounded-full border bg-emerald-500/15 text-emerald-300 border-emerald-400/25"
+                                >
+                                    {tech}
+                                </span>
+                            ))}
                         </div>
+                    </div>
+                    <div className="px-5 py-4 flex flex-col gap-4">
+                        {[
+                            {
+                                label: "Offline-First",
+                                text: "Built for remote agricultural areas with unstable internet. Uses Hive for rapid local caching of vegetative, generative, and harvest inspection data."
+                            },
+                            {
+                                label: "Hybrid Cloud Sync",
+                                text: "Automatically synchronises local data with Firebase Firestore and Supabase once a connection is re-established."
+                            },
+                            {
+                                label: "Geo-Tagging",
+                                text: "Integrates maps_flutter and flutter_map for precise real-time location tracking of field workers."
+                            }
+                        ].map((h) => (
+                            <div key={h.label} className="flex gap-3">
+                                <div className="mt-1 w-0.5 shrink-0 rounded-full bg-neon-cyan/40 self-stretch" />
+                                <div>
+                                    <span className="text-xs font-bold text-neon-cyan uppercase tracking-wider block mb-0.5">{h.label}</span>
+                                    <p className="text-xs text-gray-300 leading-relaxed">{h.text}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Scify CompFeed */}
+                <div className="flex flex-col rounded-2xl border bg-gradient-to-br from-blue-500/10 to-cyan-500/5 border-neon-cyan/20 backdrop-blur-md shadow-lg overflow-hidden">
+                    <div className="px-5 pt-5 pb-4 border-b border-white/5">
+                        <span className="text-[0.6rem] font-mono uppercase tracking-widest text-gray-400 block mb-1">
+                            Modern Fullstack Web Application
+                        </span>
+                        <h5 className="text-base font-bold text-white">Scify CompFeed</h5>
+                        <div className="flex flex-wrap gap-1.5 mt-3">
+                            {["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL", "WhatsApp API"].map((tech) => (
+                                <span
+                                    key={tech}
+                                    className="px-2 py-0.5 text-[0.6rem] font-mono rounded-full border bg-neon-cyan/10 text-neon-cyan border-neon-cyan/25"
+                                >
+                                    {tech}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="px-5 py-4 flex flex-col gap-4">
+                        {[
+                            {
+                                label: "Serverless Architecture",
+                                text: "Utilises Next.js Server Components and Server Actions for fast, SEO-friendly performance and direct database mutations."
+                            },
+                            {
+                                label: "QR Code Verification",
+                                text: "Farmers and customers scan seed bags for instant product verification and automated complaint submissions."
+                            },
+                            {
+                                label: "Automated Ticketing & SLA",
+                                text: "WhatsApp and Email integration auto-notifies stakeholders at each stage: Investigation → Lab Testing → Resolve."
+                            }
+                        ].map((h) => (
+                            <div key={h.label} className="flex gap-3">
+                                <div className="mt-1 w-0.5 shrink-0 rounded-full bg-neon-cyan/40 self-stretch" />
+                                <div>
+                                    <span className="text-xs font-bold text-neon-cyan uppercase tracking-wider block mb-0.5">{h.label}</span>
+                                    <p className="text-xs text-gray-300 leading-relaxed">{h.text}</p>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
@@ -319,7 +369,14 @@ export default function MobileTechHub2D() {
                             animate={{ rotate: [0, 5, -5, 0] }}
                             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                         >
-                            <LuksuriLogo size={56} />
+                            <Image
+                                src="/logo.png"
+                                alt="Luksuri Reka Logo"
+                                width={56}
+                                height={56}
+                                className="object-contain drop-shadow-[0_0_12px_rgba(0,240,255,0.7)]"
+                                priority
+                            />
                         </motion.div>
                     </div>
 
@@ -411,11 +468,11 @@ export default function MobileTechHub2D() {
                     className="mt-8 p-6 rounded-3xl border border-neon-cyan/20 bg-neon-cyan/5 backdrop-blur-md text-center space-y-4 shadow-[0_0_30px_rgba(0,240,255,0.06)]"
                 >
                     <p className="text-sm text-gray-300 leading-relaxed">
-                        Experience the <span className="text-neon-cyan font-semibold">full interactive 3D demo</span> on a desktop or tablet browser.
+                        Experience the <span className="text-neon-cyan font-semibold">full interactive 3D view</span> on a desktop or tablet browser.
                     </p>
                     <div className="flex items-center justify-center gap-2 text-xs font-mono text-neon-cyan/60 tracking-wider">
                         <div className="w-1.5 h-1.5 rounded-full bg-neon-cyan animate-pulse" />
-                        Luksuri Reka Digital © 2024
+                        Luksuri Reka Digital Solutions © 2024
                     </div>
                 </motion.div>
             </div>
