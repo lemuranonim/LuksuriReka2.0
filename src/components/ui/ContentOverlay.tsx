@@ -289,7 +289,7 @@ export default function ContentOverlay() {
 
             <motion.div variants={itemVariants} className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md shadow-lg">
                 <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                    Luksuri Reka Digital is a cutting-edge creative and engineering lab based in Tulungagung, Jawa Timur. We specialize in building immersive web experiences, scalable cloud systems, and modern SaaS platforms that merge aesthetic brilliance with deep technical performance.
+                    Luksuri Reka Digital Solutions is a cutting-edge creative and engineering lab based in Tulungagung, Jawa Timur. We specialize in building immersive web experiences, scalable cloud systems, and modern SaaS platforms that merge aesthetic brilliance with deep technical performance.
                 </p>
                 <p className="text-gray-300 text-sm leading-relaxed">
                     By leveraging state-of-the-art technologies such as <strong>React Three Fiber</strong>, <strong>Next.js</strong>, and robust microservice architectures, we empower brands to captivate users and automate complex workflows seamlessly.
@@ -330,7 +330,7 @@ export default function ContentOverlay() {
                         <div className="flex justify-between items-start mb-8 sticky top-0 z-20 pb-4 bg-[#0A2540]/60 backdrop-blur-md -mx-6 md:-mx-8 px-6 md:px-8 pt-2 rounded-t-3xl border-b border-white/5">
                             <motion.h2 variants={itemVariants} className="text-2xl md:text-3xl font-bold font-sans text-white leading-tight pr-4 tracking-wide flex items-center gap-3">
                                 <span className="w-2 h-8 bg-neon-cyan rounded-full shadow-[0_0_10px_rgba(0,240,255,0.8)] hidden md:block"></span>
-                                {activeSection === 'ceo-portfolio' && "Luksuri Reka Digital"}
+                                {activeSection === 'ceo-portfolio' && "Luksuri Reka Digital Solutions"}
                                 {activeSection === 'case-study' && "Project Case Studies"}
                                 {activeSection === 'services' && "Digital Software Solutions"}
                                 {activeSection === 'mascot' && "Contact Us"}
