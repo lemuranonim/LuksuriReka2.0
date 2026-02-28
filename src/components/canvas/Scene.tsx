@@ -16,7 +16,7 @@ export default function Scene() {
         <div className="w-full h-screen absolute inset-0 z-0 bg-trust-blue text-neon-cyan flex items-center justify-center font-mono">
             <Canvas
                 camera={{ position: [0, 2, 8], fov: 45 }}
-                dpr={[1, 2]}
+                dpr={[1, 1.5]}
                 fallback={
                     <div className="flex w-full h-full flex-col items-center justify-center z-10 relative">
                         <span>[SYSTEM WARNING: WebGL Context Failed]</span>
