@@ -15,6 +15,9 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "PT Luksuri Reka Digital Solutions",
   description: "Advanced Frontend/Backend capabilities, deep UI/UX sensitivity",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
