@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Terima Kasih - Luksuri Reka</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            width: 100%;
+            overflow-x: hidden;
+            background-color: #0f172a;
+            font-family: 'Inter', sans-serif;
+            color: #f8fafc;
+        }
+
+        .slide-container {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            background-image: url("https://page.gensparksite.com/slides_images/56b6f5fba306d081e8d64c8dda52b03b.webp");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.97);
+            z-index: 1;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 5vh 5vw;
+        }
+
+        .middle-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        .mono-text {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .final-pill {
+            background-color: rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: #93c5fd;
+            padding: 6px 16px;
+            border-radius: 9999px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        /* Teks Gradasi untuk Judul */
+        .gradient-text {
+            background: linear-gradient(135deg, #60a5fa 0%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Kartu Kontak (Glassmorphism) */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            width: 100%;
+            max-width: 900px;
+            margin-top: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .contact-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+            }
+        }
+
+        .contact-card {
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .contact-card:hover {
+            background: rgba(30, 41, 59, 0.7);
+            border-color: rgba(59, 130, 246, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2);
+        }
+
+        .icon-wrapper {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 1) 0%, rgba(15, 23, 42, 1) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .icon-website {
+            color: #60a5fa;
+            box-shadow: 0 0 20px rgba(96, 165, 250, 0.2);
+        }
+
+        .icon-email {
+            color: #34d399;
+            box-shadow: 0 0 20px rgba(52, 211, 153, 0.2);
+        }
+
+        .icon-support {
+            color: #fbbf24;
+            box-shadow: 0 0 20px rgba(251, 191, 36, 0.2);
+        }
+
+        .company-logo-placeholder {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem auto;
+            color: #94a3b8;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slide-container">
+        <div class="overlay"></div>
+        <div class="content-wrapper">
+
+            <div class="middle-content">
+
+                <div class="mb-8">
+                    <img src="../../logo.png" alt="Luksuri Reka Logo"
+                        class="h-20 w-auto mx-auto object-contain drop-shadow-lg" />
+                </div>
+
+                <p class="mono-text final-pill"><i class="fa-solid fa-flag-checkered mr-2"></i>AKHIR PRESENTASI</p>
+
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4">
+                    Terima Kasih
+                </h1>
+                <p class="text-lg md:text-xl text-slate-300 max-w-2xl font-light leading-relaxed">
+                    Atas waktu, perhatian, dan kepercayaan yang diberikan kepada <strong
+                        class="text-white font-semibold">PT Luksuri Reka Digital Solutions</strong>. Kami siap terus
+                    berkolaborasi menyukseskan CompFeeds.
+                </p>
+
+                <div class="contact-grid">
+                    <a href="https://luksurireka.com" target="_blank" class="contact-card group no-underline">
+                        <div class="icon-wrapper icon-website group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <h3 class="text-white font-bold text-lg mb-1">Website Resmi</h3>
+                        <p class="text-slate-400 text-sm">luksurireka.com</p>
+                    </a>
+
+                    <a href="mailto:hello@luksurireka.com" class="contact-card group no-underline">
+                        <div class="icon-wrapper icon-email group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <h3 class="text-white font-bold text-lg mb-1">Project Inquiry</h3>
+                        <p class="text-slate-400 text-sm">hello@luksurireka.com</p>
+                    </a>
+
+                    <a href="https://luksurireka.com/help" target="_blank" class="contact-card group no-underline">
+                        <div class="icon-wrapper icon-support group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <h3 class="text-white font-bold text-lg mb-1">Pusat Bantuan</h3>
+                        <p class="text-slate-400 text-sm">luksurireka.com/help</p>
+                    </a>
+                </div>
+
+            </div>
+
+            <div
+                class="flex flex-col sm:flex-row justify-between items-start sm:items-end border-t border-slate-700 pt-6 mt-auto">
+                <div class="flex items-center text-slate-500 text-sm mono-text mb-2 sm:mb-0">
+                    <span class="mr-4">PT LUKSURI REKA DIGITAL SOLUTIONS</span>
+                    <span class="hidden sm:inline">•</span>
+                    <span class="sm:ml-4">CompFeeds Project Report</span>
+                </div>
+                <div class="text-left sm:text-right">
+                    <p class="text-slate-500 text-sm">
+                        <a href="https://luksurireka.com/compfeeds-project-report" target="_blank"
+                            rel="noopener noreferrer"
+                            class="font-bold italic text-blue-600 hover:text-blue-800 underline">
+                            https://luksurireka.com/compfeeds-project-report
+                        </a>
+                        | Slide 9 / 9
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
