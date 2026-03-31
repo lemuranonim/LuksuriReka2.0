@@ -4,6 +4,10 @@ import { useState, useEffect, useRef } from 'react';
 import { exportToJpgZip, exportToPptx, exportToPdf } from './exportUtils';
 
 export default function PresentationViewer() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [tokenInput, setTokenInput] = useState('');
+  const [errorToken, setErrorToken] = useState('');
+
   const [currentSlide, setCurrentSlide] = useState(1);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [exporting, setExporting] = useState<string | null>(null);
@@ -127,6 +131,48 @@ export default function PresentationViewer() {
       setExporting(null); // Menghilangkan UI Loading setelah selesai
     }
   };
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (tokenInput.trim().toUpperCase() === 'ADVfiscal2627') {
+      setIsAuthenticated(true);
+      setErrorToken('');
+    } else {
+      setErrorToken('Token tidak valid. Akses ditolak.');
+    }
+  };
+
+  if (!isAuthenticated) {
+    return (
+      <div className="w-screen h-screen bg-[#050510] flex items-center justify-center font-sans overflow-hidden relative">
+        <style dangerouslySetInnerHTML={{ __html: `@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');` }} />
+        <div className="absolute inset-0 bg-slate-900/90 backdrop-blur-xl"></div>
+        <div className="relative z-10 bg-slate-800/80 border border-emerald-500/30 p-10 rounded-2xl shadow-[0_0_50px_rgba(16,185,129,0.2)] max-w-sm w-full mx-4 text-center">
+          <div className="w-20 h-20 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i className="fa-solid fa-shield-halved text-4xl text-emerald-400"></i>
+          </div>
+          <h2 className="text-2xl font-bold text-white mb-2">Secure Access</h2>
+          <p className="text-slate-400 text-sm mb-6">Masukkan Security Token untuk melihat dokumen proposal ini.</p>
+
+          <form onSubmit={handleLogin} className="flex flex-col gap-4">
+            <div>
+              <input
+                type="password"
+                value={tokenInput}
+                onChange={(e) => setTokenInput(e.target.value)}
+                placeholder="Enter Access Token"
+                className="w-full bg-slate-900/80 border border-slate-600 rounded-lg px-4 py-3 text-white text-center tracking-widest focus:outline-none focus:border-emerald-500 transition-colors"
+              />
+              {errorToken && <p className="text-red-400 text-xs mt-2 text-left"><i className="fa-solid fa-circle-exclamation mr-1"></i>{errorToken}</p>}
+            </div>
+            <button type="submit" className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-lg transition-colors flex items-center justify-center gap-2">
+              <i className="fa-solid fa-key"></i> Verifikasi
+            </button>
+          </form>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div
