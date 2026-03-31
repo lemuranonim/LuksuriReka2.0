@@ -134,7 +134,7 @@ export default function PresentationViewer() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (tokenInput.trim().toUpperCase() === 'ADVfiscal2627') {
+    if (tokenInput.trim().toUpperCase() === 'ADVFISCAL2627') {
       setIsAuthenticated(true);
       setErrorToken('');
     } else {
