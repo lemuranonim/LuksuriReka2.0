@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Cakupan Dukungan & Keamanan</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-color: #0f172a;
+            font-family: 'Inter', sans-serif;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        .slide-container {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            background-image: url("https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1920&q=80");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(15, 23, 42, 0.95);
+            z-index: 1;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 5vh 5vw;
+        }
+
+        .header-section {
+            border-left: 6px solid #d946ef;
+            padding-left: 20px;
+            margin-bottom: 40px;
+        }
+
+        .conclusions-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        @media (min-width: 1024px) {
+            .conclusions-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+        }
+
+        .conclusion-card {
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .card-violet {
+            border-bottom: 4px solid #8b5cf6;
+        }
+
+        .card-fuchsia {
+            border-bottom: 4px solid #d946ef;
+        }
+
+        .card-blue {
+            border-bottom: 4px solid #3b82f6;
+        }
+
+        .card-icon-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .icon-violet-bg {
+            background: rgba(139, 92, 246, 0.2);
+            color: #a78bfa;
+        }
+
+        .icon-fuchsia-bg {
+            background: rgba(217, 70, 239, 0.2);
+            color: #e879f9;
+        }
+
+        .icon-blue-bg {
+            background: rgba(59, 130, 246, 0.2);
+            color: #60a5fa;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
+            border: 1px dashed #8b5cf6;
+            border-radius: 16px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .cta-section {
+                flex-direction: row;
+                text-align: left;
+                padding: 30px 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slide-container">
+        <div class="overlay"></div>
+        <div class="content-wrapper">
+
+            <div class="header-section">
+                <p class="font-mono text-fuchsia-400 mb-2 uppercase tracking-wider text-sm">SLIDE PENUTUP</p>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white">
+                    Cakupan Dukungan <br class="hidden md:block" />
+                    & <span class="text-violet-400">Keamanan Tambahan</span>
+                </h1>
+            </div>
+
+            <div class="flex-grow flex flex-col justify-center">
+                <div class="conclusions-grid">
+
+                    <div class="conclusion-card card-violet">
+                        <div class="card-icon-box icon-violet-bg">
+                            <i class="fa-solid fa-shield-virus"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Security & Updates</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Penerapan <strong class="text-violet-400">Security Patch & Dependency Updates</strong>
+                            secara proaktif untuk mengatasi celah kerentanan kode dan memastikan infrastruktur backend
+                            kebal dari ancaman intrusi data.
+                        </p>
+                    </div>
+
+                    <div class="conclusion-card card-blue">
+                        <div class="card-icon-box icon-blue-bg">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Database Backup Rutin</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Dilakukan replikasi file dan <strong class="text-blue-400">Backup Database
+                                (Harian/Mingguan)</strong> guna menjaga integritas data keluhan pelanggan jika terjadi
+                            malfungsi server atau kegagalan sistem internal.
+                        </p>
+                    </div>
+
+                    <div class="conclusion-card card-fuchsia">
+                        <div class="card-icon-box icon-fuchsia-bg">
+                            <i class="fa-solid fa-bug-slash"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Bug Fix & General Maintain</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Layanan siap sedia berupa <strong class="text-fuchsia-400">Bug fix & hotfix
+                                on-demand</strong> serta cakupan perbaikan web general untuk operasional CompFeed yang
+                            selalu *seamless* bagi PT Advanta kapanpun.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <div
+                        class="flex-shrink-0 hidden md:flex w-16 h-16 bg-violet-500/20 rounded-full items-center justify-center">
+                        <i class="fa-solid fa-file-contract text-3xl text-violet-400"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h2 class="text-2xl font-bold text-white mb-2">Penawaran Total Service Term</h2>
+                        <p class="text-slate-300 leading-relaxed text-sm">
+                            Keseluruhan maintenance terukur (Skala server, Security, Database Backup, & Uptime 1 Tahun)
+                            dicakup melalui proposal flat cost ini, memastikan operasional CompFeed dan WA API terbebas
+                            dari kekhawatiran <i>hidden maintenance cost.</i>
+                        </p>
+                    </div>
+                    <div class="bg-slate-800/80 border border-fuchsia-500/50 rounded-xl p-4 text-center min-w-[200px]">
+                        <i class="fa-solid fa-signature text-3xl text-fuchsia-400 mb-2"></i>
+                        <p class="font-bold text-white text-sm">Menunggu Approval</p>
+                        <p class="text-xs text-fuchsia-300 mt-1">Proposal Final</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-between items-end border-t border-slate-700 pt-6 mt-6">
+                <div class="flex items-center text-slate-500 text-sm font-mono">
+                    <span>PT LUKSURI REKA DIGITAL SOLUTIONS</span>
+                    <span class="mx-3">•</span>
+                    <span>Proposal untuk PT Advanta Seeds Indonesia</span>
+                </div>
+                <div class="text-slate-500 text-sm font-mono text-right">
+                    Slide 2 / 2
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
