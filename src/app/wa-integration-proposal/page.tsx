@@ -15,8 +15,8 @@ export default function PresentationViewer() {
   // State untuk mengatur apakah panel UI (tombol-tombol) ditampilkan atau tidak
   const [isUiVisible, setIsUiVisible] = useState(true);
 
-  // Sesuai dengan request, 2 slide
-  const totalSlides = 2;
+  // Sesuai dengan request, 3 slide
+  const totalSlides = 3;
   const viewerRef = useRef<HTMLDivElement>(null);
 
   // 1. Deteksi Perubahan Fullscreen (Penting agar tombol Esc juga terdeteksi)
