@@ -591,7 +591,7 @@
             border-radius: 20px;
         }
 
-        /* ─── RESPONSIVE ─── */
+        /* ─── RESPONSIVE (Tablets & Below) ─── */
         @media (max-width: 900px) {
             .slide-wrapper {
                 padding: 24px 20px 20px;
@@ -609,6 +609,121 @@
                 min-width: calc(50% - 7px);
             }
         }
+
+        /* ─── MOBILE UI/UX CAROUSEL (Max 768px) ─── */
+        @media (max-width: 768px) {
+            .slide-wrapper {
+                padding: 16px 14px;
+            }
+
+            .total-panel {
+                min-width: 100%;
+                width: 100%;
+                padding: 20px 24px;
+            }
+
+            .total-panel .panel-amount {
+                font-size: 32px;
+            }
+
+            .slide-title {
+                font-size: 24px;
+            }
+
+            .cards-container {
+                display: flex;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                gap: 16px;
+                padding-bottom: 8px;
+                scrollbar-width: none;
+            }
+
+            .cards-container::-webkit-scrollbar {
+                display: none;
+            }
+
+            .mod-card {
+                min-width: 88vw;
+                scroll-snap-align: center;
+                flex-shrink: 0;
+            }
+
+            .card-top {
+                flex-direction: row;
+                padding: 16px;
+                gap: 14px;
+                text-align: left;
+            }
+
+            .icon-wrapper {
+                width: 48px;
+                height: 48px;
+                border-radius: 12px;
+            }
+
+            .icon-wrapper svg {
+                width: 24px;
+                height: 24px;
+            }
+
+            .card-title {
+                text-align: left;
+                font-size: 13px;
+                flex: 1;
+            }
+
+            .card-body {
+                padding: 12px 16px;
+                gap: 4px;
+            }
+
+            .bullet-item {
+                padding: 4px 0;
+            }
+
+            .bullet-text {
+                font-size: 13px;
+                line-height: 1.4;
+            }
+
+            .card-footer {
+                padding: 12px 16px 16px;
+                display: grid;
+                grid-template-columns: 1fr auto;
+                align-items: center;
+                gap: 8px 0;
+            }
+
+            .budget-label {
+                margin-bottom: 0;
+                font-size: 11px;
+            }
+
+            .budget-amount {
+                font-size: 18px;
+            }
+
+            .budget-bar-track {
+                grid-column: 1 / span 2;
+                height: 4px;
+                margin-top: 2px;
+            }
+
+            .slide-footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                padding-top: 16px;
+            }
+
+            .footer-brand {
+                font-size: 12px;
+                flex-wrap: wrap;
+            }
+        }
     </style>
 </head>
 
@@ -619,11 +734,9 @@
 
     <div class="slide-wrapper">
 
-        <!-- ══════════════════ HEADER ══════════════════ -->
         <div class="header">
             <div class="header-left">
                 <div class="company-row">
-                    <!-- Advanta Seeds leaf-inspired mark -->
                     <div class="company-mark">
                         <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10 17 C10 17 3 12 3 7 C3 4.2 6 2 10 2 C14 2 17 4.2 17 7 C17 12 10 17 10 17Z"
@@ -650,21 +763,19 @@
                 </h1>
             </div>
 
-            <!-- TOTAL INVESTMENT PANEL -->
             <div class="total-panel">
                 <div class="panel-label">Total Estimated Investment</div>
                 <div class="panel-sub">5 Digital Modules · FY 2026–2027</div>
                 <div class="panel-amount">
-                    <span class="currency">Rp</span>299.000.000
+                    <span class="currency">Rp</span>305.000.000
                 </div>
                 <div class="panel-badge">Approved Budget Ceiling</div>
             </div>
         </div>
 
-        <!-- ══════════════════ CARDS ══════════════════ -->
         <div class="cards-container">
 
-            <!-- ── CARD 1 ── -->
+            <!-- Card 1: Plant Lab -->
             <div class="mod-card">
                 <div class="card-top">
                     <div class="icon-wrapper">
@@ -702,14 +813,14 @@
                 </div>
                 <div class="card-footer">
                     <div class="budget-label">Module Budget</div>
-                    <div class="budget-amount">Rp 75.000.000</div>
+                    <div class="budget-amount">Rp 150.000.000</div>
                     <div class="budget-bar-track">
                         <div class="budget-bar-fill" style="width:100%"></div>
                     </div>
                 </div>
             </div>
 
-            <!-- ── CARD 2 ── -->
+            <!-- Card 2: GOT -->
             <div class="mod-card">
                 <div class="card-top">
                     <div class="icon-wrapper">
@@ -742,33 +853,28 @@
                 </div>
                 <div class="card-footer">
                     <div class="budget-label">Module Budget</div>
-                    <div class="budget-amount">Rp 75.000.000</div>
+                    <div class="budget-amount">Rp 80.000.000</div>
                     <div class="budget-bar-track">
-                        <div class="budget-bar-fill" style="width:100%"></div>
+                        <div class="budget-bar-fill" style="width:53%"></div>
                     </div>
                 </div>
             </div>
 
-            <!-- ── CARD 3 ── -->
+            <!-- Card 3: MGP -->
             <div class="mod-card">
                 <div class="card-top">
                     <div class="icon-wrapper">
                         <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Image frame with colored dots -->
                             <rect x="2" y="4" width="22" height="16" rx="2.5" stroke="currentColor"
                                 stroke-width="1.4" />
-                            <!-- Red dot cluster -->
                             <circle cx="7" cy="10" r="1.5" fill="currentColor" opacity="0.9" />
                             <circle cx="10" cy="8" r="1.5" fill="currentColor" opacity="0.7" />
                             <circle cx="8.5" cy="13" r="1.5" fill="currentColor" opacity="0.8" />
-                            <!-- Blue dot cluster -->
                             <circle cx="14" cy="9" r="1.5" fill="currentColor" opacity="0.5" />
                             <circle cx="17" cy="11" r="1.5" fill="currentColor" opacity="0.5" />
                             <circle cx="15" cy="13" r="1.5" fill="currentColor" opacity="0.5" />
-                            <!-- Output bar (bottom) -->
                             <rect x="2" y="22" width="22" height="3" rx="1" fill="currentColor" opacity="0.08" />
                             <rect x="2" y="22" width="8" height="3" rx="1" fill="currentColor" opacity="0.55" />
-                            <!-- % sign -->
                             <text x="20" y="25" font-size="3.5" fill="currentColor" opacity="0.7"
                                 font-family="monospace">%</text>
                         </svg>
@@ -794,14 +900,14 @@
                 </div>
                 <div class="card-footer">
                     <div class="budget-label">Module Budget</div>
-                    <div class="budget-amount">Rp 75.000.000</div>
+                    <div class="budget-amount">Rp 45.000.000</div>
                     <div class="budget-bar-track">
-                        <div class="budget-bar-fill" style="width:100%"></div>
+                        <div class="budget-bar-fill" style="width:30%"></div>
                     </div>
                 </div>
             </div>
 
-            <!-- ── CARD 4 ── -->
+            <!-- Card 4: CompFeed -->
             <div class="mod-card">
                 <div class="card-top">
                     <div class="icon-wrapper">
@@ -837,14 +943,14 @@
                 </div>
                 <div class="card-footer">
                     <div class="budget-label">Module Budget</div>
-                    <div class="budget-amount">Rp 25.000.000</div>
+                    <div class="budget-amount">Rp 15.000.000</div>
                     <div class="budget-bar-track">
-                        <div class="budget-bar-fill" style="width:33%"></div>
+                        <div class="budget-bar-fill" style="width:10%"></div>
                     </div>
                 </div>
             </div>
 
-            <!-- ── CARD 5 ── -->
+            <!-- Card 5: KC Upgrade -->
             <div class="mod-card">
                 <div class="card-top">
                     <div class="icon-wrapper">
@@ -879,16 +985,15 @@
                 </div>
                 <div class="card-footer">
                     <div class="budget-label">Module Budget</div>
-                    <div class="budget-amount">Rp 49.000.000</div>
+                    <div class="budget-amount">Rp 15.000.000</div>
                     <div class="budget-bar-track">
-                        <div class="budget-bar-fill" style="width:65%"></div>
+                        <div class="budget-bar-fill" style="width:10%"></div>
                     </div>
                 </div>
             </div>
 
-        </div><!-- /cards-container -->
+        </div>
 
-        <!-- ═════════════════ FOOTER ═════════════════ -->
         <div class="slide-footer">
             <div class="footer-left">
                 <div class="footer-dot"></div>
@@ -904,7 +1009,7 @@
             </div>
         </div>
 
-    </div><!-- /slide-wrapper -->
+    </div>
 </body>
 
 </html>
