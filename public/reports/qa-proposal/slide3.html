@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Sub Project B — MGP Color Point Reading &amp; Scoring</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 100%; height: 100vh; overflow: hidden; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+    .bg { position: fixed; inset: 0; z-index: 0; background: linear-gradient(135deg, #0f0a00 0%, #1a1200 30%, #1c1500 60%, #120e00 100%); }
+    .bg-grid { position: fixed; inset: 0; z-index: 1; opacity: 0.05; background-image: linear-gradient(rgba(212,168,50,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(212,168,50,0.5) 1px, transparent 1px); background-size: 60px 60px; }
+    .bg-glow { position: fixed; z-index: 2; width: 700px; height: 700px; border-radius: 50%; background: radial-gradient(circle, rgba(184,135,31,0.2) 0%, transparent 70%); top: -200px; right: -100px; }
+    .top-stripe { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 100; background: linear-gradient(90deg, #b8871f 0%, #d4a832 50%, #f0c84a 100%); }
+    .slide-wrapper { position: relative; z-index: 10; width: 100%; height: 100vh; display: grid; grid-template-rows: auto 1fr; padding: 48px 72px 70px; gap: 24px; }
+    .slide-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; animation: fade-down 0.7s ease both; }
+    .header-left { display: flex; flex-direction: column; gap: 6px; }
+    .sub-tag { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 700; color: #d4a832; letter-spacing: 0.18em; text-transform: uppercase; }
+    .sub-tag::before { content: ''; display: block; width: 28px; height: 2px; background: linear-gradient(90deg, #b8871f, #f0c84a); border-radius: 2px; }
+    .slide-title { font-family: 'Playfair Display', serif; font-size: clamp(24px, 2.5vw, 34px); font-weight: 800; color: #ffffff; line-height: 1.2; letter-spacing: -0.02em; }
+    .slide-title .hl { background: linear-gradient(135deg, #d4a832, #f0c84a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .header-budget { background: linear-gradient(135deg, rgba(184,135,31,0.2), rgba(212,168,50,0.08)); border: 1px solid rgba(212,168,50,0.35); border-radius: 14px; padding: 14px 22px; text-align: right; position: relative; overflow: hidden; backdrop-filter: blur(12px); }
+    .header-budget::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #b8871f, #d4a832, #f0c84a); }
+    .hb-label { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 4px; }
+    .hb-amount { font-family: 'Playfair Display', serif; font-size: clamp(20px, 2.2vw, 28px); font-weight: 700; color: #fff; }
+    .hb-amount .curr { color: #d4a832; font-size: 0.55em; vertical-align: super; margin-right: 2px; }
+    .hb-badge { display: inline-flex; align-items: center; gap: 5px; margin-top: 6px; background: rgba(212,168,50,0.12); border: 1px solid rgba(212,168,50,0.25); border-radius: 20px; padding: 3px 12px; font-size: 9.5px; font-weight: 700; color: #d4a832; letter-spacing: 0.12em; text-transform: uppercase; }
+    .main-content { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start; }
+    /* LEFT: feature + color dots */
+    .left-col { display: flex; flex-direction: column; gap: 12px; }
+    .feat-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 16px 18px; display: flex; align-items: flex-start; gap: 14px; backdrop-filter: blur(8px); transition: border-color 0.3s, transform 0.3s; position: relative; overflow: hidden; }
+    .feat-card:hover { transform: translateX(5px); border-color: rgba(212,168,50,0.25); }
+    .feat-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, #b8871f, #d4a832); }
+    .feat-card:nth-child(1) { animation: fade-up 0.7s 0.2s ease both; }
+    .feat-card:nth-child(2) { animation: fade-up 0.7s 0.3s ease both; }
+    .feat-card:nth-child(3) { animation: fade-up 0.7s 0.4s ease both; }
+    .feat-icon { width: 42px; height: 42px; border-radius: 11px; background: rgba(212,168,50,0.12); border: 1px solid rgba(212,168,50,0.2); color: #d4a832; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .feat-icon svg { width: 20px; height: 20px; }
+    .feat-body { flex: 1; }
+    .feat-title { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.9); margin-bottom: 3px; }
+    .feat-desc { font-size: 11.5px; color: rgba(255,255,255,0.45); line-height: 1.55; }
+    /* COLOR PALETTE DEMO */
+    .color-demo { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 18px; backdrop-filter: blur(8px); animation: fade-up 0.7s 0.5s ease both; }
+    .cd-label { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 14px; }
+    .color-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .color-dot { width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0; box-shadow: 0 0 8px; }
+    .color-bar-track { flex: 1; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; }
+    .color-bar-fill { height: 100%; border-radius: 4px; transition: width 1s ease; }
+    .color-pct { font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.6); min-width: 36px; text-align: right; }
+    /* RIGHT */
+    .right-col { display: flex; flex-direction: column; gap: 12px; }
+    .scope-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 18px; backdrop-filter: blur(8px); animation: fade-left 0.7s 0.3s ease both; }
+    .scope-label { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 10px; }
+    .scope-list { display: flex; flex-direction: column; gap: 7px; }
+    .scope-item { display: flex; align-items: center; gap: 10px; }
+    .scope-dot { width: 6px; height: 6px; border-radius: 50%; background: #d4a832; box-shadow: 0 0 6px rgba(212,168,50,0.7); flex-shrink: 0; }
+    .scope-text { font-size: 12px; color: rgba(255,255,255,0.65); }
+    .metrics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; animation: fade-left 0.7s 0.4s ease both; }
+    .metric-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 12px 14px; text-align: center; backdrop-filter: blur(8px); transition: border-color 0.3s, transform 0.3s; }
+    .metric-card:hover { transform: translateY(-3px); border-color: rgba(212,168,50,0.25); }
+    .metric-value { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: #d4a832; line-height: 1; margin-bottom: 4px; }
+    .metric-label { font-size: 10px; color: rgba(255,255,255,0.4); }
+    .note-box { background: rgba(212,168,50,0.06); border: 1px solid rgba(212,168,50,0.15); border-radius: 12px; padding: 14px 16px; animation: fade-left 0.7s 0.5s ease both; }
+    .note-label { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(212,168,50,0.6); margin-bottom: 8px; }
+    .note-text { font-size: 12px; color: rgba(255,255,255,0.55); line-height: 1.6; }
+    .slide-footer { position: fixed; bottom: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 12px 72px; background: rgba(15,10,0,0.88); border-top: 1px solid rgba(255,255,255,0.06); backdrop-filter: blur(16px); }
+    .footer-brand { font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 0.05em; }
+    .footer-right { display: flex; align-items: center; gap: 12px; }
+    .footer-page { font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 0.08em; }
+    .footer-stamp { background: linear-gradient(135deg, #b8871f, #d4a832); color: white; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 14px; border-radius: 20px; }
+    .slide-num { position: fixed; top: 50%; right: 24px; z-index: 50; transform: translateY(-50%); display: flex; flex-direction: column; gap: 8px; }
+    .slide-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.15); }
+    .slide-dot.active { background: #d4a832; box-shadow: 0 0 8px rgba(212,168,50,0.8); height: 18px; border-radius: 3px; }
+    @keyframes fade-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fade-left { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes fade-down { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body>
+  <div class="top-stripe"></div>
+  <div class="bg"></div>
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
+  <div class="slide-wrapper">
+    <div class="slide-header">
+      <div class="header-left">
+        <div class="sub-tag">Sub Project B — CAPEX · MGP</div>
+        <h1 class="slide-title"><span class="hl">MGP Color Point</span><br>Reading &amp; Scoring System</h1>
+      </div>
+      <div class="header-budget">
+        <div class="hb-label">Sub Project B Budget</div>
+        <div class="hb-amount"><span class="curr">Rp</span>35.000.000</div>
+        <div class="hb-badge">✓ Fixed Budget</div>
+      </div>
+    </div>
+    <div class="main-content">
+      <div class="left-col">
+        <div class="feat-card">
+          <div class="feat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M20.188 10.934c.388.462.612 1.027.612 1.566s-.224 1.104-.612 1.566C18.768 15.828 15.636 18 12 18c-3.636 0-6.768-2.172-8.188-3.934A2.978 2.978 0 013.2 12.5c0-.539.224-1.104.612-1.566C5.232 9.172 8.364 7 12 7c3.636 0 6.768 2.172 8.188 3.934z"/></svg>
+          </div>
+          <div class="feat-body">
+            <div class="feat-title">Automated Color-Point Detection</div>
+            <div class="feat-desc">Deteksi titik warna otomatis dari gambar/foto—merah, biru, kuning, dan kategori lainnya—menggunakan algoritma image processing.</div>
+          </div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+          </div>
+          <div class="feat-body">
+            <div class="feat-title">Auto Percentage Conversion</div>
+            <div class="feat-desc">Penghitungan jumlah titik per kategori warna dengan konversi otomatis ke persen (%). Akurat dan konsisten setiap saat.</div>
+          </div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
+          </div>
+          <div class="feat-body">
+            <div class="feat-title">Standardized Scoring to Database</div>
+            <div class="feat-desc">Output langsung disimpan ke database sebagai record MGP Scoring standar yang terstruktur dan mudah diaudit.</div>
+          </div>
+        </div>
+        <div class="color-demo">
+          <div class="cd-label">Color Detection Preview</div>
+          <div class="color-row">
+            <div class="color-dot" style="background:#e74c3c; box-shadow:0 0 8px rgba(231,76,60,0.7);"></div>
+            <div class="color-bar-track"><div class="color-bar-fill" style="width:42%; background:#e74c3c;"></div></div>
+            <div class="color-pct">42%</div>
+          </div>
+          <div class="color-row">
+            <div class="color-dot" style="background:#3498db; box-shadow:0 0 8px rgba(52,152,219,0.7);"></div>
+            <div class="color-bar-track"><div class="color-bar-fill" style="width:28%; background:#3498db;"></div></div>
+            <div class="color-pct">28%</div>
+          </div>
+          <div class="color-row">
+            <div class="color-dot" style="background:#f1c40f; box-shadow:0 0 8px rgba(241,196,15,0.7);"></div>
+            <div class="color-bar-track"><div class="color-bar-fill" style="width:18%; background:#f1c40f;"></div></div>
+            <div class="color-pct">18%</div>
+          </div>
+          <div class="color-row" style="margin-bottom:0;">
+            <div class="color-dot" style="background:#9b59b6; box-shadow:0 0 8px rgba(155,89,182,0.7);"></div>
+            <div class="color-bar-track"><div class="color-bar-fill" style="width:12%; background:#9b59b6;"></div></div>
+            <div class="color-pct">12%</div>
+          </div>
+        </div>
+      </div>
+      <div class="right-col">
+        <div class="scope-box">
+          <div class="scope-label">Scope of Delivery</div>
+          <div class="scope-list">
+            <div class="scope-item"><div class="scope-dot"></div><div class="scope-text">Modul upload &amp; analisis gambar MGP</div></div>
+            <div class="scope-item"><div class="scope-dot"></div><div class="scope-text">Algoritma deteksi titik warna (image processing)</div></div>
+            <div class="scope-item"><div class="scope-dot"></div><div class="scope-text">Auto-scoring &amp; konversi persen per kategori</div></div>
+            <div class="scope-item"><div class="scope-dot"></div><div class="scope-text">Penyimpanan otomatis ke database terstruktur</div></div>
+            <div class="scope-item"><div class="scope-dot"></div><div class="scope-text">Riwayat scoring &amp; export laporan MGP</div></div>
+          </div>
+        </div>
+        <div class="metrics-grid">
+          <div class="metric-card"><div class="metric-value">AI</div><div class="metric-label">Detection Engine</div></div>
+          <div class="metric-card"><div class="metric-value">4+</div><div class="metric-label">Color Categories</div></div>
+          <div class="metric-card"><div class="metric-value">Auto</div><div class="metric-label">% Conversion</div></div>
+          <div class="metric-card"><div class="metric-value">DB</div><div class="metric-label">Direct Storage</div></div>
+        </div>
+        <div class="note-box">
+          <div class="note-label">Integration Note</div>
+          <div class="note-text">Modul MGP terintegrasi dalam satu paket CAPEX dengan Plant &amp; Lab (Sub Project A), menghasilkan satu platform terpadu dengan total investasi <strong style="color:#d4a832;">Rp 185.000.000</strong>.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">
+    <div class="slide-dot"></div>
+    <div class="slide-dot"></div>
+    <div class="slide-dot active"></div>
+    <div class="slide-dot"></div>
+    <div class="slide-dot"></div>
+  </div>
+  <div class="slide-footer">
+    <div class="footer-brand">PT Luksuri Reka Digital Solutions · QA Digitalization — Advanta Seeds Indonesia</div>
+    <div class="footer-right">
+      <div class="footer-page">03 / 05 — Sub Project B</div>
+      <div class="footer-stamp">Confidential</div>
+    </div>
+  </div>
+</body>
+</html>

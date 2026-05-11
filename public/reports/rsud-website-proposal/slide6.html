@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Timeline Pengerjaan Proyek</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { margin: 0; padding: 0; min-height: 100vh; background-color: #0f172a; font-family: 'Inter', sans-serif; color: #f8fafc; overflow-x: hidden; }
+        .slide-container { width: 100%; min-height: 100vh; display: flex; flex-direction: column; position: relative; background-image: url("https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1920&q=80"); background-size: cover; background-position: center; }
+        .overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 58, 95, 0.92) 50%, rgba(15, 23, 42, 0.95) 100%); z-index: 1; }
+        .content-wrapper { position: relative; z-index: 10; display: flex; flex-direction: column; min-height: 100vh; padding: 5vh 5vw; }
+        .header-section { border-left: 6px solid #a855f7; padding-left: 20px; margin-bottom: 28px; }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 16px;
+            padding: 28px;
+        }
+
+        .timeline-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .timeline-phase {
+            display: grid;
+            grid-template-columns: 200px 60px 1fr;
+            align-items: stretch;
+            min-height: 90px;
+        }
+
+        .phase-duration {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            padding-right: 20px;
+        }
+
+        .phase-connector {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .phase-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 3px solid;
+            background: #0f172a;
+            z-index: 2;
+            margin-top: 20px;
+            flex-shrink: 0;
+        }
+
+        .phase-line {
+            width: 2px;
+            flex: 1;
+            z-index: 1;
+        }
+
+        .phase-content {
+            padding: 14px 20px;
+            margin: 6px 0;
+            background: rgba(15, 23, 42, 0.4);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .phase-tag {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slide-container">
+        <div class="overlay"></div>
+        <div class="content-wrapper">
+
+            <div class="header-section mt-2">
+                <p class="font-mono text-purple-400 mb-2 uppercase tracking-wider text-sm">SLIDE 6 — TIMELINE PROYEK</p>
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight text-white">
+                    Timeline <span class="text-purple-400">Pengerjaan Proyek</span>
+                </h1>
+                <p class="text-slate-400 mt-2 text-base">Estimasi jadwal pengerjaan 18–20 minggu (4–5 bulan) dengan metodologi Agile Sprint.</p>
+            </div>
+
+            <div class="flex-grow flex flex-col justify-center">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Timeline (Left 2 cols) -->
+                    <div class="glass-card lg:col-span-2">
+                        <div class="timeline-container">
+
+                            <!-- Phase 1 -->
+                            <div class="timeline-phase">
+                                <div class="phase-duration">
+                                    <span class="font-mono text-sky-400 font-bold text-sm">Minggu 1-2</span>
+                                    <span class="text-slate-500 text-xs">2 Minggu</span>
+                                </div>
+                                <div class="phase-connector">
+                                    <div class="phase-dot" style="border-color: #0ea5e9;"></div>
+                                    <div class="phase-line" style="background: linear-gradient(to bottom, #0ea5e9, #8b5cf6);"></div>
+                                </div>
+                                <div class="phase-content">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <i class="fa-solid fa-magnifying-glass text-sky-400"></i>
+                                        <h4 class="text-white font-bold text-sm">Discovery & Planning</h4>
+                                        <span class="phase-tag bg-sky-500/20 text-sky-300">Sprint 0</span>
+                                    </div>
+                                    <p class="text-slate-400 text-xs">Requirement gathering, interview stakeholder RS, sitemap, wireframe, KAK.</p>
+                                </div>
+                            </div>
+
+                            <!-- Phase 2 -->
+                            <div class="timeline-phase">
+                                <div class="phase-duration">
+                                    <span class="font-mono text-violet-400 font-bold text-sm">Minggu 3-5</span>
+                                    <span class="text-slate-500 text-xs">3 Minggu</span>
+                                </div>
+                                <div class="phase-connector">
+                                    <div class="phase-dot" style="border-color: #8b5cf6;"></div>
+                                    <div class="phase-line" style="background: linear-gradient(to bottom, #8b5cf6, #22c55e);"></div>
+                                </div>
+                                <div class="phase-content">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <i class="fa-solid fa-palette text-violet-400"></i>
+                                        <h4 class="text-white font-bold text-sm">UI/UX Design & Prototyping</h4>
+                                        <span class="phase-tag bg-violet-500/20 text-violet-300">Sprint 1</span>
+                                    </div>
+                                    <p class="text-slate-400 text-xs">Desain kustom 50+ halaman di Figma, design system, mobile mockup, review 3 iterasi.</p>
+                                </div>
+                            </div>
+
+                            <!-- Phase 3 -->
+                            <div class="timeline-phase">
+                                <div class="phase-duration">
+                                    <span class="font-mono text-emerald-400 font-bold text-sm">Minggu 6-14</span>
+                                    <span class="text-slate-500 text-xs">9 Minggu</span>
+                                </div>
+                                <div class="phase-connector">
+                                    <div class="phase-dot" style="border-color: #22c55e;"></div>
+                                    <div class="phase-line" style="background: linear-gradient(to bottom, #22c55e, #f59e0b);"></div>
+                                </div>
+                                <div class="phase-content">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <i class="fa-solid fa-code text-emerald-400"></i>
+                                        <h4 class="text-white font-bold text-sm">Full-Stack Development</h4>
+                                        <span class="phase-tag bg-emerald-500/20 text-emerald-300">Sprint 2-5</span>
+                                    </div>
+                                    <p class="text-slate-400 text-xs">Frontend responsif, backend API, CMS admin, modul pendaftaran, jadwal dokter, PPID, galeri.</p>
+                                </div>
+                            </div>
+
+                            <!-- Phase 4 -->
+                            <div class="timeline-phase">
+                                <div class="phase-duration">
+                                    <span class="font-mono text-amber-400 font-bold text-sm">Minggu 15-16</span>
+                                    <span class="text-slate-500 text-xs">2 Minggu</span>
+                                </div>
+                                <div class="phase-connector">
+                                    <div class="phase-dot" style="border-color: #f59e0b;"></div>
+                                    <div class="phase-line" style="background: linear-gradient(to bottom, #f59e0b, #ef4444);"></div>
+                                </div>
+                                <div class="phase-content">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <i class="fa-solid fa-database text-amber-400"></i>
+                                        <h4 class="text-white font-bold text-sm">Data Migration & Content Entry</h4>
+                                        <span class="phase-tag bg-amber-500/20 text-amber-300">Sprint 6</span>
+                                    </div>
+                                    <p class="text-slate-400 text-xs">Migrasi konten lama, input data dokter, profil poliklinik, foto fasilitas, dokumen PPID.</p>
+                                </div>
+                            </div>
+
+                            <!-- Phase 5 -->
+                            <div class="timeline-phase">
+                                <div class="phase-duration">
+                                    <span class="font-mono text-red-400 font-bold text-sm">Minggu 17-18</span>
+                                    <span class="text-slate-500 text-xs">2 Minggu</span>
+                                </div>
+                                <div class="phase-connector">
+                                    <div class="phase-dot" style="border-color: #ef4444;"></div>
+                                    <div class="phase-line" style="background: linear-gradient(to bottom, #ef4444, #06b6d4);"></div>
+                                </div>
+                                <div class="phase-content">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <i class="fa-solid fa-shield-halved text-red-400"></i>
+                                        <h4 class="text-white font-bold text-sm">Testing, QA & Security Audit</h4>
+                                        <span class="phase-tag bg-red-500/20 text-red-300">Sprint 7</span>
+                                    </div>
+                                    <p class="text-slate-400 text-xs">UAT, cross-browser testing, pen testing, bug fixing, performance optimization.</p>
+                                </div>
+                            </div>
+
+                            <!-- Phase 6 -->
+                            <div class="timeline-phase">
+                                <div class="phase-duration">
+                                    <span class="font-mono text-cyan-400 font-bold text-sm">Minggu 19-20</span>
+                                    <span class="text-slate-500 text-xs">2 Minggu</span>
+                                </div>
+                                <div class="phase-connector">
+                                    <div class="phase-dot" style="border-color: #06b6d4;"></div>
+                                    <div class="phase-line" style="background: transparent;"></div>
+                                </div>
+                                <div class="phase-content">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <i class="fa-solid fa-rocket text-cyan-400"></i>
+                                        <h4 class="text-white font-bold text-sm">Launch, Training & Handover</h4>
+                                        <span class="phase-tag bg-cyan-500/20 text-cyan-300">Go-Live</span>
+                                    </div>
+                                    <p class="text-slate-400 text-xs">Deployment production, pelatihan admin on-site 2 sesi, dokumentasi & manual book.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Right: Key Metrics -->
+                    <div class="flex flex-col gap-5">
+                        <div class="glass-card text-center">
+                            <i class="fa-solid fa-stopwatch text-3xl text-purple-400 mb-3"></i>
+                            <p class="text-slate-400 text-xs uppercase tracking-widest mb-1">Total Durasi</p>
+                            <p class="text-white font-black text-4xl">20</p>
+                            <p class="text-slate-400 text-sm">Minggu (~5 Bulan)</p>
+                        </div>
+
+                        <div class="glass-card text-center">
+                            <i class="fa-solid fa-users text-3xl text-sky-400 mb-3"></i>
+                            <p class="text-slate-400 text-xs uppercase tracking-widest mb-1">Tim Developer</p>
+                            <p class="text-white font-black text-4xl">4-5</p>
+                            <p class="text-slate-400 text-sm">Orang Dedicated</p>
+                        </div>
+
+                        <div class="glass-card text-center">
+                            <i class="fa-solid fa-layer-group text-3xl text-emerald-400 mb-3"></i>
+                            <p class="text-slate-400 text-xs uppercase tracking-widest mb-1">Total Sprint</p>
+                            <p class="text-white font-black text-4xl">7+1</p>
+                            <p class="text-slate-400 text-sm">Agile Sprints</p>
+                        </div>
+
+                        <div class="glass-card">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-handshake text-lg text-amber-400 mt-1"></i>
+                                <div>
+                                    <h4 class="text-white font-bold text-sm">Skema Pembayaran</h4>
+                                    <div class="text-slate-400 text-xs mt-2 space-y-1">
+                                        <p><strong class="text-emerald-400">30%</strong> — Tanda jadi (Kick-off)</p>
+                                        <p><strong class="text-sky-400">30%</strong> — Desain disetujui</p>
+                                        <p><strong class="text-amber-400">30%</strong> — Development selesai</p>
+                                        <p><strong class="text-red-400">10%</strong> — Go-Live & Handover</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-between items-end border-t border-slate-700 pt-6 mt-4">
+                <div class="flex items-center text-slate-500 text-sm font-mono">
+                    <span>PT LUKSURI REKA DIGITAL SOLUTIONS</span>
+                    <span class="mx-3">•</span>
+                    <span>Proposal untuk RSUD Dr. Iskak Kab. Tulungagung</span>
+                </div>
+                <div class="text-slate-500 text-sm font-mono text-right">
+                    Slide 6 / 7
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

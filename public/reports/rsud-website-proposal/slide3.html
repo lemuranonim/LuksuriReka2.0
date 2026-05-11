@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Scope Modul & Fitur Utama</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { margin: 0; padding: 0; min-height: 100vh; background-color: #0f172a; font-family: 'Inter', sans-serif; color: #f8fafc; overflow-x: hidden; }
+        .slide-container { width: 100%; min-height: 100vh; display: flex; flex-direction: column; position: relative; background-image: url("https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1920&q=80"); background-size: cover; background-position: center; }
+        .overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 58, 95, 0.92) 50%, rgba(15, 23, 42, 0.95) 100%); z-index: 1; }
+        .content-wrapper { position: relative; z-index: 10; display: flex; flex-direction: column; min-height: 100vh; padding: 5vh 5vw; }
+        .header-section { border-left: 6px solid #0ea5e9; padding-left: 20px; margin-bottom: 24px; }
+
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .module-card {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 22px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        .module-card:hover {
+            border-color: rgba(14, 165, 233, 0.4);
+            background: rgba(30, 41, 59, 0.7);
+        }
+
+        .module-number {
+            position: absolute;
+            top: -8px;
+            right: -4px;
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.04);
+            line-height: 1;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .module-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            margin-bottom: 14px;
+        }
+
+        .feature-tag {
+            display: inline-block;
+            background: rgba(14, 165, 233, 0.1);
+            border: 1px solid rgba(14, 165, 233, 0.2);
+            color: #7dd3fc;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            margin: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slide-container">
+        <div class="overlay"></div>
+        <div class="content-wrapper">
+
+            <div class="header-section mt-2">
+                <p class="font-mono text-sky-400 mb-2 uppercase tracking-wider text-sm">SLIDE 3 — SCOPE OF WORK</p>
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight text-white">
+                    Modul & Fitur <span class="text-sky-400">Utama Website</span>
+                </h1>
+                <p class="text-slate-400 mt-2 text-base">6 modul inti yang akan dibangun untuk memenuhi kebutuhan operasional dan pelayanan publik RSUD.</p>
+            </div>
+
+            <div class="flex-grow flex flex-col justify-center">
+                <div class="module-grid">
+
+                    <!-- Module 1: Company Profile -->
+                    <div class="module-card">
+                        <span class="module-number">01</span>
+                        <div class="module-icon" style="background: rgba(14, 165, 233, 0.2); color: #38bdf8;">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <h3 class="text-white font-bold text-lg mb-2">Profil & Informasi RS</h3>
+                        <p class="text-slate-400 text-xs mb-3 leading-relaxed">Halaman profil lengkap rumah sakit termasuk sejarah, visi-misi, struktur organisasi, dan sambutan direktur.</p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="feature-tag">Visi & Misi</span>
+                            <span class="feature-tag">Struktur Org.</span>
+                            <span class="feature-tag">Sejarah RS</span>
+                            <span class="feature-tag">Akreditasi</span>
+                        </div>
+                    </div>
+
+                    <!-- Module 2: Layanan & Fasilitas -->
+                    <div class="module-card">
+                        <span class="module-number">02</span>
+                        <div class="module-icon" style="background: rgba(34, 197, 94, 0.2); color: #4ade80;">
+                            <i class="fa-solid fa-stethoscope"></i>
+                        </div>
+                        <h3 class="text-white font-bold text-lg mb-2">Layanan & Fasilitas Medis</h3>
+                        <p class="text-slate-400 text-xs mb-3 leading-relaxed">Katalog lengkap 30+ poliklinik, instalasi (IGD, ICU, NICU), layanan unggulan LASKAR, dan fasilitas penunjang.</p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="feature-tag">30+ Poliklinik</span>
+                            <span class="feature-tag">IGD/ICU</span>
+                            <span class="feature-tag">LASKAR</span>
+                            <span class="feature-tag">Cath Lab</span>
+                        </div>
+                    </div>
+
+                    <!-- Module 3: Jadwal Dokter & Pendaftaran -->
+                    <div class="module-card">
+                        <span class="module-number">03</span>
+                        <div class="module-icon" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24;">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <h3 class="text-white font-bold text-lg mb-2">Jadwal Dokter & Registrasi</h3>
+                        <p class="text-slate-400 text-xs mb-3 leading-relaxed">Sistem pencarian jadwal dokter, pendaftaran rawat jalan online, dan integrasi antrian digital (Si Poetri / Si Tole).</p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="feature-tag">Doctor Finder</span>
+                            <span class="feature-tag">Booking Online</span>
+                            <span class="feature-tag">Antrian Digital</span>
+                            <span class="feature-tag">WhatsApp</span>
+                        </div>
+                    </div>
+
+                    <!-- Module 4: CMS & Berita -->
+                    <div class="module-card">
+                        <span class="module-number">04</span>
+                        <div class="module-icon" style="background: rgba(168, 85, 247, 0.2); color: #c084fc;">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </div>
+                        <h3 class="text-white font-bold text-lg mb-2">CMS Berita & Media</h3>
+                        <p class="text-slate-400 text-xs mb-3 leading-relaxed">Admin panel untuk kelola berita, pengumuman, galeri foto/video kegiatan RS, dan agenda acara rumah sakit.</p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="feature-tag">Berita & Artikel</span>
+                            <span class="feature-tag">Galeri Media</span>
+                            <span class="feature-tag">Pengumuman</span>
+                            <span class="feature-tag">Agenda RS</span>
+                        </div>
+                    </div>
+
+                    <!-- Module 5: PPID & Transparansi -->
+                    <div class="module-card">
+                        <span class="module-number">05</span>
+                        <div class="module-icon" style="background: rgba(236, 72, 153, 0.2); color: #f472b6;">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <h3 class="text-white font-bold text-lg mb-2">PPID & Transparansi Publik</h3>
+                        <p class="text-slate-400 text-xs mb-3 leading-relaxed">Portal keterbukaan informasi publik, SPO pelayanan, hak & kewajiban pasien, dan unit pengaduan masyarakat.</p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="feature-tag">PPID</span>
+                            <span class="feature-tag">SPO Layanan</span>
+                            <span class="feature-tag">Pengaduan</span>
+                            <span class="feature-tag">Survei Publik</span>
+                        </div>
+                    </div>
+
+                    <!-- Module 6: Karir & Kontak -->
+                    <div class="module-card">
+                        <span class="module-number">06</span>
+                        <div class="module-icon" style="background: rgba(6, 182, 212, 0.2); color: #22d3ee;">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <h3 class="text-white font-bold text-lg mb-2">Kontak, Karir & PSC 119</h3>
+                        <p class="text-slate-400 text-xs mb-3 leading-relaxed">Halaman kontak terintegrasi Google Maps, informasi PSC 119/199, lowongan kerja, dan link media sosial RS.</p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="feature-tag">Google Maps</span>
+                            <span class="feature-tag">PSC 119</span>
+                            <span class="feature-tag">Karir/Loker</span>
+                            <span class="feature-tag">Sosial Media</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="flex justify-between items-end border-t border-slate-700 pt-6 mt-4">
+                <div class="flex items-center text-slate-500 text-sm font-mono">
+                    <span>PT LUKSURI REKA DIGITAL SOLUTIONS</span>
+                    <span class="mx-3">•</span>
+                    <span>Proposal untuk RSUD Dr. Iskak Kab. Tulungagung</span>
+                </div>
+                <div class="text-slate-500 text-sm font-mono text-right">
+                    Slide 3 / 7
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

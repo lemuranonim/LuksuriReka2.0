@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Conclusion — QA Digitalization Fixed Budget Proposal FY 2026-2027</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 100%; height: 100vh; overflow: hidden; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+
+    .bg { position: fixed; inset: 0; z-index: 0; background: linear-gradient(135deg, #050f1a 0%, #071525 30%, #0a1e2e 60%, #061219 100%); }
+    .bg-grid { position: fixed; inset: 0; z-index: 1; opacity: 0.04; background-image: linear-gradient(rgba(47,163,85,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(47,163,85,0.5) 1px, transparent 1px); background-size: 60px 60px; }
+    .bg-glow-1 { position: fixed; z-index: 2; width: 800px; height: 800px; border-radius: 50%; background: radial-gradient(circle, rgba(26,92,46,0.18) 0%, transparent 70%); top: -300px; left: -100px; animation: glow 14s ease-in-out infinite alternate; }
+    .bg-glow-2 { position: fixed; z-index: 2; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(184,135,31,0.10) 0%, transparent 70%); bottom: -200px; right: -50px; animation: glow 10s ease-in-out infinite alternate-reverse; }
+    @keyframes glow { from { transform: translate(0,0) scale(1); } to { transform: translate(30px,20px) scale(1.08); } }
+    .top-stripe { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 100; background: linear-gradient(90deg, #1a5c2e 0%, #2fa355 40%, #d4a832 75%, #b8871f 100%); }
+
+    .slide-wrapper { position: relative; z-index: 10; width: 100%; height: 100vh; display: grid; grid-template-rows: auto 1fr auto; padding: 48px 72px 70px; gap: 22px; }
+
+    /* HEADER */
+    .slide-header { display: flex; align-items: center; gap: 16px; animation: fade-down 0.7s ease both; }
+    .header-line { width: 36px; height: 3px; background: linear-gradient(90deg, #2fa355, #d4a832); border-radius: 2px; }
+    .eyebrow { font-size: 11px; font-weight: 700; color: #2fa355; letter-spacing: 0.2em; text-transform: uppercase; }
+    .slide-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 2.8vw, 38px); font-weight: 800; color: #ffffff; line-height: 1.18; letter-spacing: -0.02em; margin-left: auto; }
+    .slide-title .gradient { background: linear-gradient(135deg, #2fa355 0%, #d4a832 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+    /* MAIN: 3-column */
+    .main-content { display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 16px; align-items: stretch; }
+
+    /* BUDGET RECAP COLUMN */
+    .budget-recap { display: flex; flex-direction: column; gap: 12px; }
+    .recap-header { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.3); padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.06); animation: fade-up 0.7s 0.2s ease both; }
+    .recap-item { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 14px 16px; position: relative; overflow: hidden; backdrop-filter: blur(8px); transition: transform 0.3s, border-color 0.3s; }
+    .recap-item:hover { transform: translateX(4px); }
+    .recap-item::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; }
+    .recap-item.green::before { background: linear-gradient(180deg, #1a5c2e, #2fa355); }
+    .recap-item.gold::before { background: linear-gradient(180deg, #b8871f, #d4a832); }
+    .recap-item.blue::before { background: linear-gradient(180deg, #0f2040, #4a9eff); }
+    .recap-item:nth-child(2) { animation: fade-up 0.7s 0.3s ease both; }
+    .recap-item:nth-child(3) { animation: fade-up 0.7s 0.35s ease both; }
+    .recap-item:nth-child(4) { animation: fade-up 0.7s 0.4s ease both; }
+    .ri-tag { font-size: 9.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 3px; }
+    .recap-item.green .ri-tag { color: #2fa355; }
+    .recap-item.gold .ri-tag { color: #d4a832; }
+    .recap-item.blue .ri-tag { color: #4a9eff; }
+    .ri-name { font-size: 12.5px; font-weight: 600; color: rgba(255,255,255,0.8); margin-bottom: 6px; }
+    .ri-amount { font-family: 'DM Mono', monospace; font-size: 17px; font-weight: 500; color: rgba(255,255,255,0.9); }
+    .ri-bar { height: 4px; background: rgba(255,255,255,0.07); border-radius: 2px; margin-top: 8px; overflow: hidden; }
+    .ri-bar-fill { height: 100%; border-radius: 2px; }
+    .recap-item.green .ri-bar-fill { background: linear-gradient(90deg, #1a5c2e, #2fa355); }
+    .recap-item.gold .ri-bar-fill { background: linear-gradient(90deg, #b8871f, #d4a832); }
+    .recap-item.blue .ri-bar-fill { background: linear-gradient(90deg, #0f2040, #4a9eff); }
+
+    /* GRAND TOTAL + KEY POINTS */
+    .center-col { display: flex; flex-direction: column; gap: 14px; align-items: center; justify-content: center; }
+    .grand-box {
+      background: linear-gradient(145deg, rgba(26,92,46,0.22), rgba(47,163,85,0.08));
+      border: 1px solid rgba(47,163,85,0.35);
+      border-radius: 20px; padding: 28px 32px;
+      text-align: center; width: 100%;
+      position: relative; overflow: hidden;
+      backdrop-filter: blur(16px);
+      animation: fade-up 0.7s 0.2s ease both;
+    }
+    .grand-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #1a5c2e, #2fa355, #d4a832); }
+    .grand-box::after { content: ''; position: absolute; inset: 0; border-radius: 20px; background: radial-gradient(ellipse at 50% 0%, rgba(47,163,85,0.12) 0%, transparent 60%); pointer-events: none; }
+    .gb-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 10px; }
+    .gb-amount { font-family: 'Playfair Display', serif; font-size: clamp(34px, 3.8vw, 52px); font-weight: 800; color: #fff; line-height: 1; margin-bottom: 6px; }
+    .gb-amount .curr { color: #d4a832; font-size: 0.48em; vertical-align: super; margin-right: 3px; }
+    .gb-sub { font-size: 11.5px; color: rgba(255,255,255,0.4); margin-bottom: 14px; }
+    .gb-badge-row { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+    .gb-badge { display: inline-flex; align-items: center; gap: 5px; background: rgba(212,168,50,0.12); border: 1px solid rgba(212,168,50,0.3); border-radius: 20px; padding: 4px 14px; font-size: 10px; font-weight: 700; color: #d4a832; letter-spacing: 0.1em; text-transform: uppercase; }
+    .gb-badge.green { background: rgba(47,163,85,0.12); border-color: rgba(47,163,85,0.3); color: #2fa355; }
+    .divider { display: flex; align-items: center; gap: 10px; width: 100%; animation: fade-up 0.7s 0.35s ease both; }
+    .divider-line { flex: 1; height: 1px; background: rgba(255,255,255,0.07); }
+    .divider-text { font-size: 10px; font-weight: 600; color: rgba(255,255,255,0.25); letter-spacing: 0.12em; text-transform: uppercase; }
+    .closing-stmt { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 18px 20px; width: 100%; backdrop-filter: blur(8px); animation: fade-up 0.7s 0.4s ease both; }
+    .cs-text { font-family: 'Playfair Display', serif; font-size: 13px; font-style: italic; color: rgba(255,255,255,0.6); line-height: 1.7; text-align: center; }
+    .cs-sig { font-size: 11px; font-weight: 600; color: rgba(47,163,85,0.7); text-align: center; margin-top: 10px; letter-spacing: 0.08em; }
+
+    /* VALUE PROPS COLUMN */
+    .value-col { display: flex; flex-direction: column; gap: 10px; }
+    .vc-header { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.3); padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.06); animation: fade-up 0.7s 0.2s ease both; }
+    .value-item { display: flex; align-items: flex-start; gap: 12px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 13px 15px; backdrop-filter: blur(8px); transition: transform 0.3s, border-color 0.3s; }
+    .value-item:hover { transform: translateX(-4px); border-color: rgba(255,255,255,0.14); }
+    .value-item:nth-child(2) { animation: fade-left 0.7s 0.3s ease both; }
+    .value-item:nth-child(3) { animation: fade-left 0.7s 0.35s ease both; }
+    .value-item:nth-child(4) { animation: fade-left 0.7s 0.4s ease both; }
+    .value-item:nth-child(5) { animation: fade-left 0.7s 0.45s ease both; }
+    .vi-num { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 800; background: linear-gradient(135deg, #2fa355, #d4a832); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; flex-shrink: 0; padding-top: 1px; }
+    .vi-body { }
+    .vi-title { font-size: 12.5px; font-weight: 700; color: rgba(255,255,255,0.85); margin-bottom: 2px; }
+    .vi-desc { font-size: 11px; color: rgba(255,255,255,0.42); line-height: 1.5; }
+
+    /* BOTTOM STRIP */
+    .bottom-strip { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); animation: fade-up 0.7s 0.6s ease both; }
+    .bs-left { display: flex; align-items: center; gap: 14px; }
+    .company-mark { width: 34px; height: 34px; background: linear-gradient(135deg, #1a5c2e, #2fa355); border-radius: 8px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(47,163,85,0.35); }
+    .company-mark svg { width: 18px; height: 18px; }
+    .bs-company { font-size: 11.5px; font-weight: 700; color: rgba(255,255,255,0.7); }
+    .bs-tagline { font-size: 10.5px; color: rgba(255,255,255,0.35); margin-top: 2px; }
+    .bs-right { display: flex; align-items: center; gap: 8px; }
+    .bs-chip { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09); border-radius: 20px; padding: 5px 14px; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.55); }
+    .bs-chip .dot { width: 5px; height: 5px; border-radius: 50%; }
+    .bs-chip.green .dot { background: #2fa355; box-shadow: 0 0 5px rgba(47,163,85,0.8); }
+    .bs-chip.gold .dot { background: #d4a832; box-shadow: 0 0 5px rgba(212,168,50,0.8); }
+
+    /* FOOTER */
+    .slide-footer { position: fixed; bottom: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 12px 72px; background: rgba(5,15,26,0.88); border-top: 1px solid rgba(255,255,255,0.06); backdrop-filter: blur(16px); }
+    .footer-brand { font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 0.05em; }
+    .footer-right { display: flex; align-items: center; gap: 12px; }
+    .footer-page { font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 0.08em; }
+    .footer-stamp { background: linear-gradient(135deg, #1a5c2e, #2fa355); color: white; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 14px; border-radius: 20px; }
+    .slide-num { position: fixed; top: 50%; right: 24px; z-index: 50; transform: translateY(-50%); display: flex; flex-direction: column; gap: 8px; }
+    .slide-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.15); }
+    .slide-dot.active { background: #2fa355; box-shadow: 0 0 8px rgba(47,163,85,0.8); height: 18px; border-radius: 3px; }
+    @keyframes fade-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fade-left { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes fade-down { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body>
+  <div class="top-stripe"></div>
+  <div class="bg"></div>
+  <div class="bg-grid"></div>
+  <div class="bg-glow-1"></div>
+  <div class="bg-glow-2"></div>
+
+  <div class="slide-wrapper">
+    <!-- HEADER -->
+    <div class="slide-header">
+      <div class="header-line"></div>
+      <div class="eyebrow">Penutup &amp; Kesimpulan</div>
+      <h2 class="slide-title">Executive <span class="gradient">Conclusion</span></h2>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main-content">
+      <!-- LEFT: Budget Recap -->
+      <div class="budget-recap">
+        <div class="recap-header">Rekapitulasi Anggaran</div>
+        <div class="recap-item green">
+          <div class="ri-tag">Sub Project A · Plant &amp; Lab</div>
+          <div class="ri-name">PWA-Based QA Ecosystem</div>
+          <div class="ri-amount">Rp 150.000.000</div>
+          <div class="ri-bar"><div class="ri-bar-fill" style="width:77%"></div></div>
+        </div>
+        <div class="recap-item gold">
+          <div class="ri-tag">Sub Project B · MGP</div>
+          <div class="ri-name">Color Point Reading &amp; Scoring</div>
+          <div class="ri-amount">Rp 35.000.000</div>
+          <div class="ri-bar"><div class="ri-bar-fill" style="width:18%"></div></div>
+        </div>
+        <div class="recap-item blue">
+          <div class="ri-tag">Sub Project C · GOT (Terpisah)</div>
+          <div class="ri-name">Digital Inspection &amp; Compilation</div>
+          <div class="ri-amount">Rp 80.000.000</div>
+          <div class="ri-bar"><div class="ri-bar-fill" style="width:41%"></div></div>
+        </div>
+      </div>
+
+      <!-- CENTER: Grand Total + Closing -->
+      <div class="center-col">
+        <div class="grand-box">
+          <div class="gb-eyebrow">Grand Total Investment</div>
+          <div class="gb-amount"><span class="curr">Rp</span>265.000.000</div>
+          <div class="gb-sub">3 Sub Projects · FY 2026–2027</div>
+          <div class="gb-badge-row">
+            <div class="gb-badge">✓ Fixed Deal</div>
+            <div class="gb-badge green">3 Sub Projects</div>
+          </div>
+        </div>
+        <div class="divider">
+          <div class="divider-line"></div>
+          <div class="divider-text">Penutup</div>
+          <div class="divider-line"></div>
+        </div>
+        <div class="closing-stmt">
+          <div class="cs-text">"Investasi digitalisasi ini bukan sekadar modernisasi proses — melainkan fondasi pengambilan keputusan berbasis data yang akurat, cepat, dan terstandarisasi bagi seluruh divisi QA."</div>
+          <div class="cs-sig">— PT Luksuri Reka Digital Solutions</div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Value Propositions -->
+      <div class="value-col">
+        <div class="vc-header">Why This Investment Matters</div>
+        <div class="value-item">
+          <div class="vi-num">01</div>
+          <div class="vi-body">
+            <div class="vi-title">Zero Paper, Full Traceability</div>
+            <div class="vi-desc">Semua data inspeksi tercatat digital dengan jejak audit lengkap.</div>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="vi-num">02</div>
+          <div class="vi-body">
+            <div class="vi-title">Efisiensi Operasional QA</div>
+            <div class="vi-desc">Mengurangi waktu pelaporan manual dan risiko human error secara signifikan.</div>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="vi-num">03</div>
+          <div class="vi-body">
+            <div class="vi-title">Data-Driven Decisions</div>
+            <div class="vi-desc">Dashboard real-time memungkinkan keputusan berbasis data yang akurat dan cepat.</div>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="vi-num">04</div>
+          <div class="vi-body">
+            <div class="vi-title">Skalabilitas &amp; Fleksibilitas</div>
+            <div class="vi-desc">Platform dirancang untuk tumbuh bersama kebutuhan bisnis—mudah dikembangkan lebih lanjut.</div>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="vi-num">05</div>
+          <div class="vi-body">
+            <div class="vi-title">Fixed Budget Certainty</div>
+            <div class="vi-desc">Anggaran tetap memberikan kepastian finansial tanpa biaya tambahan yang tidak terduga.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM STRIP -->
+    <div class="bottom-strip">
+      <div class="bs-left">
+        <div class="company-mark">
+          <svg viewBox="0 0 20 20" fill="none">
+            <path d="M10 17C10 17 3 12 3 7C3 4.2 6 2 10 2C14 2 17 4.2 17 7C17 12 10 17 10 17Z" fill="rgba(255,255,255,0.9)"/>
+            <path d="M10 17L10 8" stroke="rgba(26,92,46,0.6)" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M10 11C8 9.5 5.5 9 5.5 9" stroke="rgba(26,92,46,0.4)" stroke-width="1" stroke-linecap="round"/>
+            <path d="M10 9C12 7.5 14.5 7 14.5 7" stroke="rgba(26,92,46,0.4)" stroke-width="1" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <div class="bs-company">PT Luksuri Reka Digital Solutions</div>
+          <div class="bs-tagline">Prepared for PT Advanta Seeds Indonesia · Quality Assurance Division</div>
+        </div>
+      </div>
+      <div class="bs-right">
+        <div class="bs-chip green"><span class="dot"></span>Ready to Execute</div>
+        <div class="bs-chip gold"><span class="dot"></span>FY 2026–2027</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE INDICATOR -->
+  <div class="slide-num">
+    <div class="slide-dot"></div>
+    <div class="slide-dot"></div>
+    <div class="slide-dot"></div>
+    <div class="slide-dot"></div>
+    <div class="slide-dot active"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="slide-footer">
+    <div class="footer-brand">PT Luksuri Reka Digital Solutions · QA Digitalization — Advanta Seeds Indonesia</div>
+    <div class="footer-right">
+      <div class="footer-page">05 / 05 — Conclusion</div>
+      <div class="footer-stamp">Confidential</div>
+    </div>
+  </div>
+</body>
+</html>

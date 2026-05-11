@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Rincian Anggaran Biaya (RAB)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { margin: 0; padding: 0; min-height: 100vh; background-color: #0f172a; font-family: 'Inter', sans-serif; color: #f8fafc; overflow-x: hidden; }
+        .slide-container { width: 100%; min-height: 100vh; display: flex; flex-direction: column; position: relative; background-image: url("https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1920&q=80"); background-size: cover; background-position: center; }
+        .overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 58, 95, 0.92) 50%, rgba(15, 23, 42, 0.95) 100%); z-index: 1; }
+        .content-wrapper { position: relative; z-index: 10; display: flex; flex-direction: column; min-height: 100vh; padding: 5vh 5vw; }
+        .header-section { border-left: 6px solid #22c55e; padding-left: 20px; margin-bottom: 24px; }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .cost-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+        }
+        .cost-row:last-child { border-bottom: none; }
+
+        .total-row {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.2) 0%, rgba(34, 197, 94, 0.2) 100%);
+            border: 1px solid rgba(14, 165, 233, 0.5);
+            border-radius: 12px;
+            padding: 22px;
+            margin-top: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slide-container">
+        <div class="overlay"></div>
+        <div class="content-wrapper">
+
+            <div class="header-section mt-2">
+                <p class="font-mono text-emerald-400 mb-2 uppercase tracking-wider text-sm">SLIDE 4 — RINCIAN ANGGARAN BIAYA</p>
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight text-white">
+                    Breakdown <span class="text-emerald-400">Estimasi Biaya</span>
+                </h1>
+                <p class="text-slate-400 mt-2 text-base">Rincian alokasi biaya per fase pengerjaan proyek website RSUD Dr. Iskak Tulungagung.</p>
+            </div>
+
+            <div class="flex-grow flex flex-col justify-center">
+                <div class="glass-card max-w-5xl mx-auto w-full">
+
+                    <!-- Row 1 -->
+                    <div class="cost-row">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-sky-500/20 rounded-lg flex items-center justify-center text-sky-400 text-xl flex-shrink-0">
+                                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold text-lg">1. Riset, Analisis & Perencanaan</h3>
+                                <p class="text-slate-400 text-xs mt-1 leading-relaxed max-w-2xl">Requirement gathering, arsitektur informasi, pembuatan sitemap, wireframe UX flow, dan KAK (Kerangka Acuan Kerja).</p>
+                            </div>
+                        </div>
+                        <div class="font-mono text-sky-300 font-bold text-lg tracking-wider flex-shrink-0 ml-4 text-right">
+                            Rp 10.000.000
+                        </div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="cost-row">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-violet-500/20 rounded-lg flex items-center justify-center text-violet-400 text-xl flex-shrink-0">
+                                <i class="fa-solid fa-palette"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold text-lg">2. Desain UI/UX (Custom Design)</h3>
+                                <p class="text-slate-400 text-xs mt-1 leading-relaxed max-w-2xl">Desain kustom responsif 50+ halaman, design system RS, mockup Figma, aksesibilitas WCAG, revisi 3x iterasi.</p>
+                            </div>
+                        </div>
+                        <div class="font-mono text-violet-300 font-bold text-lg tracking-wider flex-shrink-0 ml-4 text-right">
+                            Rp 25.000.000
+                        </div>
+                    </div>
+
+                    <!-- Row 3 -->
+                    <div class="cost-row">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center text-emerald-400 text-xl flex-shrink-0">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold text-lg">3. Pengembangan Frontend & Backend</h3>
+                                <p class="text-slate-400 text-xs mt-1 leading-relaxed max-w-2xl">Coding full-stack (Next.js/Laravel), CMS admin panel, modul jadwal dokter, pendaftaran online, PPID, galeri, integrasi API.</p>
+                            </div>
+                        </div>
+                        <div class="font-mono text-emerald-300 font-bold text-lg tracking-wider flex-shrink-0 ml-4 text-right">
+                            Rp 75.000.000
+                        </div>
+                    </div>
+
+                    <!-- Row 4 -->
+                    <div class="cost-row">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center text-amber-400 text-xl flex-shrink-0">
+                                <i class="fa-solid fa-database"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold text-lg">4. Migrasi Data & Input Konten Awal</h3>
+                                <p class="text-slate-400 text-xs mt-1 leading-relaxed max-w-2xl">Migrasi konten dari website lama, input data 200+ dokter, profil 30+ poliklinik, foto fasilitas, dan dokumen PPID.</p>
+                            </div>
+                        </div>
+                        <div class="font-mono text-amber-300 font-bold text-lg tracking-wider flex-shrink-0 ml-4 text-right">
+                            Rp 15.000.000
+                        </div>
+                    </div>
+
+                    <!-- Row 5 -->
+                    <div class="cost-row">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center text-red-400 text-xl flex-shrink-0">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold text-lg">5. Keamanan, Testing & QA</h3>
+                                <p class="text-slate-400 text-xs mt-1 leading-relaxed max-w-2xl">SSL setup, WAF configuration, penetration testing, UAT (User Acceptance Test), cross-browser/device testing, bug fixing.</p>
+                            </div>
+                        </div>
+                        <div class="font-mono text-red-300 font-bold text-lg tracking-wider flex-shrink-0 ml-4 text-right">
+                            Rp 15.000.000
+                        </div>
+                    </div>
+
+                    <!-- Row 6 -->
+                    <div class="cost-row">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center text-pink-400 text-xl flex-shrink-0">
+                                <i class="fa-solid fa-chalkboard-user"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold text-lg">6. Pelatihan Admin & Dokumentasi</h3>
+                                <p class="text-slate-400 text-xs mt-1 leading-relaxed max-w-2xl">Training on-site 2 sesi, manual book digital, video tutorial CMS, dan pendampingan teknis 1 bulan pasca launch.</p>
+                            </div>
+                        </div>
+                        <div class="font-mono text-pink-300 font-bold text-lg tracking-wider flex-shrink-0 ml-4 text-right">
+                            Rp 7.500.000
+                        </div>
+                    </div>
+
+                    <!-- Subtotal -->
+                    <div class="flex justify-between items-center py-3 px-5 bg-slate-800/60 rounded-xl border border-slate-700 mt-3">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-calculator text-lg text-slate-400"></i>
+                            <h3 class="text-white font-bold text-base">Subtotal Pengembangan</h3>
+                        </div>
+                        <div class="font-mono text-white font-bold text-xl tracking-wider">
+                            Rp 147.500.000
+                        </div>
+                    </div>
+
+                    <!-- Grand Total -->
+                    <div class="total-row relative overflow-hidden">
+                        <div class="absolute -right-6 -top-6 text-sky-500/10 text-9xl pointer-events-none">
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+                        </div>
+                        <div class="flex items-center gap-4 relative z-10">
+                            <div class="w-14 h-14 bg-white border-2 border-emerald-400 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(34,197,94,0.5)]">
+                                <i class="fa-solid fa-file-invoice text-2xl text-emerald-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-extrabold text-lg uppercase tracking-widest">+ Infra & Hosting (Tahun 1)</h3>
+                                <p class="text-emerald-200 text-xs">VPS Cloud, Domain .go.id, SSL, CDN, Backup — lihat slide 5</p>
+                            </div>
+                        </div>
+                        <div class="font-mono text-white font-black text-2xl tracking-wider bg-emerald-800/60 px-5 py-3 rounded-lg border border-emerald-400/50 shadow-[0_0_20px_rgba(34,197,94,0.3)] relative z-10 ml-4 flex-shrink-0">
+                            Rp 40.000.000
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="flex justify-between items-end border-t border-slate-700 pt-6 mt-4">
+                <div class="flex items-center text-slate-500 text-sm font-mono">
+                    <span>PT LUKSURI REKA DIGITAL SOLUTIONS</span>
+                    <span class="mx-3">•</span>
+                    <span>Proposal untuk RSUD Dr. Iskak Kab. Tulungagung</span>
+                </div>
+                <div class="text-slate-500 text-sm font-mono text-right">
+                    Slide 4 / 7
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

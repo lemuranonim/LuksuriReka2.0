@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Sub Project C — GOT Digital Inspection &amp; Data Compilation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 100%; height: 100vh; overflow: hidden; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+    .bg { position: fixed; inset: 0; z-index: 0; background: linear-gradient(135deg, #040d1a 0%, #060f22 30%, #0a1530 60%, #050c1c 100%); }
+    .bg-grid { position: fixed; inset: 0; z-index: 1; opacity: 0.05; background-image: linear-gradient(rgba(74,158,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(74,158,255,0.5) 1px, transparent 1px); background-size: 60px 60px; }
+    .bg-glow { position: fixed; z-index: 2; width: 700px; height: 700px; border-radius: 50%; background: radial-gradient(circle, rgba(15,32,100,0.3) 0%, transparent 70%); bottom: -200px; right: -100px; }
+    .top-stripe { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 100; background: linear-gradient(90deg, #0f2040 0%, #2c4f87 40%, #4a9eff 100%); }
+    .slide-wrapper { position: relative; z-index: 10; width: 100%; height: 100vh; display: grid; grid-template-rows: auto 1fr; padding: 48px 72px 70px; gap: 24px; }
+    .slide-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; animation: fade-down 0.7s ease both; }
+    .header-left { display: flex; flex-direction: column; gap: 6px; }
+    .sub-tag { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 700; color: #4a9eff; letter-spacing: 0.18em; text-transform: uppercase; }
+    .sub-tag::before { content: ''; display: block; width: 28px; height: 2px; background: linear-gradient(90deg, #0f2040, #4a9eff); border-radius: 2px; }
+    .slide-title { font-family: 'Playfair Display', serif; font-size: clamp(24px, 2.5vw, 34px); font-weight: 800; color: #ffffff; line-height: 1.2; letter-spacing: -0.02em; }
+    .slide-title .hl { background: linear-gradient(135deg, #4a9eff, #7ec8e3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .header-budget { background: linear-gradient(135deg, rgba(15,32,64,0.5), rgba(74,158,255,0.08)); border: 1px solid rgba(74,158,255,0.35); border-radius: 14px; padding: 14px 22px; text-align: right; position: relative; overflow: hidden; backdrop-filter: blur(12px); }
+    .header-budget::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #0f2040, #2c4f87, #4a9eff); }
+    .hb-label { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 4px; }
+    .hb-amount { font-family: 'Playfair Display', serif; font-size: clamp(20px, 2.2vw, 28px); font-weight: 700; color: #fff; }
+    .hb-amount .curr { color: #4a9eff; font-size: 0.55em; vertical-align: super; margin-right: 2px; }
+    .hb-sub { font-size: 10.5px; color: rgba(255,255,255,0.35); margin-top: 4px; }
+    .hb-badge { display: inline-flex; align-items: center; gap: 5px; margin-top: 6px; background: rgba(74,158,255,0.12); border: 1px solid rgba(74,158,255,0.25); border-radius: 20px; padding: 3px 12px; font-size: 9.5px; font-weight: 700; color: #4a9eff; letter-spacing: 0.12em; text-transform: uppercase; }
+    .main-content { display: grid; grid-template-columns: 1.1fr 1fr; gap: 18px; align-items: start; }
+    .features-col { display: flex; flex-direction: column; gap: 10px; }
+    .feat-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 16px 18px; display: flex; align-items: flex-start; gap: 14px; backdrop-filter: blur(8px); transition: border-color 0.3s, transform 0.3s; position: relative; overflow: hidden; }
+    .feat-card:hover { transform: translateX(5px); border-color: rgba(74,158,255,0.25); }
+    .feat-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, #0f2040, #4a9eff); }
+    .feat-card:nth-child(1) { animation: fade-up 0.7s 0.2s ease both; }
+    .feat-card:nth-child(2) { animation: fade-up 0.7s 0.3s ease both; }
+    .feat-card:nth-child(3) { animation: fade-up 0.7s 0.4s ease both; }
+    .feat-card:nth-child(4) { animation: fade-up 0.7s 0.5s ease both; }
+    .feat-icon { width: 42px; height: 42px; border-radius: 11px; background: rgba(74,158,255,0.12); border: 1px solid rgba(74,158,255,0.2); color: #4a9eff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .feat-icon svg { width: 20px; height: 20px; }
+    .feat-body { flex: 1; }
+    .feat-title { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.9); margin-bottom: 3px; }
+    .feat-desc { font-size: 11.5px; color: rgba(255,255,255,0.45); line-height: 1.55; }
+    .right-col { display: flex; flex-direction: column; gap: 12px; }
+    .scope-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 18px; backdrop-filter: blur(8px); animation: fade-left 0.7s 0.3s ease both; }
+    .scope-label { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 10px; }
+    .scope-list { display: flex; flex-direction: column; gap: 7px; }
+    .scope-item { display: flex; align-items: center; gap: 10px; }
+    .scope-dot { width: 6px; height: 6px; border-radius: 50%; background: #4a9eff; box-shadow: 0 0 6px rgba(74,158,255,0.7); flex-shrink: 0; }
+    .scope-text { font-size: 12px; color: rgba(255,255,255,0.65); }
+    .metrics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; animation: fade-left 0.7s 0.4s ease both; }
+    .metric-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 12px 14px; text-align: center; backdrop-filter: blur(8px); transition: border-color 0.3s, transform 0.3s; }
+    .metric-card:hover { transform: translateY(-3px); border-color: rgba(74,158,255,0.25); }
+    .metric-value { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: #4a9eff; line-height: 1; margin-bottom: 4px; }
+    .metric-label { font-size: 10px; color: rgba(255,255,255,0.4); }
+    .budget-note { background: rgba(74,158,255,0.06); border: 1px solid rgba(74,158,255,0.15); border-radius: 12px; padding: 14px 16px; animation: fade-left 0.7s 0.5s ease both; }
+    .bn-label { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(74,158,255,0.6); margin-bottom: 8px; }
+    .bn-text { font-size: 12px; color: rgba(255,255,255,0.55); line-height: 1.6; }
+    .tech-stack { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 14px 16px; animation: fade-left 0.7s 0.6s ease both; }
+    .tech-label { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(74,158,255,0.6); margin-bottom: 8px; }
+    .tech-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tech-chip { background: rgba(74,158,255,0.1); border: 1px solid rgba(74,158,255,0.2); border-radius: 20px; padding: 4px 12px; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.65); }
+    .slide-footer { position: fixed; bottom: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 12px 72px; background: rgba(4,13,26,0.88); border-top: 1px solid rgba(255,255,255,0.06); backdrop-filter: blur(16px); }
+    .footer-brand { font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 0.05em; }
+    .footer-right { display: flex; align-items: center; gap: 12px; }
+    .footer-page { font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 0.08em; }
+    .footer-stamp { background: linear-gradient(135deg, #0f2040, #2c4f87); color: white; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 14px; border-radius: 20px; }
+    .slide-num { position: fixed; top: 50%; right: 24px; z-index: 50; transform: translateY(-50%); display: flex; flex-direction: column; gap: 8px; }
+    .slide-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.15); }
+    .slide-dot.active { background: #4a9eff; box-shadow: 0 0 8px rgba(74,158,255,0.8); height: 18px; border-radius: 3px; }
+    @keyframes fade-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fade-left { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes fade-down { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body>
+  <div class="top-stripe"></div>
+  <div class="bg"></div>
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
+  <div class="slide-wrapper">
+    <div class="slide-header">
+      <div class="header-left">
+        <div class="sub-tag">Sub Project C — Budget Terpisah · GOT</div>
+        <h1 class="slide-title"><span class="hl">GOT Digital Inspection</span><br>&amp; Data Compilation</h1>
+      </div>
+      <div class="header-budget">
+        <div class="hb-label">Sub Project C Budget</div>
+        <div class="hb-amount"><span class="curr">Rp</span>80.000.000</div>
+        <div class="hb-sub">Budget Terpisah dari Sub Project A+B</div>
+        <div class="hb-badge">✓ Separate Budget</div>
+      </div>
+    </div>
+    <div class="main-content">
+      <div class="features-col">
+        <div class="feat-card">
+          <div class="feat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01M8 6h8M8 10h8M8 14h4"/></svg>
+          </div>
+          <div class="feat-body">
+            <div class="feat-title">Mobile-Ready Field Inspection Mode</div>
+            <div class="feat-desc">Antarmuka yang dioptimalkan untuk penggunaan di lapangan menggunakan smartphone, termasuk mode offline untuk area tanpa sinyal.</div>
+          </div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><circle cx="12" cy="13" r="3"/></svg>
+          </div>
+          <div class="feat-body">
+            <div class="feat-title">Visual Proof &amp; Photo Input</div>
+            <div class="feat-desc">Fitur pengambilan foto sebagai bukti inspeksi yang terintegrasi langsung dalam formulir digital, disimpan bersamaan dengan data inspeksi.</div>
+          </div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <div class="feat-body">
+            <div class="feat-title">Automated Data Compilation</div>
+            <div class="feat-desc">Kompilasi data terperinci secara otomatis mengikuti standar Grow Out Test (GOT). Laporan tergenerate otomatis setiap siklus inspeksi selesai.</div>
+          </div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+          </div>
+          <div class="feat-body">
+            <div class="feat-title">GOT Standard Compliance</div>
+            <div class="feat-desc">Seluruh modul dirancang mengikuti prosedur standar GOT. Memastikan konsistensi dan kepatuhan di seluruh lokasi pengujian varietas.</div>
+          </div>
+        </div>
+      </div>
+      <div class="right-col">
+        <div class="scope-box">
+          <div class="scope-label">Scope of Delivery</div>
+          <div class="scope-list">
+            <div class="scope-item"><div class="scope-dot"></div><div class="scope-text">Aplikasi GOT mobile-first (iOS &amp; Android ready)</div></div>
+            <div class="scope-item"><div class="scope-dot"></div><div class="scope-text">Form inspeksi digital sesuai standar GOT</div></div>
+            <div class="scope-item"><div class="scope-dot"></div><div class="scope-text">Fitur foto bukti lapangan terintegrasi</div></div>
+            <div class="scope-item"><div class="scope-dot"></div><div class="scope-text">Auto-kompilasi data per siklus inspeksi</div></div>
+            <div class="scope-item"><div class="scope-dot"></div><div class="scope-text">Dashboard monitoring &amp; laporan GOT</div></div>
+            <div class="scope-item"><div class="scope-dot"></div><div class="scope-text">Export data &amp; integrasi database sentral</div></div>
+          </div>
+        </div>
+        <div class="metrics-grid">
+          <div class="metric-card"><div class="metric-value">PWA</div><div class="metric-label">Mobile First</div></div>
+          <div class="metric-card"><div class="metric-value">100%</div><div class="metric-label">GOT Standard</div></div>
+          <div class="metric-card"><div class="metric-value">Auto</div><div class="metric-label">Compilation</div></div>
+          <div class="metric-card"><div class="metric-value">📷</div><div class="metric-label">Photo Proof</div></div>
+        </div>
+        <div class="budget-note">
+          <div class="bn-label">Budget Separation Note</div>
+          <div class="bn-text">Sub Project C (GOT) dianggarkan secara <strong style="color:#4a9eff;">terpisah</strong> dari Sub Project A+B (CAPEX). Fleksibilitas ini memungkinkan persetujuan dan eksekusi yang independen sesuai kebutuhan operasional.</div>
+        </div>
+        <div class="tech-stack">
+          <div class="tech-label">Technology Stack</div>
+          <div class="tech-chips">
+            <div class="tech-chip">React PWA</div>
+            <div class="tech-chip">Next.js</div>
+            <div class="tech-chip">PostgreSQL</div>
+            <div class="tech-chip">REST API</div>
+            <div class="tech-chip">Cloud Storage</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">
+    <div class="slide-dot"></div>
+    <div class="slide-dot"></div>
+    <div class="slide-dot"></div>
+    <div class="slide-dot active"></div>
+    <div class="slide-dot"></div>
+  </div>
+  <div class="slide-footer">
+    <div class="footer-brand">PT Luksuri Reka Digital Solutions · QA Digitalization — Advanta Seeds Indonesia</div>
+    <div class="footer-right">
+      <div class="footer-page">04 / 05 — Sub Project C</div>
+      <div class="footer-stamp">Confidential</div>
+    </div>
+  </div>
+</body>
+</html>
