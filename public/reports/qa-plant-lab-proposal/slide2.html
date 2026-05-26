@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Plant + Lab Fixed Cost Proposal - Commercial</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 100%; height: 100%; overflow: hidden; font-family: Inter, Arial, sans-serif; background: #ffffff; color: #06214a; }
+    .slide { position: relative; width: 100vw; height: 100vh; overflow: hidden; background: linear-gradient(135deg, #ffffff 0%, #f4fbff 62%, #effbf3 100%); }
+    .top-line { position: absolute; left: 0; right: 0; top: 0; height: 1.1vh; background: linear-gradient(90deg, #06346f 0%, #1687d9 38%, #25b34b 72%, #f6a11a 100%); }
+    .logo { position: absolute; left: 5.6vw; top: 5.8vh; width: 6.2vw; height: 6.2vw; object-fit: contain; }
+    .kicker { position: absolute; left: 13.2vw; top: 6.9vh; color: #0b8e45; font-size: 0.78vw; letter-spacing: 0.13em; text-transform: uppercase; font-weight: 900; }
+    h1 { position: absolute; left: 13.1vw; top: 10.2vh; width: 55vw; font-size: 2.7vw; line-height: 1.16; letter-spacing: -0.03em; font-weight: 900; }
+    .lead { position: absolute; left: 13.2vw; top: 23.8vh; width: 54vw; font-size: 1.05vw; line-height: 1.48; color: #566d88; font-weight: 650; }
+    .total-card { position: absolute; right: 6vw; top: 5.8vh; width: 22.8vw; height: 19.4vh; background: linear-gradient(145deg, #06346f 0%, #074481 65%, #0b8e45 100%); color: white; display: flex; flex-direction: column; justify-content: center; padding: 2.5vh 2vw; box-shadow: 0 1.6vh 3.4vh rgba(6,52,111,0.20); }
+    .total-card small { color: #cbeed8; font-size: 0.72vw; font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; }
+    .total-card strong { margin-top: 1.25vh; font-size: 2.35vw; line-height: 1; font-weight: 900; letter-spacing: -0.035em; }
+    .total-card span { margin-top: 1.2vh; color: rgba(255,255,255,0.86); font-size: 0.9vw; font-weight: 800; }
+    .left-title { position: absolute; left: 5.7vw; top: 32vh; font-size: 1.35vw; font-weight: 900; }
+    .unit { position: absolute; left: 46.2vw; top: 32.25vh; font-size: 0.72vw; color: #64748b; font-weight: 900; }
+    .budget { position: absolute; left: 5.7vw; top: 37vh; width: 45.6vw; background: rgba(255,255,255,0.84); border: 1px solid #d8e7f4; padding: 1.3vh 1.45vw; box-shadow: 0 1vh 2.4vh rgba(6,52,111,0.05); }
+    .row { display: grid; grid-template-columns: 20vw 17.2vw 3.2vw; gap: 1.1vw; align-items: center; height: 6vh; border-bottom: 1px solid #edf4fb; }
+    .row:last-child { border-bottom: 0; }
+    .name { font-size: 0.88vw; line-height: 1.22; font-weight: 900; color: #06214a; }
+    .bar-track { height: 1.42vh; background: #eaf2fa; }
+    .bar { height: 100%; }
+    .value { text-align: right; font-size: 0.92vw; font-weight: 900; color: #06214a; }
+    .total-line { position: absolute; left: 5.7vw; top: 82.2vh; width: 45.6vw; height: 7vh; display: flex; justify-content: space-between; align-items: center; padding: 0 1.45vw; background: #06346f; color: white; font-size: 1.35vw; font-weight: 900; }
+    .panel { position: absolute; right: 6vw; top: 32vh; width: 38.5vw; height: 27vh; background: #f5faff; border: 1px solid #d8e7f4; padding: 3.2vh 2.3vw; box-shadow: 0 1vh 2.4vh rgba(6,52,111,0.05); }
+    .panel h2 { font-size: 1.45vw; font-weight: 900; margin-bottom: 1.8vh; }
+    .deliverable { display: grid; grid-template-columns: 0.6vw 1fr; gap: 1vw; align-items: start; margin: 1.12vh 0; font-size: 0.88vw; color: #06214a; line-height: 1.34; font-weight: 650; }
+    .dot { width: 0.52vw; height: 0.52vw; margin-top: 0.42vh; background: #25b34b; }
+    .dot.blue { background: #1687d9; }
+    .timeline-title { position: absolute; right: 7.2vw; top: 63.6vh; width: 36.5vw; font-size: 1.35vw; font-weight: 900; }
+    .timeline { position: absolute; right: 7.2vw; top: 70vh; display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.05vw; width: 36.5vw; }
+    .phase { min-width: 0; text-align: center; position: relative; }
+    .phase:not(:first-child)::before { content: ""; position: absolute; left: -1.05vw; top: 1.55vw; width: 1.05vw; height: 0.22vh; background: #c6dbef; }
+    .phase-num { width: 3.2vw; height: 3.2vw; margin: 0 auto; color: white; display: grid; place-items: center; font-size: 1vw; font-weight: 900; }
+    .phase-label { margin-top: 0.95vh; font-size: 0.64vw; line-height: 1.2; font-weight: 900; color: #06214a; }
+    .close-box { position: absolute; right: 6vw; bottom: 8.9vh; width: 38.5vw; min-height: 8.8vh; display: grid; grid-template-columns: 7.2vw 1fr; align-items: center; background: #fff8e8; border: 1px solid #f4ce79; }
+    .close-number { height: 100%; display: grid; place-items: center; background: #f6a11a; color: white; font-size: 1.2vw; font-weight: 900; }
+    .close-copy { padding: 1.6vh 1.6vw; color: #24364e; font-size: 0.9vw; line-height: 1.45; font-weight: 750; }
+    .footer { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; height: 6.1vh; padding: 0 5.6vw; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.92); border-top: 1px solid #d8e7f4; backdrop-filter: blur(14px); }
+    .footer-left { font-size: 0.72vw; color: #6b7a90; letter-spacing: 0.03em; font-weight: 650; }
+    .footer-left span { color: #0b8e45; font-weight: 900; }
+    .footer-right { display: flex; align-items: center; gap: 0.9vw; }
+    .footer-page { font-family: 'DM Mono', monospace; color: #61748d; font-size: 0.72vw; font-weight: 500; letter-spacing: 0.06em; }
+    .footer-stamp { padding: 0.55vh 1vw; border-radius: 999px; background: #eaf8ee; border: 1px solid #bfe9ca; color: #0b8e45; font-size: 0.62vw; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+  <main class="slide">
+    <div class="top-line"></div>
+    <img class="logo" src="logo_plant_lab.png" alt="Plant Lab logo" />
+    <div class="kicker">Commercial proposal | fixed cost</div>
+    <h1>Fixed cost Rp185 juta untuk implementasi Plant + Lab</h1>
+    <p class="lead">Proposal ini disusun untuk memperoleh persetujuan komersial pada nilai Rp185.000.000, dengan deliverables, rencana kerja, dan ruang lingkup implementasi yang terdefinisi.</p>
+
+    <section class="total-card">
+      <small>Nilai pengajuan</small>
+      <strong>Rp185.000.000</strong>
+      <span>Plant + Lab fixed cost submission</span>
+    </section>
+
+    <h2 class="left-title">Rincian alokasi fixed cost</h2>
+    <div class="unit">Rp juta</div>
+    <section class="budget">
+      <div class="row">
+        <div class="name">Scope alignment + data model</div>
+        <div class="bar-track"><div class="bar" style="width: 39%; background: #f6a11a;"></div></div>
+        <div class="value">18</div>
+      </div>
+      <div class="row">
+        <div class="name">UI/UX PWA and mobile workflow</div>
+        <div class="bar-track"><div class="bar" style="width: 57%; background: #1687d9;"></div></div>
+        <div class="value">26</div>
+      </div>
+      <div class="row">
+        <div class="name">Plant inspection and approval module</div>
+        <div class="bar-track"><div class="bar" style="width: 78%; background: #25b34b;"></div></div>
+        <div class="value">36</div>
+      </div>
+      <div class="row">
+        <div class="name">Lab sample, result log, and evidence module</div>
+        <div class="bar-track"><div class="bar" style="width: 70%; background: #0b8e45;"></div></div>
+        <div class="value">32</div>
+      </div>
+      <div class="row">
+        <div class="name">Dashboard, report generator, and database integration</div>
+        <div class="bar-track"><div class="bar" style="width: 100%; background: #06346f;"></div></div>
+        <div class="value">46</div>
+      </div>
+      <div class="row">
+        <div class="name">QA, UAT, deployment, training, and handover</div>
+        <div class="bar-track"><div class="bar" style="width: 59%; background: #e04f5f;"></div></div>
+        <div class="value">27</div>
+      </div>
+    </section>
+    <div class="total-line"><span>Total fixed cost</span><span>Rp185 jt</span></div>
+
+    <section class="panel">
+      <h2>Deliverables fixed cost</h2>
+      <div class="deliverable"><i class="dot"></i><p>PWA Plant + Lab dengan akses multi-device dan konfigurasi environment.</p></div>
+      <div class="deliverable"><i class="dot"></i><p>Form inspeksi, sample log, evidence attachment, approval, dan status tracking.</p></div>
+      <div class="deliverable"><i class="dot"></i><p>Dashboard, weekly report, master data, user role, database, dan API integration.</p></div>
+      <div class="deliverable"><i class="dot blue"></i><p>UAT support, training, deployment, handover, dan dokumentasi final.</p></div>
+    </section>
+
+    <h2 class="timeline-title">Rencana implementasi 6 minggu</h2>
+    <section class="timeline">
+      <div class="phase"><div class="phase-num" style="background:#f6a11a;">1</div><div class="phase-label">Scope<br />Lock</div></div>
+      <div class="phase"><div class="phase-num" style="background:#25b34b;">2</div><div class="phase-label">Plant</div></div>
+      <div class="phase"><div class="phase-num" style="background:#25b34b;">3</div><div class="phase-label">Lab</div></div>
+      <div class="phase"><div class="phase-num" style="background:#1687d9;">4</div><div class="phase-label">Dashboard</div></div>
+      <div class="phase"><div class="phase-num" style="background:#1687d9;">5</div><div class="phase-label">QA/UAT</div></div>
+      <div class="phase"><div class="phase-num" style="background:#06346f;">6</div><div class="phase-label">Deployment</div></div>
+    </section>
+
+    <section class="close-box">
+      <div class="close-number">Approval</div>
+      <p class="close-copy">Keputusan yang diminta: persetujuan pengajuan fixed cost Rp185.000.000 agar implementasi Plant + Lab dapat masuk tahap eksekusi.</p>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-left"><span>PT Luksuri Reka Digital Solutions</span> · Plant + Lab Fixed Cost Proposal - Advanta Seeds Indonesia</div>
+      <div class="footer-right">
+        <div class="footer-page">02 / 02 - Commercial Summary</div>
+        <div class="footer-stamp">Confidential</div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

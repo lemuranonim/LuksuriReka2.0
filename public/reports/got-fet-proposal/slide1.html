@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>GOT + FET Fixed Cost Proposal - Scope</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 100%; height: 100%; overflow: hidden; font-family: Inter, Arial, sans-serif; background: #f6fbff; color: #06214a; }
+    .slide { position: relative; width: 100vw; height: 100vh; overflow: hidden; background: linear-gradient(135deg, #f7fcff 0%, #eff8ff 52%, #edf9f0 100%); }
+    .top-line { position: absolute; inset: 0 0 auto; height: 1.1vh; background: linear-gradient(90deg, #06346f 0%, #1687d9 38%, #25b34b 72%, #f6a11a 100%); }
+    .paper { position: absolute; left: 3.8vw; right: 3.8vw; top: 4.3vh; bottom: 4.3vh; background: rgba(255,255,255,0.92); border: 1px solid #d8e7f4; box-shadow: 0 2.6vh 6.5vh rgba(6,52,111,0.10); }
+    .header { position: absolute; left: 6.4vw; right: 6.4vw; top: 7vh; height: 8.5vh; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: flex; align-items: center; gap: 1.35vw; }
+    .brand img { width: 6.6vw; height: 4.9vw; object-fit: contain; }
+    .kicker { font-size: 0.78vw; line-height: 1; font-weight: 900; letter-spacing: 0.12em; color: #0b8e45; text-transform: uppercase; }
+    .sub-kicker { margin-top: 0.7vh; font-size: 0.82vw; font-weight: 700; color: #61748d; }
+    .pill { display: inline-flex; align-items: center; gap: 0.65vw; height: 4.1vh; padding: 0 1.35vw; border-radius: 999px; background: #eaf8ee; border: 1px solid #bfe9ca; color: #0b8e45; font-size: 0.82vw; font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; }
+    .pill i { display: block; width: 0.55vw; height: 0.55vw; border-radius: 999px; background: #25b34b; box-shadow: 0 0 0 0.3vw rgba(37,179,75,0.12); }
+    h1 { position: absolute; left: 6.6vw; top: 18vh; width: 57vw; font-size: 3.45vw; line-height: 1.06; letter-spacing: -0.035em; font-weight: 900; color: #06214a; }
+    h1 span { color: #0b8e45; }
+    .lead { position: absolute; left: 6.7vw; top: 36.4vh; width: 51vw; font-size: 1.18vw; line-height: 1.58; color: #4f6682; font-weight: 600; }
+    .value-card { position: absolute; right: 6.5vw; top: 18vh; width: 26vw; height: 25vh; background: linear-gradient(150deg, #06346f 0%, #074481 58%, #0b8e45 100%); color: white; padding: 3vh 2.4vw; box-shadow: 0 1.5vh 3vh rgba(6,52,111,0.20); }
+    .value-label { font-size: 0.82vw; font-weight: 900; letter-spacing: 0.14em; text-transform: uppercase; color: #ccefd8; }
+    .value-amount { margin-top: 1.5vh; font-size: 3.4vw; line-height: 0.95; font-weight: 900; letter-spacing: -0.04em; }
+    .value-copy { margin-top: 1.6vh; font-size: 1.02vw; line-height: 1.45; font-weight: 700; color: rgba(255,255,255,0.86); }
+    .modules { position: absolute; left: 6.5vw; right: 6.5vw; top: 48.8vh; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.7vw; }
+    .module { min-height: 22.5vh; padding: 2.3vh 1.75vw; background: #ffffff; border: 1px solid #d8e7f4; box-shadow: 0 1vh 2.4vh rgba(6,52,111,0.055); }
+    .module-head { display: flex; align-items: center; gap: 1vw; margin-bottom: 1.8vh; }
+    .module-head img { width: 3.25vw; height: 3.25vw; object-fit: contain; }
+    .icon-tile { width: 3.25vw; height: 3.25vw; display: grid; place-items: center; background: #eaf8ee; color: #0b8e45; font-size: 1.45vw; font-weight: 900; }
+    .module h2 { font-size: 1.26vw; line-height: 1.16; font-weight: 900; color: #06214a; }
+    .module p { margin-top: 1.15vh; font-size: 0.88vw; line-height: 1.46; color: #4f6682; font-weight: 600; }
+    .mini-tag { display: inline-flex; margin-top: 1.4vh; padding: 0.65vh 0.9vw; background: #eef7ff; color: #1687d9; font-size: 0.66vw; font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; }
+    .workflow-title { position: absolute; left: 6.5vw; top: 74vh; font-size: 1.25vw; font-weight: 900; color: #06214a; }
+    .workflow { position: absolute; left: 6.5vw; right: 6.5vw; top: 80vh; display: grid; grid-template-columns: repeat(8, 1fr); gap: 0.7vw; }
+    .step { position: relative; min-width: 0; }
+    .step:not(:first-child)::before { content: ""; position: absolute; left: -0.72vw; top: 1.55vw; width: 0.72vw; height: 0.22vh; background: #b8d2e9; }
+    .num { width: 3.2vw; height: 3.2vw; margin: 0 auto 0.85vh; display: grid; place-items: center; color: white; font-size: 1vw; font-weight: 900; background: #25b34b; }
+    .num.blue { background: #1687d9; }
+    .num.gold { background: #f6a11a; }
+    .num.navy { background: #06346f; }
+    .label { text-align: center; color: #06214a; font-size: 0.67vw; font-weight: 900; line-height: 1.16; }
+    .footer { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; height: 6.1vh; padding: 0 6.5vw; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.92); border-top: 1px solid #d8e7f4; backdrop-filter: blur(14px); }
+    .footer-left { font-size: 0.72vw; color: #6b7a90; letter-spacing: 0.03em; font-weight: 650; }
+    .footer-left span { color: #0b8e45; font-weight: 900; }
+    .footer-right { display: flex; align-items: center; gap: 0.9vw; }
+    .footer-page { font-family: 'DM Mono', monospace; color: #61748d; font-size: 0.72vw; font-weight: 500; letter-spacing: 0.06em; }
+    .footer-stamp { padding: 0.55vh 1vw; border-radius: 999px; background: #eaf8ee; border: 1px solid #bfe9ca; color: #0b8e45; font-size: 0.62vw; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+  <main class="slide">
+    <div class="top-line"></div>
+    <div class="paper"></div>
+
+    <header class="header">
+      <div class="brand">
+        <img src="logo_got_fet_unbox.png" alt="GOT FET logo" />
+        <div>
+          <div class="kicker">Fixed Cost Submission | GOT + FET</div>
+          <div class="sub-kicker">PT Advanta Seeds Indonesia - Quality Assurance Workflow</div>
+        </div>
+      </div>
+      <div class="pill"><i></i>Siap untuk persetujuan komersial</div>
+    </header>
+
+    <h1>Pengajuan <span>fixed cost Rp80 juta</span> untuk GOT + FET</h1>
+    <p class="lead">Proposal ini menetapkan paket implementasi bernilai tetap untuk digitalisasi workflow GOT + FET dengan tata kelola data yang dapat ditelusuri, siap review, dan siap serah terima.</p>
+
+    <section class="value-card">
+      <div class="value-label">Nilai pengajuan fixed cost</div>
+      <div class="value-amount">Rp80 jt</div>
+      <p class="value-copy">Tujuan pengajuan: memperoleh persetujuan komersial pada nilai fixed cost ini.</p>
+    </section>
+
+    <section class="modules">
+      <article class="module">
+        <div class="module-head">
+          <img src="logo_got_unbox.png" alt="GOT logo" />
+          <h2>GOT evidence and purity workflow</h2>
+        </div>
+        <p>Pencatatan foto evidence tanaman, observed count, true-type, off-type, selfing, male, dan suspicious dalam satu alur pengajuan data.</p>
+        <span class="mini-tag">field data capture</span>
+      </article>
+      <article class="module">
+        <div class="module-head">
+          <img src="logo_fet_unbox.png" alt="FET logo" />
+          <h2>FET plot 5x10 and emergence workflow</h2>
+        </div>
+        <p>Dokumentasi plot, status 50 titik per ulangan, DAP, replication, emergence percent, dan validasi sebelum pengajuan data.</p>
+        <span class="mini-tag">plot validation</span>
+      </article>
+      <article class="module">
+        <div class="module-head">
+          <div class="icon-tile">DB</div>
+          <h2>Database and review decision</h2>
+        </div>
+        <p>Otentikasi, profil pengguna, penyimpanan evidence, tabel observasi, pelacakan sampel, riwayat review, dan keputusan akhir.</p>
+        <span class="mini-tag">data governance</span>
+      </article>
+    </section>
+
+    <h2 class="workflow-title">Alur operasional yang tercakup dalam paket fixed cost</h2>
+    <section class="workflow">
+      <div class="step"><div class="num">1</div><div class="label">Sample</div></div>
+      <div class="step"><div class="num">2</div><div class="label">Prepared</div></div>
+      <div class="step"><div class="num">3</div><div class="label">Dispatched</div></div>
+      <div class="step"><div class="num">4</div><div class="label">Received</div></div>
+      <div class="step"><div class="num">5</div><div class="label">Planted</div></div>
+      <div class="step"><div class="num blue">6</div><div class="label">Observed</div></div>
+      <div class="step"><div class="num gold">7</div><div class="label">Reviewed</div></div>
+      <div class="step"><div class="num navy">8</div><div class="label">Decision</div></div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-left"><span>PT Luksuri Reka Digital Solutions</span> · GOT + FET Fixed Cost Proposal - Advanta Seeds Indonesia</div>
+      <div class="footer-right">
+        <div class="footer-page">01 / 02 - Scope Overview</div>
+        <div class="footer-stamp">Confidential</div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
