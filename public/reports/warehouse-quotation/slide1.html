@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Warehouse Digitalization Quotation - Offer Summary</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 100%; height: 100%; overflow: hidden; font-family: Inter, Arial, sans-serif; background: #f8fbff; color: #082032; }
+    .slide { position: relative; width: 100vw; height: 100vh; overflow: hidden; background: linear-gradient(135deg, #ffffff 0%, #f4fbff 52%, #eefaf5 100%); }
+    .top-line { position: absolute; inset: 0 0 auto; height: 1.05vh; background: linear-gradient(90deg, #0f6f62 0%, #48a7d8 44%, #d7a33f 100%); }
+    .paper { position: absolute; left: 3.8vw; right: 3.8vw; top: 4.2vh; bottom: 4.4vh; background: rgba(255,255,255,0.92); border: 1px solid #dbe9f2; box-shadow: 0 2.4vh 7vh rgba(6,52,111,0.10); }
+    .accent-glow { position: absolute; right: -8vw; top: -14vh; width: 42vw; height: 42vw; border-radius: 50%; background: radial-gradient(circle, rgba(103,199,182,0.20), rgba(103,199,182,0)); }
+    .header { position: absolute; left: 6.5vw; right: 6.5vw; top: 6.4vh; height: 8vh; display: flex; justify-content: space-between; align-items: center; }
+    .brand { display: flex; align-items: center; gap: 1vw; }
+    .brand-mark { width: 3.8vw; height: 3.8vw; display: grid; place-items: center; background: linear-gradient(145deg, #0f6f62, #48a7d8); color: white; font-size: 1.05vw; font-weight: 900; letter-spacing: -0.03em; box-shadow: 0 1vh 2vh rgba(15,111,98,0.18); }
+    .kicker { font-size: 0.76vw; font-weight: 900; letter-spacing: 0.13em; text-transform: uppercase; color: #0f6f62; }
+    .sub-kicker { margin-top: 0.65vh; font-size: 0.82vw; font-weight: 700; color: #627589; }
+    .pill { height: 4.1vh; display: inline-flex; align-items: center; gap: 0.62vw; padding: 0 1.25vw; border-radius: 999px; background: #e8f7f3; border: 1px solid #bde9de; color: #0f6f62; font-size: 0.78vw; font-weight: 900; letter-spacing: 0.09em; text-transform: uppercase; }
+    .pill i { width: 0.55vw; height: 0.55vw; border-radius: 999px; background: #0f6f62; box-shadow: 0 0 0 0.3vw rgba(15,111,98,0.12); }
+    h1 { position: absolute; left: 6.6vw; top: 18vh; width: 55vw; font-size: 3.55vw; line-height: 1.04; letter-spacing: -0.04em; font-weight: 900; color: #082032; }
+    h1 span { color: #0f6f62; }
+    .lead { position: absolute; left: 6.7vw; top: 37.2vh; width: 51vw; font-size: 1.12vw; line-height: 1.58; color: #4f6478; font-weight: 650; }
+    .quote-card { position: absolute; right: 6.5vw; top: 17.4vh; width: 27.2vw; height: 27.2vh; background: linear-gradient(150deg, #0e6158 0%, #11786a 52%, #2a89bb 100%); color: white; padding: 3vh 2.45vw; box-shadow: 0 1.6vh 3.4vh rgba(15,111,98,0.22); }
+    .quote-card small { display: block; color: #cef3ea; font-size: 0.78vw; font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; }
+    .quote-card strong { display: block; margin-top: 1.4vh; font-size: 3.15vw; line-height: 0.95; font-weight: 900; letter-spacing: -0.04em; }
+    .quote-card span { display: block; margin-top: 1.35vh; color: rgba(255,255,255,0.88); font-size: 0.98vw; line-height: 1.42; font-weight: 750; }
+    .summary-grid { position: absolute; left: 6.5vw; right: 6.5vw; top: 52.4vh; display: grid; grid-template-columns: 1.02fr 1fr 1fr; gap: 1.45vw; }
+    .summary-card { min-height: 19.8vh; padding: 2.1vh 1.55vw; background: #ffffff; border: 1px solid #dbe9f2; box-shadow: 0 1vh 2.4vh rgba(6,52,111,0.055); }
+    .summary-card.gold { background: #fffbf1; border-color: #f1d492; }
+    .summary-label { font-size: 0.68vw; font-weight: 900; letter-spacing: 0.12em; color: #8a9aad; text-transform: uppercase; }
+    .summary-value { margin-top: 1vh; font-size: 2.05vw; line-height: 1; font-weight: 900; letter-spacing: -0.03em; color: #082032; }
+    .summary-copy { margin-top: 1.25vh; font-size: 0.86vw; line-height: 1.45; color: #52677c; font-weight: 650; }
+    .workflow-title { position: absolute; left: 6.5vw; top: 76.6vh; font-size: 1.1vw; font-weight: 900; color: #082032; }
+    .workflow { position: absolute; left: 6.5vw; right: 6.5vw; top: 82.1vh; display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.88vw; }
+    .step { position: relative; min-width: 0; text-align: center; }
+    .step:not(:first-child)::before { content: ""; position: absolute; left: -0.88vw; top: 1.38vw; width: 0.88vw; height: 0.22vh; background: #c7ddec; }
+    .num { width: 2.85vw; height: 2.85vw; margin: 0 auto 0.76vh; display: grid; place-items: center; color: white; font-size: 0.92vw; font-weight: 900; background: #0f6f62; }
+    .num.blue { background: #48a7d8; }
+    .num.gold { background: #d7a33f; }
+    .num.navy { background: #14304a; }
+    .label { color: #082032; font-size: 0.66vw; font-weight: 900; line-height: 1.18; }
+    .footer { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; height: 6.1vh; padding: 0 6.5vw; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.92); border-top: 1px solid #dbe9f2; backdrop-filter: blur(14px); }
+    .footer-left { font-size: 0.72vw; color: #6b7a90; letter-spacing: 0.03em; font-weight: 650; }
+    .footer-left span { color: #0f6f62; font-weight: 900; }
+    .footer-right { display: flex; align-items: center; gap: 0.9vw; }
+    .footer-page { font-family: 'DM Mono', monospace; color: #61748d; font-size: 0.72vw; font-weight: 500; letter-spacing: 0.06em; }
+    .footer-stamp { padding: 0.55vh 1vw; border-radius: 999px; background: #e8f7f3; border: 1px solid #bde9de; color: #0f6f62; font-size: 0.62vw; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+  <main class="slide">
+    <div class="top-line"></div>
+    <div class="paper"></div>
+    <div class="accent-glow"></div>
+
+    <header class="header">
+      <div class="brand">
+        <div class="brand-mark">WH</div>
+        <div>
+          <div class="kicker">Penawaran Final | Warehouse</div>
+          <div class="sub-kicker">PT Advanta Seeds Indonesia - Warehouse Digitalization</div>
+        </div>
+      </div>
+      <div class="pill"><i></i>Paket Standard Recommended</div>
+    </header>
+
+    <h1>Penawaran final <span>Digitalisasi Warehouse</span> untuk PT Advanta Seeds Indonesia.</h1>
+    <p class="lead">Dokumen penawaran ini disusun sebagai dasar persetujuan implementasi sistem warehouse digital dengan ruang lingkup, rencana pelaksanaan, dan ketentuan komersial yang telah diringkas untuk proses persetujuan internal perusahaan.</p>
+
+    <section class="quote-card">
+      <small>Initial budget</small>
+      <strong>Rp75 jt</strong>
+      <span>Biaya implementasi untuk 1 warehouse/site, termasuk konfigurasi QR/Barcode LPN hingga kesiapan pra-produksi massal.</span>
+    </section>
+
+    <section class="summary-grid">
+      <article class="summary-card">
+        <div class="summary-label">Total OPEX FY2027</div>
+        <div class="summary-value">Rp15 jt</div>
+        <p class="summary-copy">Coverage sampai 31 Maret 2027 dan dibayarkan lunas di awal sebagai bagian dari total penawaran.</p>
+      </article>
+      <article class="summary-card">
+        <div class="summary-label">Delivery model</div>
+        <div class="summary-value">2 + 2 minggu</div>
+        <p class="summary-copy">2 minggu penyusunan preparation pack, dilanjutkan 2 minggu development setelah approval dan pembayaran termin awal.</p>
+      </article>
+      <article class="summary-card gold">
+        <div class="summary-label">Termin awal</div>
+        <div class="summary-value">Rp52,5 jt</div>
+        <p class="summary-copy">Mencakup DP 50% initial budget dan pelunasan OPEX FY2027 sebesar Rp15 juta.</p>
+      </article>
+    </section>
+
+    <h2 class="workflow-title">Persetujuan yang dibutuhkan dari penawaran ini</h2>
+    <section class="workflow">
+      <div class="step"><div class="num">1</div><div class="label">Review<br />Penawaran</div></div>
+      <div class="step"><div class="num">2</div><div class="label">Approval<br />Quotation</div></div>
+      <div class="step"><div class="num gold">3</div><div class="label">PO / SPK<br />+ Termin 1</div></div>
+      <div class="step"><div class="num blue">4</div><div class="label">Build<br />System</div></div>
+      <div class="step"><div class="num blue">5</div><div class="label">UAT</div></div>
+      <div class="step"><div class="num navy">6</div><div class="label">Go-live<br />Handover</div></div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-left"><span>PT Luksuri Reka Digital Solutions</span> · Warehouse Digitalization Quotation - Advanta Seeds Indonesia</div>
+      <div class="footer-right">
+        <div class="footer-page">01 / 03 - Ringkasan Penawaran</div>
+        <div class="footer-stamp">Confidential</div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

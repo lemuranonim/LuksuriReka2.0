@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Warehouse Digitalization Quotation - Scope and Timeline</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 100%; height: 100%; overflow: hidden; font-family: Inter, Arial, sans-serif; background: #f8fbff; color: #082032; }
+    .slide { position: relative; width: 100vw; height: 100vh; overflow: hidden; background: linear-gradient(135deg, #ffffff 0%, #f6fbff 55%, #effaf6 100%); }
+    .top-line { position: absolute; inset: 0 0 auto; height: 1.05vh; background: linear-gradient(90deg, #0f6f62 0%, #48a7d8 44%, #d7a33f 100%); }
+    .header { position: absolute; left: 5.8vw; right: 5.8vw; top: 5.5vh; display: flex; align-items: flex-start; justify-content: space-between; }
+    .kicker { font-size: 0.76vw; font-weight: 900; letter-spacing: 0.13em; color: #0f6f62; text-transform: uppercase; }
+    h1 { margin-top: 1.6vh; width: 59vw; font-size: 3vw; line-height: 1.1; letter-spacing: -0.035em; font-weight: 900; color: #082032; }
+    .lead { margin-top: 1.7vh; width: 56vw; font-size: 1.03vw; line-height: 1.5; color: #52677c; font-weight: 650; }
+    .badge { margin-top: 1.1vh; min-width: 19vw; padding: 1.6vh 1.5vw; background: #ffffff; border: 1px solid #dbe9f2; box-shadow: 0 1vh 2.6vh rgba(6,52,111,0.07); text-align: right; }
+    .badge small { display: block; color: #7a8fa2; font-size: 0.72vw; font-weight: 900; letter-spacing: 0.13em; text-transform: uppercase; }
+    .badge strong { display: block; margin-top: 0.7vh; color: #0f6f62; font-size: 1.65vw; font-weight: 900; letter-spacing: -0.025em; }
+    .timeline-card { position: absolute; left: 5.8vw; right: 5.8vw; top: 30.5vh; height: 24.5vh; background: #f1fbf8; border: 1px solid #cde9e1; box-shadow: 0 1vh 2.6vh rgba(15,111,98,0.07); }
+    .timeline-title { position: absolute; left: 2vw; top: 2.3vh; font-size: 1.18vw; font-weight: 900; color: #082032; }
+    .timeline-note { position: absolute; right: 2vw; top: 2.65vh; font-size: 0.78vw; color: #0f6f62; font-weight: 900; letter-spacing: 0.09em; text-transform: uppercase; }
+    .timeline { position: absolute; left: 2vw; right: 2vw; top: 7.6vh; display: grid; grid-template-columns: 1.05fr 0.58fr 1.22fr; gap: 1.35vw; }
+    .phase { min-height: 13.5vh; padding: 1.65vh 1.35vw; background: #ffffff; border: 1px solid #dbe9f2; position: relative; }
+    .phase::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 0.35vw; background: #0f6f62; }
+    .phase.gate::before { background: #d7a33f; }
+    .phase.build::before { background: #48a7d8; }
+    .phase-label { font-size: 0.67vw; color: #8a9aad; font-weight: 900; letter-spacing: 0.14em; text-transform: uppercase; }
+    .phase-title { margin-top: 0.8vh; font-size: 1.18vw; line-height: 1.12; font-weight: 900; color: #082032; }
+    .phase-copy { margin-top: 0.9vh; font-size: 0.82vw; line-height: 1.38; color: #52677c; font-weight: 650; }
+    .scope-title { position: absolute; left: 5.8vw; top: 60.5vh; font-size: 1.28vw; font-weight: 900; color: #082032; }
+    .scope { position: absolute; left: 5.8vw; top: 66.1vh; width: 53.3vw; display: grid; grid-template-columns: 1fr 1fr; gap: 1vw; }
+    .scope-item { min-height: 9.2vh; background: #ffffff; border: 1px solid #dbe9f2; padding: 1.45vh 1.25vw; display: grid; grid-template-columns: 3vw 1fr; gap: 0.9vw; align-items: start; box-shadow: 0 0.8vh 2vh rgba(6,52,111,0.045); }
+    .scope-num { width: 2.55vw; height: 2.55vw; display: grid; place-items: center; background: #e8f7f3; color: #0f6f62; font-size: 0.82vw; font-weight: 900; font-family: 'DM Mono', monospace; }
+    .scope-name { font-size: 0.95vw; font-weight: 900; color: #082032; }
+    .scope-copy { margin-top: 0.48vh; font-size: 0.72vw; line-height: 1.36; color: #52677c; font-weight: 650; }
+    .tech-panel { position: absolute; right: 5.8vw; top: 60.2vh; width: 32.4vw; height: 26.2vh; display: flex; flex-direction: column; background: linear-gradient(150deg, #102e46 0%, #0f6f62 100%); color: white; padding: 2.2vh 1.9vw 2vh; box-shadow: 0 1.4vh 3.2vh rgba(16,46,70,0.19); overflow: hidden; }
+    .tech-panel small { color: #c9f0e7; font-size: 0.72vw; font-weight: 900; letter-spacing: 0.14em; text-transform: uppercase; }
+    .tech-panel h2 { margin-top: 0.9vh; font-size: 1.55vw; line-height: 1.08; font-weight: 900; letter-spacing: -0.025em; }
+    .tech-panel p { margin-top: 1vh; font-size: 0.78vw; line-height: 1.42; color: rgba(255,255,255,0.86); font-weight: 650; }
+    .tech-tags { margin-top: auto; display: flex; flex-wrap: wrap; gap: 0.52vw; padding-top: 1.2vh; }
+    .tag { padding: 0.52vh 0.72vw; background: rgba(255,255,255,0.13); border: 1px solid rgba(255,255,255,0.22); color: white; font-size: 0.57vw; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; }
+    .footer { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; height: 6.1vh; padding: 0 5.8vw; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.92); border-top: 1px solid #dbe9f2; backdrop-filter: blur(14px); }
+    .footer-left { font-size: 0.72vw; color: #6b7a90; letter-spacing: 0.03em; font-weight: 650; }
+    .footer-left span { color: #0f6f62; font-weight: 900; }
+    .footer-right { display: flex; align-items: center; gap: 0.9vw; }
+    .footer-page { font-family: 'DM Mono', monospace; color: #61748d; font-size: 0.72vw; font-weight: 500; letter-spacing: 0.06em; }
+    .footer-stamp { padding: 0.55vh 1vw; border-radius: 999px; background: #e8f7f3; border: 1px solid #bde9de; color: #0f6f62; font-size: 0.62vw; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+  <main class="slide">
+    <div class="top-line"></div>
+
+    <header class="header">
+      <div>
+        <div class="kicker">Ruang lingkup dan rencana pelaksanaan</div>
+        <h1>Ruang lingkup pekerjaan dan rencana pelaksanaan.</h1>
+        <p class="lead">Penawaran ini mencakup pengembangan sistem warehouse digital berbasis Web Admin dan PWA Scanner dengan ruang lingkup kerja yang terukur, tahapan pelaksanaan yang jelas, dan batasan deliverable yang siap menjadi dasar PO/SPK.</p>
+      </div>
+      <div class="badge">
+        <small>Rencana pelaksanaan</small>
+        <strong>2 minggu preparation + 2 minggu delivery</strong>
+      </div>
+    </header>
+
+    <section class="timeline-card">
+      <h2 class="timeline-title">Tahapan pelaksanaan yang diusulkan</h2>
+      <div class="timeline-note">persetujuan dahulu, kemudian pelaksanaan</div>
+      <div class="timeline">
+        <article class="phase">
+          <div class="phase-label">Minggu 1-2</div>
+          <div class="phase-title">Preparation pack</div>
+          <p class="phase-copy">Penyusunan UI/UX wireframe, daftar fitur, flow warehouse, format QR/LPN, role matrix, dan acceptance criteria untuk kebutuhan pengajuan internal.</p>
+        </article>
+        <article class="phase gate">
+          <div class="phase-label">Approval gate</div>
+          <div class="phase-title">Termin awal</div>
+          <p class="phase-copy">Dibayarkan setelah PO/SPK dan scope final. Termin awal mencakup DP initial budget dan pelunasan OPEX FY2027 di muka.</p>
+        </article>
+        <article class="phase build">
+          <div class="phase-label">2 minggu setelah DP</div>
+          <div class="phase-title">Build, UAT, handover</div>
+          <p class="phase-copy">Pengembangan fitur utama, validasi scan QR/Barcode, UAT, deployment, training singkat, dan handover operasional.</p>
+        </article>
+      </div>
+    </section>
+
+    <h2 class="scope-title">Ruang lingkup utama yang termasuk dalam penawaran</h2>
+    <section class="scope">
+      <article class="scope-item">
+        <div class="scope-num">01</div>
+        <div>
+          <div class="scope-name">Sistem admin warehouse</div>
+          <p class="scope-copy">Master data, dokumen inbound/outbound, user role, dan kontrol status transaksi warehouse.</p>
+        </div>
+      </article>
+      <article class="scope-item">
+        <div class="scope-num">02</div>
+        <div>
+          <div class="scope-name">Aplikasi scanner berbasis PWA</div>
+          <p class="scope-copy">Dukungan scan kamera browser/PWA dan keyboard scanner input untuk LPN dan lokasi.</p>
+        </div>
+      </article>
+      <article class="scope-item">
+        <div class="scope-num">03</div>
+        <div>
+          <div class="scope-name">Konfigurasi QR/Barcode LPN</div>
+          <p class="scope-copy">Generate LPN, label template, scan resolver, parser token, dan anti-duplicate baseline.</p>
+        </div>
+      </article>
+      <article class="scope-item">
+        <div class="scope-num">04</div>
+        <div>
+          <div class="scope-name">Dashboard dan stock flow</div>
+          <p class="scope-copy">Inbound, put away, outbound, movement log, stock count, dan report operasional ringkas.</p>
+        </div>
+      </article>
+    </section>
+
+    <aside class="tech-panel">
+      <small>Stack teknologi</small>
+      <h2>Next.js Web/PWA + Supabase/Postgres</h2>
+      <p>Stack teknologi dipilih untuk mendukung implementasi yang cepat, aman, dan mudah dikelola. Detail backend, database security, dan deployment tetap menjadi bagian dari pekerjaan teknis internal.</p>
+      <div class="tech-tags">
+        <span class="tag">Web Admin</span>
+        <span class="tag">PWA Scanner</span>
+        <span class="tag">Postgres</span>
+        <span class="tag">QR/LPN</span>
+      </div>
+    </aside>
+
+    <footer class="footer">
+      <div class="footer-left"><span>PT Luksuri Reka Digital Solutions</span> · Warehouse Digitalization Quotation - Advanta Seeds Indonesia</div>
+      <div class="footer-right">
+        <div class="footer-page">02 / 03 - Ruang Lingkup dan Timeline</div>
+        <div class="footer-stamp">Confidential</div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
