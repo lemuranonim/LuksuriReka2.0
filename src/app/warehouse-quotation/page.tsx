@@ -157,7 +157,6 @@ export default function WarehouseQuotationViewer() {
               Verifikasi Akses
             </button>
           </form>
-          <p className="mt-5 text-center text-xs text-[#9aa8b8]">Security token: WAREHOUSE75</p>
         </section>
       </main>
     );
