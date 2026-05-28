@@ -114,7 +114,7 @@ export default function WarehouseQuotationViewer() {
 
   const handleLogin = (event: React.FormEvent) => {
     event.preventDefault();
-    if (tokenInput.trim().toUpperCase() === 'WAREHOUSE75') {
+    if (tokenInput.trim().toUpperCase() === 'WAREHOUSE2627') {
       setIsAuthenticated(true);
       setErrorToken('');
       return;
