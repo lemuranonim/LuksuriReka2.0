@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { exportToJpgZip, exportToPdf, exportToPptx } from './exportUtils';
 
-const totalSlides = 2;
+const totalSlides = 17;
 
 export default function QAPlantLabProposalViewer() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -336,3 +336,4 @@ export default function QAPlantLabProposalViewer() {
     </div>
   );
 }
+

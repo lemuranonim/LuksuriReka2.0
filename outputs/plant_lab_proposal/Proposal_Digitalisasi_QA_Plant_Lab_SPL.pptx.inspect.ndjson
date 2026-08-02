@@ -1,0 +1,551 @@
+{"kind":"deck","id":"pr/lainu1","name":"Deck"}
+{"kind":"layout","layoutId":"/ppt/slideMasters/slideMaster1.xml","name":"","type":"master"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout1.xml","name":"DEFAULT"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout2.xml","name":"1_Encabezado de sección"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout3.xml","name":"1_Diseño personalizado"}
+{"kind":"slide","id":"sl/y90nupkv","slide":1,"title":"Proposal Digitalisasi KrosCek","textShapes":2}
+{"kind":"textbox","id":"sh/547294r6","slide":1,"name":"Title 2","text":"Proposal Digitalisasi KrosCek\nQA Plant + Lab/SPL","textPreview":"Proposal Digitalisasi KrosCek | QA Plant + Lab/SPL","textChars":48,"textLines":2,"bbox":[0,300.65,735.03,212.83]}
+{"kind":"textbox","id":"sh/ts7md4r2","slide":1,"name":"Title 2","text":"Workflow terintegrasi, data terkontrol, roadmap 10 minggu, dan quotation MVP","textPreview":"Workflow terintegrasi, data terkontrol, roadmap 10 minggu, dan quotation MVP","textChars":76,"textLines":1,"bbox":[16,626.23,642.6,80.74]}
+{"kind":"notes","id":"nt/y90nupkv","slide":1,"text":"[Sources]\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Summary\n[/Sources]"}
+{"kind":"slide","id":"sl/hwbqtkby","slide":2,"title":"Proposal Ekosistem QA Plant + Lab/SPL","textShapes":13}
+{"kind":"textbox","id":"sh/b29kza94","slide":2,"name":"Text 0","text":"Proposal Ekosistem QA Plant + Lab/SPL","textPreview":"Proposal Ekosistem QA Plant + Lab/SPL","textChars":37,"textLines":1,"bbox":[67.2,43.2,854.4,43.2]}
+{"kind":"textbox","id":"sh/a10jqpsj","slide":2,"name":"Text 1","text":"Dua aplikasi mandiri, satu bridge terkontrol, dan portal global untuk visibilitas end-to-end.","textPreview":"Dua aplikasi mandiri, satu bridge terkontrol, dan portal global untuk visibilitas end-to-end.","textChars":93,"textLines":1,"bbox":[67.2,86.85,844.8,26.88]}
+{"kind":"textbox","id":"sh/ozy1ofad","slide":2,"name":"Text 3","text":"Blueprint siap diputuskan: scope MVP, workflow, roadmap, dan investasi telah dirinci.","textPreview":"Blueprint siap diputuskan: scope MVP, workflow, roadmap, dan investasi telah dirinci.","textChars":85,"textLines":1,"bbox":[67.2,234.66,652.8,48]}
+{"kind":"shape","id":"sh/w3i1sfa9","slide":2,"name":"Shape 5","bbox":[67.2,333.35,153.6,32.64]}
+{"kind":"textbox","id":"sh/r65knqtk","slide":2,"name":"Text 6","text":"QA Plant","textPreview":"QA Plant","textChars":8,"textLines":1,"bbox":[74.88,341.03,138.24,15.36]}
+{"kind":"shape","id":"sh/q5wjelsz","slide":2,"name":"Shape 7","bbox":[236.16,333.35,134.4,32.64]}
+{"kind":"textbox","id":"sh/ove9o7yd","slide":2,"name":"Text 8","text":"Lab / SPL","textPreview":"Lab / SPL","textChars":9,"textLines":1,"bbox":[243.84,341.03,119.04,15.36]}
+{"kind":"shape","id":"sh/9wnqhczy","slide":2,"name":"Shape 9","bbox":[385.92,333.35,139.2,32.64]}
+{"kind":"textbox","id":"sh/mtwrmxg7","slide":2,"name":"Text 10","text":"Bridge + Portal","textPreview":"Bridge + Portal","textChars":15,"textLines":1,"bbox":[393.6,341.03,123.84,15.36]}
+{"kind":"shape","id":"sh/nu58f2hs","slide":2,"name":"Shape 11","bbox":[835.2,145.92,355.2,436.8]}
+{"kind":"shape","id":"sh/wjy9sry9","slide":2,"name":"Shape 12","bbox":[918.72,161.37,188.16,59.52]}
+{"kind":"textbox","id":"sh/xk7qlczu","slide":2,"name":"Text 13","text":"QA Plant","textPreview":"QA Plant","textChars":8,"textLines":1,"bbox":[926.4,173.85,172.8,19.2]}
+{"kind":"textbox","id":"sh/ahwrqhgj","slide":2,"name":"Text 14","text":"Inspeksi • MC/PP • sampling","textPreview":"Inspeksi • MC/PP • sampling","textChars":27,"textLines":1,"bbox":[928.32,201.21,168.96,11.52]}
+{"kind":"shape","id":"sh/bip8jmho","slide":2,"name":"Shape 15","bbox":[979.2,248.42,62.4,33.6]}
+{"kind":"shape","id":"sh/cnupgny5","slide":2,"name":"Shape 16","bbox":[918.72,307.3,188.16,69.12]}
+{"kind":"textbox","id":"sh/do3q9szq","slide":2,"name":"Text 17","text":"Integration Bridge","textPreview":"Integration Bridge","textChars":18,"textLines":1,"bbox":[926.4,319.78,172.8,19.2]}
+{"kind":"textbox","id":"sh/t8byxkn2","slide":2,"name":"Text 18","text":"Shared ID • event • retry • log","textPreview":"Shared ID • event • retry • log","textChars":31,"textLines":1,"bbox":[928.32,343.78,168.96,21.12]}
+{"kind":"shape","id":"sh/s72xofmh","slide":2,"name":"Shape 19","bbox":[981.6,401.11,62.4,33.6]}
+{"kind":"shape","id":"sh/76twva5c","slide":2,"name":"Shape 20","bbox":[918.72,451.51,188.16,69.12]}
+{"kind":"textbox","id":"sh/65kfmpor","slide":2,"name":"Text 21","text":"Lab / SPL","textPreview":"Lab / SPL","textChars":9,"textLines":1,"bbox":[926.4,463.99,172.8,19.2]}
+{"kind":"textbox","id":"sh/hcvy14ne","slide":2,"name":"Text 22","text":"Request • testing • approval","textPreview":"Request • testing • approval","textChars":28,"textLines":1,"bbox":[930.24,490.59,168.96,21.12]}
+{"kind":"textbox","id":"sh/gbmxszmt","slide":2,"name":"Text 23","text":"10 minggu • Rp235 juta MVP","textPreview":"10 minggu • Rp235 juta MVP","textChars":26,"textLines":1,"bbox":[895.68,538.08,234.25,46.08]}
+{"kind":"notes","id":"nt/hwbqtkby","slide":2,"text":"[Sources]\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Summary\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Ecosystem_Map\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Budgeting\n[/Sources]"}
+{"kind":"slide","id":"sl/ofy9wn61","slide":3,"title":"Arsitektur modular menjaga independensi Plant dan Lab","textShapes":17}
+{"kind":"textbox","id":"sh/298ryl4v","slide":3,"name":"Text 0","text":"Arsitektur modular menjaga independensi Plant dan Lab","textPreview":"Arsitektur modular menjaga independensi Plant dan Lab","textChars":53,"textLines":1,"bbox":[67.2,43.2,935.22,43.2]}
+{"kind":"textbox","id":"sh/3ah8rqlg","slide":3,"name":"Text 1","text":"Masing-masing aplikasi memiliki release dan database sendiri; bridge hanya menukar data yang disepakati.","textPreview":"Masing-masing aplikasi memiliki release dan database sendiri; bridge hanya menukar data yang disepakati.","textChars":104,"textLines":1,"bbox":[67.2,86.85,844.8,26.88]}
+{"kind":"shape","id":"sh/cza94vmx","slide":3,"name":"Shape 5","bbox":[64.32,199.68,374.4,139.2]}
+{"kind":"shape","id":"sh/obq90bml","slide":3,"name":"Shape 6","bbox":[64.32,199.68,9.6,139.2]}
+{"kind":"textbox","id":"sh/sfix03y9","slide":3,"name":"Text 7","text":"1. Plant tetap mandiri","textPreview":"1. Plant tetap mandiri","textChars":22,"textLines":1,"bbox":[85.44,216.96,340.8,26.88]}
+{"kind":"textbox","id":"sh/tgry9ofu","slide":3,"name":"Text 8","text":"Web + PWA untuk inspection, process plan, MC/PP, sampling, dashboard, dan export.","textPreview":"Web + PWA untuk inspection, process plan, MC/PP, sampling, dashboard, dan export.","textChars":81,"textLines":1,"bbox":[85.44,250.56,340.8,76.8]}
+{"kind":"shape","id":"sh/a9kfadwn","slide":3,"name":"Shape 9","bbox":[453.12,199.68,374.4,139.2]}
+{"kind":"shape","id":"sh/batgjixs","slide":3,"name":"Shape 10","bbox":[453.12,199.68,9.6,139.2]}
+{"kind":"textbox","id":"sh/l4fi9cza","slide":3,"name":"Text 11","text":"2. Bridge mengontrol integrasi","textPreview":"2. Bridge mengontrol integrasi","textChars":30,"textLines":1,"bbox":[474.24,216.96,340.8,26.88]}
+{"kind":"textbox","id":"sh/k3m1g7yp","slide":3,"name":"Text 12","text":"Shared key, kontrak API, queue/retry, idempotency, sync log, dan error monitor.","textPreview":"Shared key, kontrak API, queue/retry, idempotency, sync log, dan error monitor.","textChars":79,"textLines":1,"bbox":[474.24,250.56,340.8,76.8]}
+{"kind":"shape","id":"sh/z2d07mh4","slide":3,"name":"Shape 13","bbox":[841.92,199.68,369.6,139.2]}
+{"kind":"shape","id":"sh/y14jehgj","slide":3,"name":"Shape 14","bbox":[841.92,199.68,9.6,139.2]}
+{"kind":"textbox","id":"sh/x0vi5czy","slide":3,"name":"Text 15","text":"3. Lab/SPL tetap mandiri","textPreview":"3. Lab/SPL tetap mandiri","textChars":24,"textLines":1,"bbox":[863.04,216.96,336,26.88]}
+{"kind":"textbox","id":"sh/czmhc7id","slide":3,"name":"Text 16","text":"Web + mobile web/PWA untuk request, receipt, testing, review, approval, dan report.","textPreview":"Web + mobile web/PWA untuk request, receipt, testing, review, approval, dan report.","textChars":83,"textLines":1,"bbox":[863.04,250.56,336,76.8]}
+{"kind":"shape","id":"sh/byd032h8","slide":3,"name":"Shape 17","bbox":[64.32,421.44,1147.2,230.4]}
+{"kind":"textbox","id":"sh/ax4zax0n","slide":3,"name":"Text 18","text":"Alur data yang disepakati","textPreview":"Alur data yang disepakati","textChars":25,"textLines":1,"bbox":[88.32,448.32,240,24]}
+{"kind":"shape","id":"sh/hwzihwzi","slide":3,"name":"Shape 19","bbox":[97.92,494.4,206.4,109.07]}
+{"kind":"textbox","id":"sh/wv61obyx","slide":3,"name":"Text 20","text":"QA Plant","textPreview":"QA Plant","textChars":8,"textLines":1,"bbox":[105.6,506.88,191.04,19.2]}
+{"kind":"textbox","id":"sh/4nuhs7uh","slide":3,"name":"Text 21","text":"Lot/Sample ID\nInspection\nSource result","textPreview":"Lot/Sample ID | Inspection | Source result","textChars":38,"textLines":3,"bbox":[93.92,534.54,214.4,61.13]}
+{"kind":"shape","id":"sh/po3ilcvm","slide":3,"name":"Shape 22","bbox":[313.92,540.86,62.4,24]}
+{"kind":"shape","id":"sh/21szqxcb","slide":3,"name":"Shape 23","bbox":[385.92,494.4,216,109.07]}
+{"kind":"textbox","id":"sh/32l0j2dw","slide":3,"name":"Text 24","text":"Bridge","textPreview":"Bridge","textChars":6,"textLines":1,"bbox":[393.6,506.88,200.64,19.2]}
+{"kind":"textbox","id":"sh/cruhwrud","slide":3,"name":"Text 25","text":"Contract API\nQueue/retry\nSync log","textPreview":"Contract API | Queue/retry | Sync log","textChars":33,"textLines":3,"bbox":[395.52,530.88,196.8,43.2]}
+{"kind":"shape","id":"sh/ds3ipcvy","slide":3,"name":"Shape 26","bbox":[612.48,540.62,60.48,24]}
+{"kind":"shape","id":"sh/qpczuhc7","slide":3,"name":"Shape 27","bbox":[683.52,494.4,206.4,109.07]}
+{"kind":"textbox","id":"sh/rql0nmds","slide":3,"name":"Text 28","text":"Lab / SPL","textPreview":"Lab / SPL","textChars":9,"textLines":1,"bbox":[691.2,506.88,191.04,19.2]}
+{"kind":"textbox","id":"sh/0ve10ru9","slide":3,"name":"Text 29","text":"Request/receipt\nTest/approval\nFinal result","textPreview":"Request/receipt | Test/approval | Final result","textChars":42,"textLines":3,"bbox":[693.12,533.91,187.2,55.96]}
+{"kind":"shape","id":"sh/1wnitwvu","slide":3,"name":"Shape 30","bbox":[900.48,540.62,60.48,24]}
+{"kind":"shape","id":"sh/v29cfu18","slide":3,"name":"Shape 31","bbox":[971.52,494.4,177.6,109.07]}
+{"kind":"textbox","id":"sh/a10b6p03","slide":3,"name":"Text 32","text":"Global Portal","textPreview":"Global Portal","textChars":13,"textLines":1,"bbox":[979.2,506.88,162.24,19.2]}
+{"kind":"textbox","id":"sh/xoruhkje","slide":3,"name":"Text 33","text":"Module launcher\nGlobal KPI\nRole context","textPreview":"Module launcher | Global KPI | Role context","textChars":39,"textLines":3,"bbox":[981.12,530.88,158.4,43.2]}
+{"kind":"notes","id":"nt/ofy9wn61","slide":3,"text":"[Sources]\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Summary\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Ecosystem_Map\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Bridge_Contract\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Data_Model\n[/Sources]"}
+{"kind":"slide","id":"sl/jyx0ra1s","slide":4,"title":"Target operating model menjaga database tetap mandiri","textShapes":22}
+{"kind":"textbox","id":"sh/rm1k7yt4","slide":4,"name":"Text 0","text":"Target operating model menjaga database tetap mandiri","textPreview":"Target operating model menjaga database tetap mandiri","textChars":53,"textLines":1,"bbox":[67.2,43.2,935.22,43.2]}
+{"kind":"textbox","id":"sh/ql8jytsj","slide":4,"name":"Text 1","text":"Perubahan utama ada pada kontrol transaksi, handoff, monitoring, dan audit trail.","textPreview":"Perubahan utama ada pada kontrol transaksi, handoff, monitoring, dan audit trail.","textChars":81,"textLines":1,"bbox":[67.2,86.85,844.8,26.88]}
+{"kind":"textbox","id":"sh/1cj2d8b6","slide":4,"name":"Text 3","text":"Dari file dan handoff manual menuju workflow modular\nyang terhubung, terlacak, dan dapat diaudit.","textPreview":"Dari file dan handoff manual menuju workflow modular | yang terhubung, terlacak, dan dapat diaudit.","textChars":97,"textLines":2,"bbox":[65.44,153.07,1152,62.4]}
+{"kind":"textbox","id":"sh/doj29oba","slide":4,"name":"Text 5","text":"Kondisi saat ini","textPreview":"Kondisi saat ini","textChars":16,"textLines":1,"bbox":[217.92,261.03,192,21.12]}
+{"kind":"textbox","id":"sh/sna103ap","slide":4,"name":"Text 6","text":"Target MVP","textPreview":"Target MVP","textChars":10,"textLines":1,"bbox":[840,261.03,192,21.12]}
+{"kind":"shape","id":"sh/3ihk3et8","slide":4,"name":"Shape 7","bbox":[561.6,426.06,100.8,62.4]}
+{"kind":"shape","id":"sh/ih8ju9sn","slide":4,"name":"Shape 8","bbox":[91.2,308.46,436.8,69.12]}
+{"kind":"shape","id":"sh/kbm987y5","slide":4,"name":"Shape 9","bbox":[91.2,308.46,9.6,69.12]}
+{"kind":"textbox","id":"sh/5cva1cfq","slide":4,"name":"Text 10","text":"Eksekusi proses","textPreview":"Eksekusi proses","textChars":15,"textLines":1,"bbox":[112.32,325.74,403.2,26.88]}
+{"kind":"textbox","id":"sh/i94r6xgz","slide":4,"name":"Text 11","text":"File terpisah; status sulit dilacak","textPreview":"File terpisah; status sulit dilacak","textChars":35,"textLines":1,"bbox":[112.32,359.34,403.2,6.72]}
+{"kind":"shape","id":"sh/jadsz2xk","slide":4,"name":"Shape 12","bbox":[696,308.46,480,69.12]}
+{"kind":"shape","id":"sh/w72947yt","slide":4,"name":"Shape 13","bbox":[696,308.46,9.6,69.12]}
+{"kind":"textbox","id":"sh/x8vaxsfe","slide":4,"name":"Text 14","text":"Eksekusi proses","textPreview":"Eksekusi proses","textChars":15,"textLines":1,"bbox":[717.12,325.74,446.4,26.88]}
+{"kind":"textbox","id":"sh/a5kr2xg3","slide":4,"name":"Text 15","text":"Task inbox + status per transaksi","textPreview":"Task inbox + status per transaksi","textChars":33,"textLines":1,"bbox":[717.12,359.34,446.4,6.72]}
+{"kind":"shape","id":"sh/v6tsv2xo","slide":4,"name":"Shape 16","bbox":[91.2,399.66,436.8,69.12]}
+{"kind":"shape","id":"sh/g36tgryd","slide":4,"name":"Shape 17","bbox":[91.2,399.66,9.6,69.12]}
+{"kind":"textbox","id":"sh/h4fa9wfy","slide":4,"name":"Text 18","text":"Data handoff","textPreview":"Data handoff","textChars":12,"textLines":1,"bbox":[112.32,416.94,403.2,26.88]}
+{"kind":"textbox","id":"sh/p0batw72","slide":4,"name":"Text 19","text":"Input ulang antara Plant dan Lab","textPreview":"Input ulang antara Plant dan Lab","textChars":32,"textLines":1,"bbox":[112.32,450.54,403.2,6.72]}
+{"kind":"shape","id":"sh/oz29krqh","slide":4,"name":"Shape 20","bbox":[696,399.66,480,69.12]}
+{"kind":"shape","id":"sh/3ytsrmpw","slide":4,"name":"Shape 21","bbox":[696,399.66,9.6,69.12]}
+{"kind":"textbox","id":"sh/2xkrih8b","slide":4,"name":"Text 22","text":"Data handoff","textPreview":"Data handoff","textChars":12,"textLines":1,"bbox":[717.12,416.94,446.4,26.88]}
+{"kind":"textbox","id":"sh/1wbapc7q","slide":4,"name":"Text 23","text":"Shared key + event bridge; DB tetap mandiri","textPreview":"Shared key + event bridge; DB tetap mandiri","textChars":43,"textLines":1,"bbox":[717.12,450.54,446.4,6.72]}
+{"kind":"shape","id":"sh/gv29g7q5","slide":4,"name":"Shape 24","bbox":[91.2,490.86,436.8,69.12]}
+{"kind":"shape","id":"sh/fu9sn2p0","slide":4,"name":"Shape 25","bbox":[91.2,490.86,9.6,69.12]}
+{"kind":"textbox","id":"sh/et0reh8f","slide":4,"name":"Text 26","text":"Exception control","textPreview":"Exception control","textChars":17,"textLines":1,"bbox":[112.32,508.14,403.2,26.88]}
+{"kind":"textbox","id":"sh/tsrqlc7u","slide":4,"name":"Text 27","text":"OOS/retest terlambat terlihat","textPreview":"OOS/retest terlambat terlihat","textChars":29,"textLines":1,"bbox":[112.32,541.74,403.2,6.72]}
+{"kind":"shape","id":"sh/sri9s7q9","slide":4,"name":"Shape 28","bbox":[696,490.86,480,69.12]}
+{"kind":"shape","id":"sh/ilwf69kv","slide":4,"name":"Shape 29","bbox":[696,490.86,9.6,69.12]}
+{"kind":"textbox","id":"sh/jm5gze1g","slide":4,"name":"Text 30","text":"Exception control","textPreview":"Exception control","textChars":17,"textLines":1,"bbox":[717.12,508.14,446.4,26.88]}
+{"kind":"textbox","id":"sh/knex8j21","slide":4,"name":"Text 31","text":"Alert, aging, retry, revision loop","textPreview":"Alert, aging, retry, revision loop","textChars":34,"textLines":1,"bbox":[717.12,541.74,446.4,6.72]}
+{"kind":"shape","id":"sh/5ony1oj6","slide":4,"name":"Shape 32","bbox":[91.2,582.06,436.8,69.12]}
+{"kind":"shape","id":"sh/axcf29kj","slide":4,"name":"Shape 33","bbox":[91.2,582.06,9.6,69.12]}
+{"kind":"textbox","id":"sh/vy5gbe14","slide":4,"name":"Text 34","text":"Reporting & audit","textPreview":"Reporting & audit","textChars":17,"textLines":1,"bbox":[112.32,599.34,403.2,26.88]}
+{"kind":"textbox","id":"sh/wzex4z2p","slide":4,"name":"Text 35","text":"Kompilasi manual; evidence tersebar","textPreview":"Kompilasi manual; evidence tersebar","textChars":35,"textLines":1,"bbox":[112.32,632.94,403.2,6.72]}
+{"kind":"shape","id":"sh/xknyx4ja","slide":4,"name":"Shape 36","bbox":[696,582.06,480,69.12]}
+{"kind":"shape","id":"sh/mtcfypkn","slide":4,"name":"Shape 37","bbox":[696,582.06,9.6,69.12]}
+{"kind":"textbox","id":"sh/nulw7u18","slide":4,"name":"Text 38","text":"Reporting & audit","textPreview":"Reporting & audit","textChars":17,"textLines":1,"bbox":[717.12,599.34,446.4,26.88]}
+{"kind":"textbox","id":"sh/fm5c3q54","slide":4,"name":"Text 39","text":"Dashboard, export, dan audit trail","textPreview":"Dashboard, export, dan audit trail","textChars":34,"textLines":1,"bbox":[717.12,632.94,446.4,6.72]}
+{"kind":"textbox","id":"sh/elwba54j","slide":4,"name":"Text 40","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[1214.4,676.8,24,13.44]}
+{"kind":"notes","id":"nt/jyx0ra1s","slide":4,"text":"[Sources]\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — E2E_Workflow\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Status_Rules\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — UI_Blueprint\n[/Sources]"}
+{"kind":"slide","id":"sl/i107q5of","slide":5,"title":"QA Plant: dari Lot hingga sample siap diuji","textShapes":17}
+{"kind":"textbox","id":"sh/z2tcnm5s","slide":5,"name":"Text 0","text":"QA Plant: dari Lot hingga sample siap diuji","textPreview":"QA Plant: dari Lot hingga sample siap diuji","textChars":43,"textLines":1,"bbox":[67.2,43.2,935.22,43.2]}
+{"kind":"textbox","id":"sh/yhkbe1o7","slide":5,"name":"Text 1","text":"Mobile/PWA memandu eksekusi; web menangani planning, review, dashboard, dan export.","textPreview":"Mobile/PWA memandu eksekusi; web menangani planning, review, dashboard, dan export.","textChars":83,"textLines":1,"bbox":[67.2,86.85,844.8,26.88]}
+{"kind":"textbox","id":"sh/dgbulwnm","slide":5,"name":"Text 3","text":"Plant App mengendalikan dua mode inspeksi, source testing, sampling,\ndan exception loop dengan evidence serta audit trail.","textPreview":"Plant App mengendalikan dua mode inspeksi, source testing, sampling, | dan exception loop dengan evidence serta audit trail.","textChars":122,"textLines":2,"bbox":[63.9,195.34,1152,59.9]}
+{"kind":"shape","id":"sh/l4bupwny","slide":5,"name":"Shape 12","bbox":[144.09,334.41,148.8,96]}
+{"kind":"textbox","id":"sh/032tgr6d","slide":5,"name":"Text 13","text":"Direct Inspection","textPreview":"Direct Inspection","textChars":17,"textLines":1,"bbox":[151.77,346.89,133.44,19.2]}
+{"kind":"textbox","id":"sh/n6dcr65o","slide":5,"name":"Text 14","text":"Receiving • Intake\nfull form","textPreview":"Receiving • Intake | full form","textChars":28,"textLines":2,"bbox":[153.69,370.89,129.6,48]}
+{"kind":"shape","id":"sh/w32dkbuh","slide":5,"name":"Shape 15","bbox":[356.29,334.91,148.8,96]}
+{"kind":"textbox","id":"sh/x4vedgvm","slide":5,"name":"Text 16","text":"Process Plan","textPreview":"Process Plan","textChars":12,"textLines":1,"bbox":[363.97,347.39,133.44,19.2]}
+{"kind":"textbox","id":"sh/ahkvi1cb","slide":5,"name":"Text 17","text":"Drier → Packing\nschedule","textPreview":"Drier → Packing | schedule","textChars":24,"textLines":2,"bbox":[365.89,371.39,129.6,48]}
+{"kind":"shape","id":"sh/k7mxovud","slide":5,"name":"Shape 8","bbox":[915.86,323.01,0,0]}
+{"kind":"shape","id":"sh/58vehgvy","slide":5,"name":"Shape 18","bbox":[784.89,334.85,148.8,96]}
+{"kind":"textbox","id":"sh/i54fmlc7","slide":5,"name":"Text 19","text":"Lot-based Check","textPreview":"Lot-based Check","textChars":15,"textLines":1,"bbox":[792.57,347.33,133.44,19.2]}
+{"kind":"textbox","id":"sh/j6dwfqds","slide":5,"name":"Text 20","text":"Auto identity\nprocess form","textPreview":"Auto identity | process form","textChars":26,"textLines":2,"bbox":[794.49,371.33,129.6,48]}
+{"kind":"shape","id":"sh/tcfel0vu","slide":5,"name":"Shape 21","bbox":[568.49,334.73,153.6,96]}
+{"kind":"textbox","id":"sh/hgrmpwj2","slide":5,"name":"Text 22","text":"MC / PP","textPreview":"MC / PP","textChars":7,"textLines":1,"bbox":[576.17,347.21,138.24,19.2]}
+{"kind":"textbox","id":"sh/gfi5grih","slide":5,"name":"Text 23","text":"Value + photo\nrange validation","textPreview":"Value + photo | range validation","textChars":30,"textLines":2,"bbox":[578.09,371.21,134.4,48]}
+{"kind":"shape","id":"sh/ud0ne10b","slide":5,"name":"Shape 24","bbox":[994.2,335.22,148.8,96]}
+{"kind":"textbox","id":"sh/pkr6tgjy","slide":5,"name":"Text 25","text":"Sampling","textPreview":"Sampling","textChars":8,"textLines":1,"bbox":[1001.88,350.39,133.44,19.2]}
+{"kind":"textbox","id":"sh/4ji5kbid","slide":5,"name":"Text 26","text":"Process / request\nSample ID","textPreview":"Process / request | Sample ID","textChars":27,"textLines":2,"bbox":[1003.8,374.39,129.6,48]}
+{"kind":"shape","id":"sh/2h0ni107","slide":5,"name":"Shape 27","bbox":[369.72,561.46,148.8,96]}
+{"kind":"textbox","id":"sh/5o7mhcju","slide":5,"name":"Text 28","text":"Review / Approval","textPreview":"Review / Approval","textChars":17,"textLines":1,"bbox":[377.4,573.94,133.44,19.2]}
+{"kind":"textbox","id":"sh/kny587i9","slide":5,"name":"Text 29","text":"Revise • approve\nstatus lock","textPreview":"Revise • approve | status lock","textChars":28,"textLines":2,"bbox":[379.32,597.94,129.6,48]}
+{"kind":"shape","id":"sh/vu5kbihc","slide":5,"name":"Shape 11","bbox":[861.72,598.24,120,0]}
+{"kind":"shape","id":"sh/wve1knyx","slide":5,"name":"Shape 30","bbox":[664.92,565.3,470.4,88.32]}
+{"kind":"textbox","id":"sh/xwn2dszi","slide":5,"name":"Text 31","text":"Plant Database","textPreview":"Plant Database","textChars":14,"textLines":1,"bbox":[688.92,575.2,148.8,55.76]}
+{"kind":"textbox","id":"sh/ihw3mxg3","slide":5,"name":"Text 32","text":"Own transaction • evidence • role • status • audit trail; bridge sends only agreed summaries.","textPreview":"Own transaction • evidence • role • status • audit trail; bridge sends only agreed summaries.","textChars":93,"textLines":1,"bbox":[856.92,574.24,259.01,56.72]}
+{"kind":"shape","id":"sh/i1cn6hcb","slide":5,"name":"Straight Arrow Connector 34","bbox":[518.52,609.46,146.4,0]}
+{"kind":"shape","id":"sh/p076tgv6","slide":5,"name":"Straight Arrow Connector 35","bbox":[292.89,382.41,63.4,0.5]}
+{"kind":"shape","id":"sh/ozepkbul","slide":5,"name":"Straight Arrow Connector 36","bbox":[505.09,382.73,63.4,0.19]}
+{"kind":"shape","id":"sh/m583eds3","slide":5,"name":"Straight Arrow Connector 37","bbox":[722.09,382.73,62.8,0.13]}
+{"kind":"shape","id":"sh/76hk7ito","slide":5,"name":"Straight Arrow Connector 38","bbox":[933.69,382.85,60.52,0.36]}
+{"kind":"shape","id":"sh/87qlgna9","slide":5,"name":"Connector: Elbow 39","bbox":[917.32,414.02,134.09,168.48]}
+{"kind":"notes","id":"nt/i107q5of","slide":5,"text":"[Sources]\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Plant_Process\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Plant_Flowchart\n[/Sources]"}
+{"kind":"slide","id":"sl/x8f69ofe","slide":6,"title":"Lab/SPL: dari request hingga hasil final","textShapes":16}
+{"kind":"textbox","id":"sh/87ipkzal","slide":6,"name":"Text 0","text":"Lab/SPL: dari request hingga hasil final","textPreview":"Lab/SPL: dari request hingga hasil final","textChars":40,"textLines":1,"bbox":[67.2,43.2,935.22,43.2]}
+{"kind":"textbox","id":"sh/98rqt4r6","slide":6,"name":"Text 1","text":"Lab owns request, receipt, testing, review, approval, dan final status; hanya event yang disepakati tersinkron.","textPreview":"Lab owns request, receipt, testing, review, approval, dan final status; hanya event yang disepakati tersinkron.","textChars":111,"textLines":1,"bbox":[67.2,86.85,844.8,26.88]}
+{"kind":"textbox","id":"sh/yhg7epsj","slide":6,"name":"Text 3","text":"Lab/SPL menstandarkan chain of custody dan result workflow\ndengan approval, retest loop, dan audit history.","textPreview":"Lab/SPL menstandarkan chain of custody dan result workflow | dengan approval, retest loop, dan audit history.","textChars":107,"textLines":2,"bbox":[269.84,179.11,740.32,64.18]}
+{"kind":"shape","id":"sh/zi98nu94","slide":6,"name":"Shape 9","bbox":[108.35,314.43,132.48,82.56]}
+{"kind":"textbox","id":"sh/ml07i9sv","slide":6,"name":"Text 10","text":"Lab Request","textPreview":"Lab Request","textChars":11,"textLines":1,"bbox":[116.03,326.91,117.12,19.2]}
+{"kind":"textbox","id":"sh/7m98ru9g","slide":6,"name":"Text 11","text":"Test • priority\ndue date","textPreview":"Test • priority | due date","textChars":24,"textLines":2,"bbox":[117.95,350.91,113.28,34.56]}
+{"kind":"shape","id":"sh/oryp8fah","slide":6,"name":"Shape 12","bbox":[332.99,314.43,132.48,82.56]}
+{"kind":"textbox","id":"sh/pc76hkr2","slide":6,"name":"Text 13","text":"Sample Receipt","textPreview":"Sample Receipt","textChars":14,"textLines":1,"bbox":[340.67,326.91,117.12,19.2]}
+{"kind":"textbox","id":"sh/h4bupgn6","slide":6,"name":"Text 14","text":"Qty • condition\nchain of custody","textPreview":"Qty • condition | chain of custody","textChars":32,"textLines":2,"bbox":[342.59,350.91,113.28,34.56]}
+{"kind":"shape","id":"sh/w32twb6l","slide":6,"name":"Shape 15","bbox":[557.63,314.43,132.48,82.56]}
+{"kind":"textbox","id":"sh/v2tcn650","slide":6,"name":"Text 16","text":"Assignment","textPreview":"Assignment","textChars":10,"textLines":1,"bbox":[565.31,326.91,117.12,19.2]}
+{"kind":"textbox","id":"sh/u1kbu1ov","slide":6,"name":"Text 17","text":"Analyst • method\nequipment","textPreview":"Analyst • method | equipment","textChars":26,"textLines":2,"bbox":[567.23,350.91,113.28,34.56]}
+{"kind":"shape","id":"sh/5svutgni","slide":6,"name":"Shape 18","bbox":[782.27,314.43,132.48,82.56]}
+{"kind":"textbox","id":"sh/47mt0b6x","slide":6,"name":"Text 19","text":"Testing Result","textPreview":"Testing Result","textChars":14,"textLines":1,"bbox":[789.95,326.91,117.12,19.2]}
+{"kind":"textbox","id":"sh/j6dcr65c","slide":6,"name":"Text 20","text":"Parameter • value\nunit • evidence","textPreview":"Parameter • value | unit • evidence","textChars":33,"textLines":2,"bbox":[791.87,350.91,113.28,34.56]}
+{"kind":"shape","id":"sh/i54bylor","slide":6,"name":"Shape 21","bbox":[1006.91,314.43,132.48,82.56]}
+{"kind":"textbox","id":"sh/twfux0ne","slide":6,"name":"Text 22","text":"Approval","textPreview":"Approval","textChars":8,"textLines":1,"bbox":[1014.59,326.91,117.12,19.2]}
+{"kind":"textbox","id":"sh/svmt4v6t","slide":6,"name":"Text 23","text":"Approve • reject\nre-test","textPreview":"Approve • reject | re-test","textChars":24,"textLines":2,"bbox":[1016.51,350.91,113.28,34.56]}
+{"kind":"shape","id":"sh/cbe5g3ih","slide":6,"name":"Shape 26","bbox":[717.95,481.47,460.8,74.88]}
+{"kind":"textbox","id":"sh/dcnm98zm","slide":6,"name":"Text 27","text":"Bridge ke Plant & Portal: request • receipt • final result • KPI snapshot","textPreview":"Bridge ke Plant & Portal: request • receipt • final result • KPI snapshot","textChars":73,"textLines":1,"bbox":[741.95,507.39,412.8,17.28]}
+{"kind":"shape","id":"sh/qpwnet0b","slide":6,"name":"Shape 30","bbox":[332.99,477.63,132.48,82.56]}
+{"kind":"textbox","id":"sh/bq547yhw","slide":6,"name":"Text 31","text":"PP/TSW Review","textPreview":"PP/TSW Review","textChars":13,"textLines":1,"bbox":[340.67,490.11,117.12,19.2]}
+{"kind":"textbox","id":"sh/0fy5k3id","slide":6,"name":"Text 32","text":"Compare source\nLot + evidence","textPreview":"Compare source | Lot + evidence","textChars":29,"textLines":2,"bbox":[342.59,514.11,113.28,34.56]}
+{"kind":"shape","id":"sh/zaxwbuhw","slide":6,"name":"Straight Arrow Connector 24","bbox":[465.47,355.71,92.16,0]}
+{"kind":"shape","id":"sh/y94v2p0b","slide":6,"name":"Straight Arrow Connector 25","bbox":[240.83,355.71,92.16,0]}
+{"kind":"shape","id":"sh/x8ve9kzq","slide":6,"name":"Straight Arrow Connector 26","bbox":[914.75,355.71,92.16,0]}
+{"kind":"shape","id":"sh/c7md0zi5","slide":6,"name":"Straight Arrow Connector 27","bbox":[690.11,355.71,92.16,0]}
+{"kind":"shape","id":"sh/o3a5cjud","slide":6,"name":"Straight Arrow Connector 28","bbox":[399.23,396.99,0,80.64]}
+{"kind":"shape","id":"sh/p4j6loby","slide":6,"name":"Straight Arrow Connector 29","bbox":[465.47,518.91,252.48,0]}
+{"kind":"shape","id":"sh/21snatc7","slide":6,"name":"Straight Arrow Connector 30","bbox":[1073.15,396.99,0,80.64]}
+{"kind":"shape","id":"sh/n21ojets","slide":6,"name":"Straight Arrow Connector 31","bbox":[848.51,396.99,0,80.64]}
+{"kind":"notes","id":"nt/x8f69ofe","slide":6,"text":"[Sources]\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Lab_Workflow\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Lab_Flowchart\n[/Sources]"}
+{"kind":"slide","id":"sl/gnmp4jqx","slide":7,"title":"Bridge menyinkronkan event—bukan menyatukan database","textShapes":17}
+{"kind":"textbox","id":"sh/ydkbm5sv","slide":7,"name":"Text 0","text":"Bridge menyinkronkan event—bukan menyatukan database","textPreview":"Bridge menyinkronkan event—bukan menyatukan database","textChars":52,"textLines":1,"bbox":[67.2,43.2,935.22,43.2]}
+{"kind":"textbox","id":"sh/zedcfa9g","slide":7,"name":"Text 1","text":"API v1.0 memakai shared key, idempotency, retry, acknowledgement, dan error log.","textPreview":"API v1.0 memakai shared key, idempotency, retry, acknowledgement, dan error log.","textChars":80,"textLines":1,"bbox":[67.2,86.85,844.8,26.88]}
+{"kind":"shape","id":"sh/cb2tkvap","slide":7,"name":"Shape 5","bbox":[64.32,199.68,374.4,139.2]}
+{"kind":"shape","id":"sh/kzmdova1","slide":7,"name":"Shape 6","bbox":[64.32,199.68,9.6,139.2]}
+{"kind":"textbox","id":"sh/s3ml0v61","slide":7,"name":"Text 7","text":"1. Enam event MVP","textPreview":"1. Enam event MVP","textChars":17,"textLines":1,"bbox":[85.44,216.96,340.8,26.88]}
+{"kind":"textbox","id":"sh/d4f2t0nm","slide":7,"name":"Text 8","text":"Request, sample, source test, final result, dan KPI snapshot berpindah melalui event yang eksplisit.","textPreview":"Request, sample, source test, final result, dan KPI snapshot berpindah melalui event yang eksplisit.","textChars":100,"textLines":1,"bbox":[85.44,250.56,340.8,76.8]}
+{"kind":"shape","id":"sh/e5o32lor","slide":7,"name":"Shape 9","bbox":[453.12,199.68,374.4,139.2]}
+{"kind":"shape","id":"sh/f6xkvq5c","slide":7,"name":"Shape 10","bbox":[453.12,199.68,9.6,139.2]}
+{"kind":"textbox","id":"sh/p0zmlk7u","slide":7,"name":"Text 11","text":"2. Reliability by design","textPreview":"2. Reliability by design","textChars":24,"textLines":1,"bbox":[474.24,216.96,340.8,26.88]}
+{"kind":"textbox","id":"sh/ozq5szq9","slide":7,"name":"Text 12","text":"Queue, retry, acknowledgement, replace, dan idempotency mencegah loss atau duplikasi.","textPreview":"Queue, retry, acknowledgement, replace, dan idempotency mencegah loss atau duplikasi.","textChars":85,"textLines":1,"bbox":[474.24,250.56,340.8,76.8]}
+{"kind":"shape","id":"sh/nyh4jupo","slide":7,"name":"Shape 13","bbox":[841.92,199.68,369.6,139.2]}
+{"kind":"shape","id":"sh/2x8nqp83","slide":7,"name":"Shape 14","bbox":[841.92,199.68,9.6,139.2]}
+{"kind":"textbox","id":"sh/x4j6p47q","slide":7,"name":"Text 15","text":"3. Ownership tetap jelas","textPreview":"3. Ownership tetap jelas","textChars":24,"textLines":1,"bbox":[863.04,216.96,336,26.88]}
+{"kind":"textbox","id":"sh/c3a5wzq5","slide":7,"name":"Text 16","text":"Plant dan Lab tetap system of record; bridge menyimpan event, mapping, dan error history.","textPreview":"Plant dan Lab tetap system of record; bridge menyimpan event, mapping, dan error history.","textChars":89,"textLines":1,"bbox":[863.04,250.56,336,76.8]}
+{"kind":"shape","id":"sh/b2h4nupk","slide":7,"name":"Shape 17","bbox":[64.32,421.44,1147.2,230.4]}
+{"kind":"textbox","id":"sh/a18nup8z","slide":7,"name":"Text 18","text":"Kontrak handoff utama","textPreview":"Kontrak handoff utama","textChars":21,"textLines":1,"bbox":[88.32,448.32,240,24]}
+{"kind":"shape","id":"sh/lsj6t47m","slide":7,"name":"Shape 19","bbox":[97.92,494.4,206.4,109.07]}
+{"kind":"textbox","id":"sh/kra50jqh","slide":7,"name":"Text 20","text":"Lab → Plant","textPreview":"Lab → Plant","textChars":11,"textLines":1,"bbox":[105.6,506.88,191.04,19.2]}
+{"kind":"textbox","id":"sh/wneps3ap","slide":7,"name":"Text 21","text":"lab.request.created","textPreview":"lab.request.created","textChars":19,"textLines":1,"bbox":[93.92,534.54,214.4,61.13]}
+{"kind":"shape","id":"sh/honq18ru","slide":7,"name":"Shape 22","bbox":[313.92,540.86,62.4,24]}
+{"kind":"shape","id":"sh/ulc7qdsj","slide":7,"name":"Shape 23","bbox":[385.92,494.4,216,109.07]}
+{"kind":"textbox","id":"sh/vm58zi94","slide":7,"name":"Text 24","text":"Plant → Lab","textPreview":"Plant → Lab","textChars":11,"textLines":1,"bbox":[393.6,506.88,200.64,19.2]}
+{"kind":"textbox","id":"sh/8jupo3ad","slide":7,"name":"Text 25","text":"plant.sample.sent\nplant.test.submitted","textPreview":"plant.sample.sent | plant.test.submitted","textChars":38,"textLines":2,"bbox":[395.52,530.88,196.8,43.2]}
+{"kind":"shape","id":"sh/9k3qx8ry","slide":7,"name":"Shape 26","bbox":[612.48,540.62,60.48,24]}
+{"kind":"shape","id":"sh/mxc7mts7","slide":7,"name":"Shape 27","bbox":[683.52,494.4,206.4,109.07]}
+{"kind":"textbox","id":"sh/7yl8vy9s","slide":7,"name":"Text 28","text":"Lab → Plant","textPreview":"Lab → Plant","textChars":11,"textLines":1,"bbox":[691.2,506.88,191.04,19.2]}
+{"kind":"textbox","id":"sh/sfy907ah","slide":7,"name":"Text 29","text":"lab.sample.received\nlab.result.finalized","textPreview":"lab.sample.received | lab.result.finalized","textChars":40,"textLines":2,"bbox":[693.12,533.91,187.2,55.96]}
+{"kind":"shape","id":"sh/tg7q9sr2","slide":7,"name":"Shape 30","bbox":[900.48,540.62,60.48,24]}
+{"kind":"shape","id":"sh/na9sz6tk","slide":7,"name":"Shape 31","bbox":[971.52,494.4,177.6,109.07]}
+{"kind":"textbox","id":"sh/290bq1cz","slide":7,"name":"Text 32","text":"Modules → Portal","textPreview":"Modules → Portal","textChars":16,"textLines":1,"bbox":[979.2,506.88,162.24,19.2]}
+{"kind":"textbox","id":"sh/pcra1wba","slide":7,"name":"Text 33","text":"module.kpi.snapshot","textPreview":"module.kpi.snapshot","textChars":19,"textLines":1,"bbox":[981.12,530.88,158.4,43.2]}
+{"kind":"notes","id":"nt/gnmp4jqx","slide":7,"text":"[Sources]\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Bridge_Contract\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Status_Rules\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Data_Model\n[/Sources]"}
+{"kind":"slide","id":"sl/fu1gfa1s","slide":8,"title":"MVP mencakup 20 layar dengan pengalaman web + PWA","textShapes":17}
+{"kind":"textbox","id":"sh/ri9g7uhw","slide":8,"name":"Text 0","text":"MVP mencakup 20 layar dengan pengalaman web + PWA","textPreview":"MVP mencakup 20 layar dengan pengalaman web + PWA","textChars":49,"textLines":1,"bbox":[67.2,43.2,935.22,43.2]}
+{"kind":"textbox","id":"sh/6h0fypgb","slide":8,"name":"Text 1","text":"Role matrix menjaga setiap pengguna hanya melihat dan mengubah fungsi yang relevan.","textPreview":"Role matrix menjaga setiap pengguna hanya melihat dan mengubah fungsi yang relevan.","textChars":83,"textLines":1,"bbox":[67.2,86.85,844.8,26.88]}
+{"kind":"textbox","id":"sh/18byd4zy","slide":8,"name":"Text 3","text":"Web untuk mengelola dan mereview; PWA untuk eksekusi singkat di titik kerja.","textPreview":"Web untuk mengelola dan mereview; PWA untuk eksekusi singkat di titik kerja.","textChars":76,"textLines":1,"bbox":[222.4,148.7,835.2,94.54]}
+{"kind":"shape","id":"sh/tkby9kzm","slide":8,"name":"Shape 5","bbox":[98.56,299.62,273.6,158.4]}
+{"kind":"shape","id":"sh/sjix0zy1","slide":8,"name":"Shape 6","bbox":[98.56,299.62,9.6,158.4]}
+{"kind":"textbox","id":"sh/je9g3ahk","slide":8,"name":"Text 7","text":"Global Portal","textPreview":"Global Portal","textChars":13,"textLines":1,"bbox":[119.68,316.9,240,26.88]}
+{"kind":"textbox","id":"sh/id0fu50z","slide":8,"name":"Text 8","text":"Login/SSO, module launcher, global dashboard, dan access admin.","textPreview":"Login/SSO, module launcher, global dashboard, dan access admin.","textChars":63,"textLines":1,"bbox":[119.68,350.5,240,96]}
+{"kind":"shape","id":"sh/o7ydoret","slide":8,"name":"Shape 9","bbox":[376.96,299.62,273.6,158.4]}
+{"kind":"shape","id":"sh/98rehwve","slide":8,"name":"Shape 10","bbox":[376.96,299.62,9.6,158.4]}
+{"kind":"textbox","id":"sh/m5gvmhwn","slide":8,"name":"Text 11","text":"Plant Web + PWA","textPreview":"Plant Web + PWA","textChars":15,"textLines":1,"bbox":[398.08,316.9,240,26.88]}
+{"kind":"textbox","id":"sh/n6pwfmd8","slide":8,"name":"Text 12","text":"Lot plan, direct/lot-based inspection, MC/PP, sampling, dan reports.","textPreview":"Lot plan, direct/lot-based inspection, MC/PP, sampling, dan reports.","textChars":68,"textLines":1,"bbox":[398.08,350.5,240,96]}
+{"kind":"shape","id":"sh/0jydkreh","slide":8,"name":"Shape 13","bbox":[655.36,299.62,273.6,158.4]}
+{"kind":"shape","id":"sh/1k7edwv2","slide":8,"name":"Shape 14","bbox":[655.36,299.62,9.6,158.4]}
+{"kind":"textbox","id":"sh/ehgvihwr","slide":8,"name":"Text 15","text":"Lab Web + PWA","textPreview":"Lab Web + PWA","textChars":13,"textLines":1,"bbox":[676.48,316.9,240,26.88]}
+{"kind":"textbox","id":"sh/zipwbmdc","slide":8,"name":"Text 16","text":"Request, sample receipt, result input, source review, approval, dan reports.","textPreview":"Request, sample receipt, result input, source review, approval, dan reports.","textChars":76,"textLines":1,"bbox":[676.48,350.5,240,96]}
+{"kind":"shape","id":"sh/kfixwbe1","slide":8,"name":"Shape 17","bbox":[933.76,299.62,273.6,158.4]}
+{"kind":"shape","id":"sh/lgbepgvm","slide":8,"name":"Shape 18","bbox":[933.76,299.62,9.6,158.4]}
+{"kind":"textbox","id":"sh/tw7e9gnq","slide":8,"name":"Text 19","text":"Admin & control","textPreview":"Admin & control","textChars":15,"textLines":1,"bbox":[954.88,316.9,240,26.88]}
+{"kind":"textbox","id":"sh/svydgb65","slide":8,"name":"Text 20","text":"RBAC, master data, sync monitor, export Excel/PDF, dan audit history.","textPreview":"RBAC, master data, sync monitor, export Excel/PDF, dan audit history.","textChars":69,"textLines":1,"bbox":[954.88,350.5,240,96]}
+{"kind":"shape","id":"sh/7u5w765k","slide":8,"name":"Shape 21","bbox":[114.88,531.42,1065.6,134.4]}
+{"kind":"textbox","id":"sh/6twve1oz","slide":8,"name":"Text 22","text":"Reusable interaction pattern","textPreview":"Reusable interaction pattern","textChars":28,"textLines":1,"bbox":[138.88,543.9,399.41,30.72]}
+{"kind":"shape","id":"sh/5sne5wne","slide":8,"name":"Shape 23","bbox":[143.68,603.42,30.72,30.72]}
+{"kind":"textbox","id":"sh/kredcr6t","slide":8,"name":"Text 24","text":"Dashboard / inbox","textPreview":"Dashboard / inbox","textChars":17,"textLines":1,"bbox":[182.08,611.36,139.2,15.36]}
+{"kind":"shape","id":"sh/jq5w365o","slide":8,"name":"Shape 25","bbox":[345.28,603.42,30.72,30.72]}
+{"kind":"textbox","id":"sh/i5wva1o3","slide":8,"name":"Text 26","text":"List + filter","textPreview":"List + filter","textChars":13,"textLines":1,"bbox":[383.68,611.36,139.2,15.36]}
+{"kind":"shape","id":"sh/x4ne1wni","slide":8,"name":"Shape 27","bbox":[546.88,603.42,30.72,30.72]}
+{"kind":"textbox","id":"sh/w3ed8r6x","slide":8,"name":"Text 28","text":"Detail / form","textPreview":"Detail / form","textChars":13,"textLines":1,"bbox":[585.28,611.36,139.2,15.36]}
+{"kind":"shape","id":"sh/m9sb2x4v","slide":8,"name":"Shape 29","bbox":[748.48,603.42,30.72,30.72]}
+{"kind":"textbox","id":"sh/na1sb2lg","slide":8,"name":"Text 30","text":"Review / decision","textPreview":"Review / decision","textChars":17,"textLines":1,"bbox":[786.88,611.36,139.2,15.36]}
+{"kind":"shape","id":"sh/8bat47ml","slide":8,"name":"Shape 31","bbox":[950.08,603.42,30.72,30.72]}
+{"kind":"textbox","id":"sh/9w3uds36","slide":8,"name":"Text 32","text":"Report / export","textPreview":"Report / export","textChars":15,"textLines":1,"bbox":[988.48,611.36,163.2,15.36]}
+{"kind":"notes","id":"nt/fu1gfa1s","slide":8,"text":"[Sources]\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Screen_Register\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Role_Access\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — UI_Blueprint\n[/Sources]"}
+{"kind":"slide","id":"sl/udsvah03","slide":9,"title":"KPI diarahkan ke exception, handoff, dan keputusan","textShapes":17}
+{"kind":"textbox","id":"sh/nex4jq5k","slide":9,"name":"Text 0","text":"KPI diarahkan ke exception, handoff, dan keputusan","textPreview":"KPI diarahkan ke exception, handoff, dan keputusan","textChars":50,"textLines":1,"bbox":[67.2,43.2,935.22,43.2]}
+{"kind":"textbox","id":"sh/mdonql4z","slide":9,"name":"Text 1","text":"Definisi berasal dari register KPI blueprint; target numerik dikunci saat baseline dan UAT.","textPreview":"Definisi berasal dari register KPI blueprint; target numerik dikunci saat baseline dan UAT.","textChars":91,"textLines":1,"bbox":[67.2,86.85,844.8,26.88]}
+{"kind":"textbox","id":"sh/1cfmhgne","slide":9,"name":"Text 3","text":"Dashboard menunjukkan apa yang terlambat, gagal, atau perlu tindakan—bukan hanya volume aktivitas.","textPreview":"Dashboard menunjukkan apa yang terlambat, gagal, atau perlu tindakan—bukan hanya volume aktivitas.","textChars":98,"textLines":1,"bbox":[222.4,148.7,835.2,94.54]}
+{"kind":"shape","id":"sh/9gzml0nq","slide":9,"name":"Shape 5","bbox":[98.56,299.62,273.6,158.4]}
+{"kind":"shape","id":"sh/ofq5svm5","slide":9,"name":"Shape 6","bbox":[98.56,299.62,9.6,158.4]}
+{"kind":"textbox","id":"sh/bih4na5w","slide":9,"name":"Text 7","text":"Plant control","textPreview":"Plant control","textChars":13,"textLines":1,"bbox":[119.68,316.9,240,26.88]}
+{"kind":"textbox","id":"sh/ah8nu54b","slide":9,"name":"Text 8","text":"Pending inspection, pass rate, open OOS, serta sample ready/sent.","textPreview":"Pending inspection, pass rate, open OOS, serta sample ready/sent.","textChars":65,"textLines":1,"bbox":[119.68,350.5,240,96]}
+{"kind":"shape","id":"sh/oza1gfyh","slide":9,"name":"Shape 9","bbox":[376.96,299.62,273.6,158.4]}
+{"kind":"shape","id":"sh/p0ji9kf2","slide":9,"name":"Shape 10","bbox":[376.96,299.62,9.6,158.4]}
+{"kind":"textbox","id":"sh/2xsjepgb","slide":9,"name":"Text 11","text":"Lab control","textPreview":"Lab control","textChars":11,"textLines":1,"bbox":[398.08,316.9,240,26.88]}
+{"kind":"textbox","id":"sh/3y107axw","slide":9,"name":"Text 12","text":"Pending request, sample aging, approval TAT, dan re-test rate.","textPreview":"Pending request, sample aging, approval TAT, dan re-test rate.","textChars":62,"textLines":1,"bbox":[398.08,350.5,240,96]}
+{"kind":"shape","id":"sh/cnu1kzyd","slide":9,"name":"Shape 13","bbox":[655.36,299.62,273.6,158.4]}
+{"kind":"shape","id":"sh/do3id4fy","slide":9,"name":"Shape 14","bbox":[655.36,299.62,9.6,158.4]}
+{"kind":"textbox","id":"sh/qlcjipgn","slide":9,"name":"Text 15","text":"Global control","textPreview":"Global control","textChars":14,"textLines":1,"bbox":[676.48,316.9,240,26.88]}
+{"kind":"textbox","id":"sh/bml0buxs","slide":9,"name":"Text 16","text":"End-to-end Lot status, overdue handoff, dan module KPI snapshot.","textPreview":"End-to-end Lot status, overdue handoff, dan module KPI snapshot.","textChars":64,"textLines":1,"bbox":[676.48,350.5,240,96]}
+{"kind":"shape","id":"sh/0ru1ozyp","slide":9,"name":"Shape 17","bbox":[933.76,299.62,273.6,158.4]}
+{"kind":"shape","id":"sh/lsn2h4fa","slide":9,"name":"Shape 18","bbox":[933.76,299.62,9.6,158.4]}
+{"kind":"textbox","id":"sh/98ji147e","slide":9,"name":"Text 19","text":"Integration control","textPreview":"Integration control","textChars":19,"textLines":1,"bbox":[954.88,316.9,240,26.88]}
+{"kind":"textbox","id":"sh/87a18zqt","slide":9,"name":"Text 20","text":"Queued/confirmed/failed event, sync age, retry, dan source-target.","textPreview":"Queued/confirmed/failed event, sync age, retry, dan source-target.","textChars":66,"textLines":1,"bbox":[954.88,350.5,240,96]}
+{"kind":"shape","id":"sh/76h0zup8","slide":9,"name":"Shape 21","bbox":[114.88,531.42,1065.6,134.4]}
+{"kind":"textbox","id":"sh/ml8j6p8n","slide":9,"name":"Text 22","text":"Minimum filter dan audit context","textPreview":"Minimum filter dan audit context","textChars":32,"textLines":1,"bbox":[138.88,543.9,399.41,30.72]}
+{"kind":"shape","id":"sh/hcji5o7a","slide":9,"name":"Shape 23","bbox":[143.68,603.42,30.72,30.72]}
+{"kind":"textbox","id":"sh/wba1cjqp","slide":9,"name":"Text 24","text":"Tanggal / lokasi","textPreview":"Tanggal / lokasi","textChars":16,"textLines":1,"bbox":[182.08,611.36,139.2,15.36]}
+{"kind":"shape","id":"sh/va103ep4","slide":9,"name":"Shape 25","bbox":[345.28,603.42,30.72,30.72]}
+{"kind":"textbox","id":"sh/u9sja98z","slide":9,"name":"Text 26","text":"Produk / proses","textPreview":"Produk / proses","textChars":15,"textLines":1,"bbox":[383.68,611.36,139.2,15.36]}
+{"kind":"shape","id":"sh/xgzitk76","slide":9,"name":"Shape 27","bbox":[546.88,603.42,30.72,30.72]}
+{"kind":"textbox","id":"sh/cf6h0fql","slide":9,"name":"Text 28","text":"Owner / analyst","textPreview":"Owner / analyst","textChars":15,"textLines":1,"bbox":[585.28,611.36,139.2,15.36]}
+{"kind":"shape","id":"sh/2l4faloj","slide":9,"name":"Shape 29","bbox":[748.48,603.42,30.72,30.72]}
+{"kind":"textbox","id":"sh/nmdg3q54","slide":9,"name":"Text 30","text":"Status / priority","textPreview":"Status / priority","textChars":17,"textLines":1,"bbox":[786.88,611.36,139.2,15.36]}
+{"kind":"shape","id":"sh/onmxcv69","slide":9,"name":"Shape 31","bbox":[950.08,603.42,30.72,30.72]}
+{"kind":"textbox","id":"sh/pofy50nu","slide":9,"name":"Text 32","text":"Lot / request / sample","textPreview":"Lot / request / sample","textChars":22,"textLines":1,"bbox":[988.48,611.36,163.2,15.36]}
+{"kind":"notes","id":"nt/udsvah03","slide":9,"text":"[Sources]\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Dashboard_KPI\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Status_Rules\n[/Sources]"}
+{"kind":"slide","id":"sl/m90b6t0r","slide":10,"title":"MVP dapat go-live dalam 10 minggu dengan gate yang jelas","textShapes":19}
+{"kind":"textbox","id":"sh/zelojyl8","slide":10,"name":"Text 0","text":"MVP dapat go-live dalam 10 minggu dengan gate yang jelas","textPreview":"MVP dapat go-live dalam 10 minggu dengan gate yang jelas","textChars":56,"textLines":1,"bbox":[67.2,43.2,935.22,43.2]}
+{"kind":"textbox","id":"sh/ydcnatkn","slide":10,"name":"Text 1","text":"Plant, Lab, dan bridge dibangun paralel setelah contract dan field list dikunci.","textPreview":"Plant, Lab, dan bridge dibangun paralel setelah contract dan field list dikunci.","textChars":80,"textLines":1,"bbox":[67.2,86.85,844.8,26.88]}
+{"kind":"textbox","id":"sh/cbu58j2h","slide":10,"name":"Text 3","text":"Setiap fase menghasilkan output yang dapat direview—bukan menunggu semuanya selesai.","textPreview":"Setiap fase menghasilkan output yang dapat direview—bukan menunggu semuanya selesai.","textChars":84,"textLines":1,"bbox":[160.39,175.8,959.22,73.36]}
+{"kind":"shape","id":"sh/725onyl4","slide":10,"name":"Shape 5","bbox":[72,340.8,225.6,158.4]}
+{"kind":"shape","id":"sh/m1cnetkj","slide":10,"name":"Shape 6","bbox":[83.52,357.12,36.48,36.48]}
+{"kind":"textbox","id":"sh/s7yt4b21","slide":10,"name":"Text 7","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[83.52,370.56,36.48,9.6]}
+{"kind":"textbox","id":"sh/d87uxg3m","slide":10,"name":"Text 8","text":"W1","textPreview":"W1","textChars":2,"textLines":1,"bbox":[228.48,362.88,52.8,11.52]}
+{"kind":"textbox","id":"sh/q5gb21kb","slide":10,"name":"Text 9","text":"Lock architecture, field, role, dan bridge contract","textPreview":"Lock architecture, field, role, dan bridge contract","textChars":51,"textLines":1,"bbox":[87.36,405.12,193.92,69.12]}
+{"kind":"shape","id":"sh/r6pcv6lw","slide":10,"name":"Shape 10","bbox":[314.88,340.8,225.6,158.4]}
+{"kind":"shape","id":"sh/0bit8b2d","slide":10,"name":"Shape 11","bbox":[326.4,357.12,36.48,36.48]}
+{"kind":"textbox","id":"sh/1cru1g3y","slide":10,"name":"Text 12","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[326.4,370.56,36.48,9.6]}
+{"kind":"textbox","id":"sh/e9gb61k7","slide":10,"name":"Text 13","text":"W2","textPreview":"W2","textChars":2,"textLines":1,"bbox":[471.36,362.88,52.8,11.52]}
+{"kind":"textbox","id":"sh/fapcz6ls","slide":10,"name":"Text 14","text":"UX portal + module navigation; prototype approved","textPreview":"UX portal + module navigation; prototype approved","textChars":49,"textLines":1,"bbox":[330.24,405.12,193.92,69.12]}
+{"kind":"shape","id":"sh/ozitcv29","slide":10,"name":"Shape 15","bbox":[557.76,340.8,225.6,158.4]}
+{"kind":"shape","id":"sh/p0ru503u","slide":10,"name":"Shape 16","bbox":[569.28,357.12,36.48,36.48]}
+{"kind":"textbox","id":"sh/xwnupgvy","slide":10,"name":"Text 17","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[569.28,370.56,36.48,9.6]}
+{"kind":"textbox","id":"sh/wvetgbud","slide":10,"name":"Text 18","text":"W3–6","textPreview":"W3–6","textChars":4,"textLines":1,"bbox":[714.24,362.88,52.8,11.52]}
+{"kind":"textbox","id":"sh/bu5cnqd8","slide":10,"name":"Text 19","text":"Build Plant + Lab web/PWA","textPreview":"Build Plant + Lab web/PWA","textChars":25,"textLines":1,"bbox":[573.12,405.12,193.92,69.12]}
+{"kind":"shape","id":"sh/atwbelcn","slide":10,"name":"Shape 20","bbox":[800.64,340.8,225.6,158.4]}
+{"kind":"shape","id":"sh/lk7ut0va","slide":10,"name":"Shape 21","bbox":[812.16,357.12,36.48,36.48]}
+{"kind":"textbox","id":"sh/kjytkvup","slide":10,"name":"Text 22","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[812.16,370.56,36.48,9.6]}
+{"kind":"textbox","id":"sh/3itwnex8","slide":10,"name":"Text 23","text":"W3–8","textPreview":"W3–8","textChars":4,"textLines":1,"bbox":[957.12,362.88,52.8,11.52]}
+{"kind":"textbox","id":"sh/gfixszex","slide":10,"name":"Text 24","text":"Bridge, dashboard, report, dan global portal","textPreview":"Bridge, dashboard, report, dan global portal","textChars":44,"textLines":1,"bbox":[816,405.12,193.92,69.12]}
+{"kind":"shape","id":"sh/hgrel4fi","slide":10,"name":"Shape 25","bbox":[1043.52,340.8,225.6,158.4]}
+{"kind":"shape","id":"sh/ud0vqpwr","slide":10,"name":"Shape 26","bbox":[1055.04,357.12,36.48,36.48]}
+{"kind":"textbox","id":"sh/fe9wjuxc","slide":10,"name":"Text 27","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[1055.04,370.56,36.48,9.6]}
+{"kind":"textbox","id":"sh/sridofel","slide":10,"name":"Text 28","text":"W9–10","textPreview":"W9–10","textChars":5,"textLines":1,"bbox":[1200,362.88,52.8,11.52]}
+{"kind":"textbox","id":"sh/tsrehkf6","slide":10,"name":"Text 29","text":"E2E UAT, fixes, deploy, training, dan handover","textPreview":"E2E UAT, fixes, deploy, training, dan handover","textChars":46,"textLines":1,"bbox":[1058.88,405.12,193.92,69.12]}
+{"kind":"shape","id":"sh/98julg7a","slide":10,"name":"Shape 30","bbox":[88.32,585.6,1094.4,91.2]}
+{"kind":"textbox","id":"sh/87atcb6p","slide":10,"name":"Text 31","text":"Gate: scope sign-off W1 • prototype W2 • feature complete W6 • reports/portal W8 • critical defects closed W9 • go-live W10.","textPreview":"Gate: scope sign-off W1 • prototype W2 • feature complete W6 • reports/portal W8 • critical defects closed W9 • go-live W10.","textChars":124,"textLines":1,"bbox":[110.4,616.32,1051.2,24.96]}
+{"kind":"notes","id":"nt/m90b6t0r","slide":10,"text":"[Sources]\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Implementation\n[/Sources]"}
+{"kind":"slide","id":"sl/jetc3ut0","slide":11,"title":"Quotation MVP Rp235 juta—masih menyisakan buffer Rp15 juta","textShapes":17}
+{"kind":"textbox","id":"sh/n69grmpw","slide":11,"name":"Text 0","text":"Quotation MVP Rp235 juta—masih menyisakan buffer Rp15 juta","textPreview":"Quotation MVP Rp235 juta—masih menyisakan buffer Rp15 juta","textChars":58,"textLines":1,"bbox":[67.2,43.2,935.22,43.2]}
+{"kind":"textbox","id":"sh/250zy18b","slide":11,"name":"Text 1","text":"Plant Rp130 juta dan Lab/SPL Rp105 juta sudah mencakup alokasi bridge masing-masing Rp20 juta.","textPreview":"Plant Rp130 juta dan Lab/SPL Rp105 juta sudah mencakup alokasi bridge masing-masing Rp20 juta.","textChars":94,"textLines":1,"bbox":[67.2,86.85,844.8,26.88]}
+{"kind":"shape","id":"sh/xcryxg7y","slide":11,"name":"Shape 5","bbox":[64.32,199.68,374.4,139.2]}
+{"kind":"shape","id":"sh/98rytw72","slide":11,"name":"Shape 6","bbox":[64.32,199.68,9.6,139.2]}
+{"kind":"textbox","id":"sh/j2lgjq5w","slide":11,"name":"Text 7","text":"Plant — Rp130 juta","textPreview":"Plant — Rp130 juta","textChars":18,"textLines":1,"bbox":[85.44,216.96,340.8,26.88]}
+{"kind":"textbox","id":"sh/y1czalob","slide":11,"name":"Text 8","text":"Standalone core Rp110 juta + bridge allocation Rp20 juta.","textPreview":"Standalone core Rp110 juta + bridge allocation Rp20 juta.","textChars":57,"textLines":1,"bbox":[85.44,250.56,340.8,76.8]}
+{"kind":"shape","id":"sh/p07ixkn6","slide":11,"name":"Shape 9","bbox":[453.12,199.68,374.4,139.2]}
+{"kind":"shape","id":"sh/4zyhofml","slide":11,"name":"Shape 10","bbox":[453.12,199.68,9.6,139.2]}
+{"kind":"textbox","id":"sh/m58fih43","slide":11,"name":"Text 11","text":"Lab/SPL — Rp105 juta","textPreview":"Lab/SPL — Rp105 juta","textChars":20,"textLines":1,"bbox":[474.24,216.96,340.8,26.88]}
+{"kind":"textbox","id":"sh/n61wbmlo","slide":11,"name":"Text 12","text":"Standalone core Rp85 juta + bridge allocation Rp20 juta.","textPreview":"Standalone core Rp85 juta + bridge allocation Rp20 juta.","textChars":56,"textLines":1,"bbox":[474.24,250.56,340.8,76.8]}
+{"kind":"shape","id":"sh/o7axk7m9","slide":11,"name":"Shape 13","bbox":[841.92,199.68,369.6,139.2]}
+{"kind":"shape","id":"sh/98jedc3u","slide":11,"name":"Shape 14","bbox":[841.92,199.68,9.6,139.2]}
+{"kind":"textbox","id":"sh/eh8fex47","slide":11,"name":"Text 15","text":"Total MVP — Rp235 juta","textPreview":"Total MVP — Rp235 juta","textChars":22,"textLines":1,"bbox":[863.04,216.96,336,26.88]}
+{"kind":"textbox","id":"sh/z2hw72lc","slide":11,"name":"Text 16","text":"Plant + Lab/SPL, termasuk total bridge Rp40 juta.","textPreview":"Plant + Lab/SPL, termasuk total bridge Rp40 juta.","textChars":49,"textLines":1,"bbox":[863.04,250.56,336,76.8]}
+{"kind":"shape","id":"sh/03qxg7mx","slide":11,"name":"Shape 17","bbox":[64.32,421.44,1147.2,230.4]}
+{"kind":"textbox","id":"sh/14ze9c3i","slide":11,"name":"Text 18","text":"Commercial benchmark","textPreview":"Commercial benchmark","textChars":20,"textLines":1,"bbox":[88.32,448.32,240,24]}
+{"kind":"shape","id":"sh/ydcfq1kb","slide":11,"name":"Shape 19","bbox":[97.92,494.4,206.4,109.07]}
+{"kind":"textbox","id":"sh/jylwj6lw","slide":11,"name":"Text 20","text":"Reference value","textPreview":"Reference value","textChars":15,"textLines":1,"bbox":[105.6,506.88,191.04,19.2]}
+{"kind":"textbox","id":"sh/3qhsfypc","slide":11,"name":"Text 21","text":"Rp336 juta\nUnbundled","textPreview":"Rp336 juta | Unbundled","textChars":20,"textLines":2,"bbox":[93.92,534.54,214.4,61.13]}
+{"kind":"shape","id":"sh/ip8bmtor","slide":11,"name":"Shape 22","bbox":[313.92,540.86,62.4,24]}
+{"kind":"shape","id":"sh/5sjah872","slide":11,"name":"Shape 23","bbox":[385.92,494.4,216,109.07]}
+{"kind":"textbox","id":"sh/4rato36h","slide":11,"name":"Text 24","text":"Special bundle","textPreview":"Special bundle","textChars":14,"textLines":1,"bbox":[393.6,506.88,200.64,19.2]}
+{"kind":"textbox","id":"sh/v2hsbyp0","slide":11,"name":"Text 25","text":"Rp235 juta\nProposed","textPreview":"Rp235 juta | Proposed","textChars":19,"textLines":2,"bbox":[395.52,530.88,196.8,43.2]}
+{"kind":"shape","id":"sh/u18bit8f","slide":11,"name":"Shape 26","bbox":[612.48,540.62,60.48,24]}
+{"kind":"shape","id":"sh/h4zado76","slide":11,"name":"Shape 27","bbox":[683.52,494.4,206.4,109.07]}
+{"kind":"textbox","id":"sh/g3qtkj6l","slide":11,"name":"Text 28","text":"Package efficiency","textPreview":"Package efficiency","textChars":18,"textLines":1,"bbox":[691.2,506.88,191.04,19.2]}
+{"kind":"textbox","id":"sh/fy1cnipk","slide":11,"name":"Text 29","text":"Rp101 juta\nvs. reference","textPreview":"Rp101 juta | vs. reference","textChars":24,"textLines":2,"bbox":[693.12,533.91,187.2,55.96]}
+{"kind":"shape","id":"sh/exsbudoz","slide":11,"name":"Shape 30","bbox":[900.48,540.62,60.48,24]}
+{"kind":"shape","id":"sh/c3mpof6h","slide":11,"name":"Shape 31","bbox":[971.52,494.4,177.6,109.07]}
+{"kind":"textbox","id":"sh/x4vqhknm","slide":11,"name":"Text 32","text":"Program ceiling","textPreview":"Program ceiling","textChars":15,"textLines":1,"bbox":[979.2,506.88,162.24,19.2]}
+{"kind":"textbox","id":"sh/a147m5ob","slide":11,"name":"Text 33","text":"Rp250 juta\nBuffer Rp15 juta","textPreview":"Rp250 juta | Buffer Rp15 juta","textChars":27,"textLines":2,"bbox":[981.12,530.88,158.4,43.2]}
+{"kind":"notes","id":"nt/jetc3ut0","slide":11,"text":"Calculation: Plant 110+20=130; Lab/SPL 85+20=105; total 235; reference efficiency 336-235=101; reserve 250-235=15 (Rp juta).\n[Sources]\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Summary\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Budgeting\n[/Sources]"}
+{"kind":"slide","id":"sl/8f2psfyx","slide":12,"title":"Plant standalone core: Rp110 juta","textShapes":17}
+{"kind":"textbox","id":"sh/ra943il8","slide":12,"name":"Text 0","text":"Plant standalone core: Rp110 juta","textPreview":"Plant standalone core: Rp110 juta","textChars":33,"textLines":1,"bbox":[67.2,43.2,935.22,43.2]}
+{"kind":"textbox","id":"sh/q903ad4n","slide":12,"name":"Text 1","text":"Tujuh work package mencakup siklus operasional web/PWA; bridge allocation Rp20 juta ditampilkan terpisah.","textPreview":"Tujuh work package mencakup siklus operasional web/PWA; bridge allocation Rp20 juta ditampilkan terpisah.","textChars":105,"textLines":1,"bbox":[67.2,86.85,844.8,26.88]}
+{"kind":"shape","id":"sh/1gbm9s3a","slide":12,"name":"Shape 5","bbox":[64.32,199.68,374.4,139.2]}
+{"kind":"shape","id":"sh/dcbm583y","slide":12,"name":"Shape 6","bbox":[64.32,199.68,9.6,139.2]}
+{"kind":"textbox","id":"sh/7u94zmhs","slide":12,"name":"Text 7","text":"Requirement & UX — Rp8 jt","textPreview":"Requirement & UX — Rp8 jt","textChars":25,"textLines":1,"bbox":[85.44,216.96,340.8,26.88]}
+{"kind":"textbox","id":"sh/6t0n6hg7","slide":12,"name":"Text 8","text":"Scope, field, process map, dan prototype.","textPreview":"Scope, field, process map, dan prototype.","textChars":41,"textLines":1,"bbox":[85.44,250.56,340.8,76.8]}
+{"kind":"shape","id":"sh/dcv6dgz2","slide":12,"name":"Shape 9","bbox":[453.12,199.68,374.4,139.2]}
+{"kind":"shape","id":"sh/cbm5kbyh","slide":12,"name":"Shape 10","bbox":[453.12,199.68,9.6,139.2]}
+{"kind":"textbox","id":"sh/alwbitsn","slide":12,"name":"Text 11","text":"Frontend web + PWA — Rp22 jt","textPreview":"Frontend web + PWA — Rp22 jt","textChars":28,"textLines":1,"bbox":[474.24,216.96,340.8,26.88]}
+{"kind":"textbox","id":"sh/bm5sryt8","slide":12,"name":"Text 12","text":"Plant channels, task flow, dan responsive forms.","textPreview":"Plant channels, task flow, dan responsive forms.","textChars":48,"textLines":1,"bbox":[474.24,250.56,340.8,76.8]}
+{"kind":"shape","id":"sh/wnetkjat","slide":12,"name":"Shape 13","bbox":[841.92,199.68,369.6,139.2]}
+{"kind":"shape","id":"sh/xonutobe","slide":12,"name":"Shape 14","bbox":[841.92,199.68,9.6,139.2]}
+{"kind":"textbox","id":"sh/mhcbe9sr","slide":12,"name":"Text 15","text":"Inspection modules — Rp38 jt","textPreview":"Inspection modules — Rp38 jt","textChars":28,"textLines":1,"bbox":[863.04,216.96,336,26.88]}
+{"kind":"textbox","id":"sh/nilsnetc","slide":12,"name":"Text 16","text":"Direct inspection + Drier–Packing lot-based.","textPreview":"Direct inspection + Drier–Packing lot-based.","textChars":44,"textLines":1,"bbox":[863.04,250.56,336,76.8]}
+{"kind":"shape","id":"sh/ojutgjah","slide":12,"name":"Shape 17","bbox":[64.32,421.44,1147.2,230.4]}
+{"kind":"textbox","id":"sh/9k3apob2","slide":12,"name":"Text 18","text":"Paket core Plant","textPreview":"Paket core Plant","textChars":16,"textLines":1,"bbox":[88.32,448.32,240,24]}
+{"kind":"shape","id":"sh/6dgbqdsv","slide":12,"name":"Shape 19","bbox":[97.92,494.4,206.4,109.07]}
+{"kind":"textbox","id":"sh/7epczitg","slide":12,"name":"Text 20","text":"Toller + sampling","textPreview":"Toller + sampling","textChars":17,"textLines":1,"bbox":[105.6,506.88,191.04,19.2]}
+{"kind":"textbox","id":"sh/r6l8vaxw","slide":12,"name":"Text 21","text":"Rp16 jt\nMC/PP/photo/sample","textPreview":"Rp16 jt | MC/PP/photo/sample","textChars":26,"textLines":2,"bbox":[93.92,534.54,214.4,61.13]}
+{"kind":"shape","id":"sh/q5c7m5wb","slide":12,"name":"Shape 22","bbox":[313.92,540.86,62.4,24]}
+{"kind":"shape","id":"sh/d8nqxkf2","slide":12,"name":"Shape 23","bbox":[385.92,494.4,216,109.07]}
+{"kind":"textbox","id":"sh/s7epofeh","slide":12,"name":"Text 24","text":"Backend + database","textPreview":"Backend + database","textChars":18,"textLines":1,"bbox":[393.6,506.88,200.64,19.2]}
+{"kind":"textbox","id":"sh/j2lorqxk","slide":12,"name":"Text 25","text":"Rp14 jt\nAuth/RBAC/API/data","textPreview":"Rp14 jt | Auth/RBAC/API/data","textChars":26,"textLines":2,"bbox":[395.52,530.88,196.8,43.2]}
+{"kind":"shape","id":"sh/i1c7i5wf","slide":12,"name":"Shape 26","bbox":[612.48,540.62,60.48,24]}
+{"kind":"shape","id":"sh/5436t0fq","slide":12,"name":"Shape 27","bbox":[683.52,494.4,206.4,109.07]}
+{"kind":"textbox","id":"sh/43upkve5","slide":12,"name":"Text 28","text":"Dashboard + export","textPreview":"Dashboard + export","textChars":18,"textLines":1,"bbox":[691.2,506.88,191.04,19.2]}
+{"kind":"textbox","id":"sh/nyp83ud4","slide":12,"name":"Text 29","text":"Rp7 jt\nKPI/Excel/PDF","textPreview":"Rp7 jt | KPI/Excel/PDF","textChars":20,"textLines":2,"bbox":[693.12,533.91,187.2,55.96]}
+{"kind":"shape","id":"sh/2xw7upwj","slide":12,"name":"Shape 30","bbox":[900.48,540.62,60.48,24]}
+{"kind":"shape","id":"sh/kjq5oru1","slide":12,"name":"Shape 31","bbox":[971.52,494.4,177.6,109.07]}
+{"kind":"textbox","id":"sh/lkzmhwvm","slide":12,"name":"Text 32","text":"UAT + deployment","textPreview":"UAT + deployment","textChars":16,"textLines":1,"bbox":[979.2,506.88,162.24,19.2]}
+{"kind":"textbox","id":"sh/yh8nmhcv","slide":12,"name":"Text 33","text":"Rp5 jt\nTraining/handover","textPreview":"Rp5 jt | Training/handover","textChars":24,"textLines":2,"bbox":[981.12,530.88,158.4,43.2]}
+{"kind":"notes","id":"nt/8f2psfyx","slide":12,"text":"Plant standalone core line items: 8 + 22 + 38 + 16 + 14 + 7 + 5 = Rp110 juta. Plant bridge allocation is Rp20 juta.\n[Sources]\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Budgeting!A15:K25\n[/Sources]"}
+{"kind":"slide","id":"sl/hgzapcr6","slide":13,"title":"Lab/SPL standalone core: Rp85 juta","textShapes":17}
+{"kind":"textbox","id":"sh/o3i5w3ad","slide":13,"name":"Text 0","text":"Lab/SPL standalone core: Rp85 juta","textPreview":"Lab/SPL standalone core: Rp85 juta","textChars":34,"textLines":1,"bbox":[67.2,43.2,935.22,43.2]}
+{"kind":"textbox","id":"sh/p4r6p8by","slide":13,"name":"Text 1","text":"Tujuh work package mencakup request-to-approval, reporting, dan go-live; bridge allocation ditampilkan terpisah.","textPreview":"Tujuh work package mencakup request-to-approval, reporting, dan go-live; bridge allocation ditampilkan terpisah.","textChars":112,"textLines":1,"bbox":[67.2,86.85,844.8,26.88]}
+{"kind":"shape","id":"sh/q50nydsj","slide":13,"name":"Shape 5","bbox":[64.32,199.68,374.4,139.2]}
+{"kind":"shape","id":"sh/21gnuts7","slide":13,"name":"Shape 6","bbox":[64.32,199.68,9.6,139.2]}
+{"kind":"textbox","id":"sh/2xof2lcv","slide":13,"name":"Text 7","text":"Requirement & UX — Rp6 jt","textPreview":"Requirement & UX — Rp6 jt","textChars":25,"textLines":1,"bbox":[85.44,216.96,340.8,26.88]}
+{"kind":"textbox","id":"sh/3yxgbqdg","slide":13,"name":"Text 8","text":"Scope, field, workflow, dan prototype.","textPreview":"Scope, field, workflow, dan prototype.","textChars":38,"textLines":1,"bbox":[85.44,250.56,340.8,76.8]}
+{"kind":"shape","id":"sh/8vahgzu5","slide":13,"name":"Shape 9","bbox":[453.12,199.68,374.4,139.2]}
+{"kind":"shape","id":"sh/9wjyp4bq","slide":13,"name":"Shape 10","bbox":[453.12,199.68,9.6,139.2]}
+{"kind":"textbox","id":"sh/jqlkfyds","slide":13,"name":"Text 11","text":"Frontend web + PWA — Rp18 jt","textPreview":"Frontend web + PWA — Rp18 jt","textChars":28,"textLines":1,"bbox":[474.24,216.96,340.8,26.88]}
+{"kind":"textbox","id":"sh/ipcjmtw7","slide":13,"name":"Text 12","text":"Lab channels, queue, dan responsive forms.","textPreview":"Lab channels, queue, dan responsive forms.","textChars":42,"textLines":1,"bbox":[474.24,250.56,340.8,76.8]}
+{"kind":"shape","id":"sh/5cn2h8vy","slide":13,"name":"Shape 13","bbox":[841.92,199.68,369.6,139.2]}
+{"kind":"shape","id":"sh/4re1o3ed","slide":13,"name":"Shape 14","bbox":[841.92,199.68,9.6,139.2]}
+{"kind":"textbox","id":"sh/re5kjydo","slide":13,"name":"Text 15","text":"Request + sample — Rp20 jt","textPreview":"Request + sample — Rp20 jt","textChars":26,"textLines":1,"bbox":[863.04,216.96,336,26.88]}
+{"kind":"textbox","id":"sh/6dwjqtw3","slide":13,"name":"Text 16","text":"Request, receipt, tracking, dan chain of custody.","textPreview":"Request, receipt, tracking, dan chain of custody.","textChars":49,"textLines":1,"bbox":[863.04,250.56,336,76.8]}
+{"kind":"shape","id":"sh/tgn2l8vu","slide":13,"name":"Shape 17","bbox":[64.32,421.44,1147.2,230.4]}
+{"kind":"textbox","id":"sh/sfe1s3e9","slide":13,"name":"Text 18","text":"Paket core Lab/SPL","textPreview":"Paket core Lab/SPL","textChars":18,"textLines":1,"bbox":[88.32,448.32,240,24]}
+{"kind":"shape","id":"sh/7i107edk","slide":13,"name":"Shape 19","bbox":[97.92,494.4,206.4,109.07]}
+{"kind":"textbox","id":"sh/mhsje9wz","slide":13,"name":"Text 20","text":"Testing + approval","textPreview":"Testing + approval","textChars":18,"textLines":1,"bbox":[105.6,506.88,191.04,19.2]}
+{"kind":"textbox","id":"sh/y1wju94v","slide":13,"name":"Text 21","text":"Rp20 jt\nResult/review/decision","textPreview":"Rp20 jt | Result/review/decision","textChars":30,"textLines":2,"bbox":[93.92,534.54,214.4,61.13]}
+{"kind":"shape","id":"sh/z25kne5g","slide":13,"name":"Shape 22","bbox":[313.92,540.86,62.4,24]}
+{"kind":"shape","id":"sh/03e1wjm1","slide":13,"name":"Shape 23","bbox":[385.92,494.4,216,109.07]}
+{"kind":"textbox","id":"sh/l4n2po3m","slide":13,"name":"Text 24","text":"Backend + database","textPreview":"Backend + database","textChars":18,"textLines":1,"bbox":[393.6,506.88,200.64,19.2]}
+{"kind":"textbox","id":"sh/m5gjyt4r","slide":13,"name":"Text 25","text":"Rp11 jt\nAuth/RBAC/API/data","textPreview":"Rp11 jt | Auth/RBAC/API/data","textChars":26,"textLines":2,"bbox":[395.52,530.88,196.8,43.2]}
+{"kind":"shape","id":"sh/n6pkrelc","slide":13,"name":"Shape 26","bbox":[612.48,540.62,60.48,24]}
+{"kind":"shape","id":"sh/8ry10jmx","slide":13,"name":"Shape 27","bbox":[683.52,494.4,206.4,109.07]}
+{"kind":"textbox","id":"sh/9s72to3i","slide":13,"name":"Text 28","text":"Dashboard + export","textPreview":"Dashboard + export","textChars":18,"textLines":1,"bbox":[691.2,506.88,191.04,19.2]}
+{"kind":"textbox","id":"sh/atgj2t43","slide":13,"name":"Text 29","text":"Rp6 jt\nKPI/Excel/PDF","textPreview":"Rp6 jt | KPI/Excel/PDF","textChars":20,"textLines":2,"bbox":[693.12,533.91,187.2,55.96]}
+{"kind":"shape","id":"sh/vupkvylo","slide":13,"name":"Shape 30","bbox":[900.48,540.62,60.48,24]}
+{"kind":"shape","id":"sh/50behwr2","slide":13,"name":"Shape 31","bbox":[971.52,494.4,177.6,109.07]}
+{"kind":"textbox","id":"sh/4z2d8rah","slide":13,"name":"Text 32","text":"UAT + deployment","textPreview":"UAT + deployment","textChars":16,"textLines":1,"bbox":[979.2,506.88,162.24,19.2]}
+{"kind":"textbox","id":"sh/jytcfmtw","slide":13,"name":"Text 33","text":"Rp4 jt\nTraining/handover","textPreview":"Rp4 jt | Training/handover","textChars":24,"textLines":2,"bbox":[981.12,530.88,158.4,43.2]}
+{"kind":"notes","id":"nt/hgzapcr6","slide":13,"text":"Lab/SPL standalone core line items: 6 + 18 + 20 + 20 + 11 + 6 + 4 = Rp85 juta. Lab bridge allocation is Rp20 juta.\n[Sources]\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Budgeting!A26:K36\n[/Sources]"}
+{"kind":"slide","id":"sl/6lsnupw7","slide":14,"title":"Bridge allocation: Rp20 juta per project","textShapes":22}
+{"kind":"textbox","id":"sh/jepwf2pc","slide":14,"name":"Text 0","text":"Bridge allocation: Rp20 juta per project","textPreview":"Bridge allocation: Rp20 juta per project","textChars":40,"textLines":1,"bbox":[67.2,43.2,935.22,43.2]}
+{"kind":"textbox","id":"sh/idgvmx8r","slide":14,"name":"Text 1","text":"Kapabilitas yang sama dialokasikan ke Plant dan Lab/SPL; total bridge Rp40 juta.","textPreview":"Kapabilitas yang sama dialokasikan ke Plant dan Lab/SPL; total bridge Rp40 juta.","textChars":80,"textLines":1,"bbox":[67.2,86.85,844.8,26.88]}
+{"kind":"textbox","id":"sh/xc7eds76","slide":14,"name":"Text 3","text":"Pembagian simetris menjaga ownership dan effort integrasi tetap transparan.","textPreview":"Pembagian simetris menjaga ownership dan effort integrasi tetap transparan.","textChars":75,"textLines":1,"bbox":[65.44,153.07,1152,62.4]}
+{"kind":"textbox","id":"sh/5grehs7i","slide":14,"name":"Text 5","text":"Plant — Rp20 jt","textPreview":"Plant — Rp20 jt","textChars":15,"textLines":1,"bbox":[217.92,261.03,192,21.12]}
+{"kind":"textbox","id":"sh/kfidonqx","slide":14,"name":"Text 6","text":"Lab — Rp20 jt","textPreview":"Lab — Rp20 jt","textChars":13,"textLines":1,"bbox":[840,261.03,192,21.12]}
+{"kind":"shape","id":"sh/zi5c3y98","slide":14,"name":"Shape 7","bbox":[561.6,426.06,100.8,62.4]}
+{"kind":"shape","id":"sh/ehwvat8n","slide":14,"name":"Shape 8","bbox":[91.2,308.46,436.8,69.12]}
+{"kind":"shape","id":"sh/c3e1gjyd","slide":14,"name":"Shape 9","bbox":[91.2,308.46,9.6,69.12]}
+{"kind":"textbox","id":"sh/x4ni9ofy","slide":14,"name":"Text 10","text":"Connector API — Rp8 jt","textPreview":"Connector API — Rp8 jt","textChars":22,"textLines":1,"bbox":[112.32,325.74,403.2,26.88]}
+{"kind":"textbox","id":"sh/a1wze9g7","slide":14,"name":"Text 11","text":"Outbound/inbound contract","textPreview":"Outbound/inbound contract","textChars":25,"textLines":1,"bbox":[112.32,359.34,403.2,6.72]}
+{"kind":"shape","id":"sh/b2507exs","slide":14,"name":"Shape 12","bbox":[696,308.46,480,69.12]}
+{"kind":"shape","id":"sh/kre1k3y9","slide":14,"name":"Shape 13","bbox":[696,308.46,9.6,69.12]}
+{"kind":"textbox","id":"sh/ls7idofu","slide":14,"name":"Text 14","text":"Connector API — Rp8 jt","textPreview":"Connector API — Rp8 jt","textChars":22,"textLines":1,"bbox":[717.12,325.74,446.4,26.88]}
+{"kind":"textbox","id":"sh/y5wjitgj","slide":14,"name":"Text 15","text":"Inbound/outbound contract","textPreview":"Inbound/outbound contract","textChars":25,"textLines":1,"bbox":[717.12,359.34,446.4,6.72]}
+{"kind":"shape","id":"sh/z650byxo","slide":14,"name":"Shape 16","bbox":[91.2,399.66,436.8,69.12]}
+{"kind":"shape","id":"sh/0buh8zy5","slide":14,"name":"Shape 17","bbox":[91.2,399.66,9.6,69.12]}
+{"kind":"textbox","id":"sh/1w3i14fq","slide":14,"name":"Text 18","text":"Portal role mapping — Rp5 jt","textPreview":"Portal role mapping — Rp5 jt","textChars":28,"textLines":1,"bbox":[112.32,416.94,403.2,26.88]}
+{"kind":"textbox","id":"sh/hsvy50re","slide":14,"name":"Text 19","text":"Launcher + role context","textPreview":"Launcher + role context","textChars":23,"textLines":1,"bbox":[112.32,450.54,403.2,6.72]}
+{"kind":"shape","id":"sh/grmxwvqt","slide":14,"name":"Shape 20","bbox":[696,399.66,480,69.12]}
+{"kind":"shape","id":"sh/fqdg3q98","slide":14,"name":"Shape 21","bbox":[696,399.66,9.6,69.12]}
+{"kind":"textbox","id":"sh/up4fal83","slide":14,"name":"Text 22","text":"Portal role mapping — Rp5 jt","textPreview":"Portal role mapping — Rp5 jt","textChars":28,"textLines":1,"bbox":[717.12,416.94,446.4,26.88]}
+{"kind":"textbox","id":"sh/pwvy90rq","slide":14,"name":"Text 23","text":"Launcher + role context","textPreview":"Launcher + role context","textChars":23,"textLines":1,"bbox":[717.12,450.54,446.4,6.72]}
+{"kind":"shape","id":"sh/4vmh0vq5","slide":14,"name":"Shape 24","bbox":[91.2,490.86,436.8,69.12]}
+{"kind":"shape","id":"sh/3udg7q9k","slide":14,"name":"Shape 25","bbox":[91.2,490.86,9.6,69.12]}
+{"kind":"textbox","id":"sh/2t4fyl8z","slide":14,"name":"Text 26","text":"Sync & error handling — Rp4 jt","textPreview":"Sync & error handling — Rp4 jt","textChars":30,"textLines":1,"bbox":[112.32,508.14,403.2,26.88]}
+{"kind":"textbox","id":"sh/d0fydk7m","slide":14,"name":"Text 27","text":"Queue, retry, sync log","textPreview":"Queue, retry, sync log","textChars":22,"textLines":1,"bbox":[112.32,541.74,403.2,6.72]}
+{"kind":"shape","id":"sh/cz6h4fq1","slide":14,"name":"Shape 28","bbox":[696,490.86,480,69.12]}
+{"kind":"shape","id":"sh/atg3idk7","slide":14,"name":"Shape 29","bbox":[696,490.86,9.6,69.12]}
+{"kind":"textbox","id":"sh/bup4rils","slide":14,"name":"Text 30","text":"Sync & error handling — Rp4 jt","textPreview":"Sync & error handling — Rp4 jt","textChars":30,"textLines":1,"bbox":[717.12,508.14,446.4,26.88]}
+{"kind":"textbox","id":"sh/cvylkn2d","slide":14,"name":"Text 31","text":"Queue, retry, sync log","textPreview":"Queue, retry, sync log","textChars":22,"textLines":1,"bbox":[717.12,541.74,446.4,6.72]}
+{"kind":"shape","id":"sh/xw7mts3y","slide":14,"name":"Shape 32","bbox":[91.2,582.06,436.8,69.12]}
+{"kind":"shape","id":"sh/yxgnmxkj","slide":14,"name":"Shape 33","bbox":[91.2,582.06,9.6,69.12]}
+{"kind":"textbox","id":"sh/jyp4fil4","slide":14,"name":"Text 34","text":"Global KPI contribution — Rp3 jt","textPreview":"Global KPI contribution — Rp3 jt","textChars":32,"textLines":1,"bbox":[112.32,599.34,403.2,26.88]}
+{"kind":"textbox","id":"sh/kzy5on2p","slide":14,"name":"Text 35","text":"Plant module snapshot","textPreview":"Plant module snapshot","textChars":21,"textLines":1,"bbox":[112.32,632.94,403.2,6.72]}
+{"kind":"shape","id":"sh/lkrmhsju","slide":14,"name":"Shape 36","bbox":[696,582.06,480,69.12]}
+{"kind":"shape","id":"sh/6l0nqxkf","slide":14,"name":"Shape 37","bbox":[696,582.06,9.6,69.12]}
+{"kind":"textbox","id":"sh/7m94j210","slide":14,"name":"Text 38","text":"Global KPI contribution — Rp3 jt","textPreview":"Global KPI contribution — Rp3 jt","textChars":32,"textLines":1,"bbox":[717.12,599.34,446.4,26.88]}
+{"kind":"textbox","id":"sh/fi5432t4","slide":14,"name":"Text 39","text":"Lab module snapshot","textPreview":"Lab module snapshot","textChars":19,"textLines":1,"bbox":[717.12,632.94,446.4,6.72]}
+{"kind":"textbox","id":"sh/uhw3axcj","slide":14,"name":"Text 40","text":"14","textPreview":"14","textChars":2,"textLines":1,"bbox":[1214.4,676.8,24,13.44]}
+{"kind":"notes","id":"nt/6lsnupw7","slide":14,"text":"Bridge allocation per project: connector API 8 + portal role mapping 5 + sync/error handling 4 + global KPI contribution 3 = Rp20 juta.\n[Sources]\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Budgeting!A22:K25\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Budgeting!A33:K36\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Bridge_Contract\n[/Sources]"}
+{"kind":"slide","id":"sl/vaxsvy10","slide":15,"title":"Payment schedule mengikuti dua gate per project","textShapes":22}
+{"kind":"textbox","id":"sh/76p4jqls","slide":15,"name":"Text 0","text":"Payment schedule mengikuti dua gate per project","textPreview":"Payment schedule mengikuti dua gate per project","textChars":47,"textLines":1,"bbox":[67.2,43.2,935.22,43.2]}
+{"kind":"textbox","id":"sh/65gnqlk7","slide":15,"name":"Text 1","text":"Setiap quotation dibayar 50% saat kick-off/design dan 50% saat core + UAT + deployment + handover.","textPreview":"Setiap quotation dibayar 50% saat kick-off/design dan 50% saat core + UAT + deployment + handover.","textChars":98,"textLines":1,"bbox":[67.2,86.85,844.8,26.88]}
+{"kind":"textbox","id":"sh/547mhg3m","slide":15,"name":"Text 3","text":"Skema termin mengikat pembayaran pada milestone yang dapat diverifikasi.","textPreview":"Skema termin mengikat pembayaran pada milestone yang dapat diverifikasi.","textChars":72,"textLines":1,"bbox":[65.44,153.07,1152,62.4]}
+{"kind":"textbox","id":"sh/t87ml0ji","slide":15,"name":"Text 5","text":"Plant • Rp130 jt","textPreview":"Plant • Rp130 jt","textChars":16,"textLines":1,"bbox":[217.92,261.03,192,21.12]}
+{"kind":"textbox","id":"sh/s7y5sv2x","slide":15,"name":"Text 6","text":"Lab • Rp105 jt","textPreview":"Lab • Rp105 jt","textChars":14,"textLines":1,"bbox":[840,261.03,192,21.12]}
+{"kind":"shape","id":"sh/na5476l8","slide":15,"name":"Shape 7","bbox":[561.6,426.06,100.8,62.4]}
+{"kind":"shape","id":"sh/m9c3e1kn","slide":15,"name":"Shape 8","bbox":[91.2,308.46,436.8,69.12]}
+{"kind":"shape","id":"sh/wrm9kvep","slide":15,"name":"Shape 9","bbox":[91.2,308.46,9.6,69.12]}
+{"kind":"textbox","id":"sh/hsvat0fa","slide":15,"name":"Text 10","text":"Termin 1 — 50%","textPreview":"Termin 1 — 50%","textChars":14,"textLines":1,"bbox":[112.32,325.74,403.2,26.88]}
+{"kind":"textbox","id":"sh/upkrilwj","slide":15,"name":"Text 11","text":"Rp65 juta • Kick-off + core module design","textPreview":"Rp65 juta • Kick-off + core module design","textChars":41,"textLines":1,"bbox":[112.32,359.34,403.2,6.72]}
+{"kind":"shape","id":"sh/vqdsrqx4","slide":15,"name":"Shape 12","bbox":[696,308.46,480,69.12]}
+{"kind":"shape","id":"sh/4vm9ovel","slide":15,"name":"Shape 13","bbox":[696,308.46,9.6,69.12]}
+{"kind":"textbox","id":"sh/5wvax0f6","slide":15,"name":"Text 14","text":"Termin 1 — 50%","textPreview":"Termin 1 — 50%","textChars":14,"textLines":1,"bbox":[717.12,325.74,446.4,26.88]}
+{"kind":"textbox","id":"sh/it4rm5wv","slide":15,"name":"Text 15","text":"Rp52,5 juta • Kick-off + core module design","textPreview":"Rp52,5 juta • Kick-off + core module design","textChars":43,"textLines":1,"bbox":[717.12,359.34,446.4,6.72]}
+{"kind":"shape","id":"sh/judsvqxg","slide":15,"name":"Shape 16","bbox":[91.2,399.66,436.8,69.12]}
+{"kind":"shape","id":"sh/0z29cbyh","slide":15,"name":"Shape 17","bbox":[91.2,399.66,9.6,69.12]}
+{"kind":"textbox","id":"sh/l0bqlgf2","slide":15,"name":"Text 18","text":"Termin 2 — 50%","textPreview":"Termin 2 — 50%","textChars":14,"textLines":1,"bbox":[112.32,416.94,403.2,26.88]}
+{"kind":"textbox","id":"sh/1kjyt83e","slide":15,"name":"Text 19","text":"Rp65 juta • Core + initial UAT + deploy + handover","textPreview":"Rp65 juta • Core + initial UAT + deploy + handover","textChars":50,"textLines":1,"bbox":[112.32,450.54,403.2,6.72]}
+{"kind":"shape","id":"sh/gjax03m9","slide":15,"name":"Shape 20","bbox":[696,399.66,480,69.12]}
+{"kind":"shape","id":"sh/fi1grylo","slide":15,"name":"Shape 21","bbox":[696,399.66,9.6,69.12]}
+{"kind":"textbox","id":"sh/ehsfyt43","slide":15,"name":"Text 22","text":"Termin 2 — 50%","textPreview":"Termin 2 — 50%","textChars":14,"textLines":1,"bbox":[717.12,416.94,446.4,26.88]}
+{"kind":"textbox","id":"sh/p8jyx83q","slide":15,"name":"Text 23","text":"Rp52,5 juta • Core + initial UAT + deploy + handover","textPreview":"Rp52,5 juta • Core + initial UAT + deploy + handover","textChars":52,"textLines":1,"bbox":[717.12,450.54,446.4,6.72]}
+{"kind":"shape","id":"sh/o7ah4nm5","slide":15,"name":"Shape 24","bbox":[91.2,490.86,436.8,69.12]}
+{"kind":"shape","id":"sh/361gvilk","slide":15,"name":"Shape 25","bbox":[91.2,490.86,9.6,69.12]}
+{"kind":"textbox","id":"sh/25sf2d4z","slide":15,"name":"Text 26","text":"Basis quotation","textPreview":"Basis quotation","textChars":15,"textLines":1,"bbox":[112.32,508.14,403.2,26.88]}
+{"kind":"textbox","id":"sh/dc3y1s3m","slide":15,"name":"Text 27","text":"One-time MVP; seluruh item berprioritas Must","textPreview":"One-time MVP; seluruh item berprioritas Must","textChars":44,"textLines":1,"bbox":[112.32,541.74,403.2,6.72]}
+{"kind":"shape","id":"sh/cbuh8nmh","slide":15,"name":"Shape 28","bbox":[696,490.86,480,69.12]}
+{"kind":"shape","id":"sh/uh4v2pkj","slide":15,"name":"Shape 29","bbox":[696,490.86,9.6,69.12]}
+{"kind":"textbox","id":"sh/vixcvu14","slide":15,"name":"Text 30","text":"Deployment terms","textPreview":"Deployment terms","textChars":16,"textLines":1,"bbox":[717.12,508.14,446.4,26.88]}
+{"kind":"textbox","id":"sh/wj6d4z2p","slide":15,"name":"Text 31","text":"Domain, environment, backup, retention dikunci sebelum UAT","textPreview":"Domain, environment, backup, retention dikunci sebelum UAT","textChars":58,"textLines":1,"bbox":[717.12,541.74,446.4,6.72]}
+{"kind":"shape","id":"sh/hkfexkja","slide":15,"name":"Shape 32","bbox":[91.2,582.06,436.8,69.12]}
+{"kind":"shape","id":"sh/ilov6pkv","slide":15,"name":"Shape 33","bbox":[91.2,582.06,9.6,69.12]}
+{"kind":"textbox","id":"sh/jmxwzu1g","slide":15,"name":"Text 34","text":"Reference value","textPreview":"Reference value","textChars":15,"textLines":1,"bbox":[112.32,599.34,403.2,26.88]}
+{"kind":"textbox","id":"sh/4n6d8z21","slide":15,"name":"Text 35","text":"Rp336 juta • pembanding scope","textPreview":"Rp336 juta • pembanding scope","textChars":29,"textLines":1,"bbox":[112.32,632.94,403.2,6.72]}
+{"kind":"shape","id":"sh/5ofe14j6","slide":15,"name":"Shape 36","bbox":[696,582.06,480,69.12]}
+{"kind":"shape","id":"sh/6p8va9kr","slide":15,"name":"Shape 37","bbox":[696,582.06,9.6,69.12]}
+{"kind":"textbox","id":"sh/rqhw3e1c","slide":15,"name":"Text 38","text":"Ceiling / reserve","textPreview":"Ceiling / reserve","textChars":17,"textLines":1,"bbox":[717.12,599.34,446.4,26.88]}
+{"kind":"textbox","id":"sh/f6dcnetg","slide":15,"name":"Text 39","text":"Rp250 juta; buffer Rp15 juta","textPreview":"Rp250 juta; buffer Rp15 juta","textChars":28,"textLines":1,"bbox":[717.12,632.94,446.4,6.72]}
+{"kind":"textbox","id":"sh/e54ve9cv","slide":15,"name":"Text 40","text":"15","textPreview":"15","textChars":2,"textLines":1,"bbox":[1214.4,676.8,24,13.44]}
+{"kind":"notes","id":"nt/vaxsvy10","slide":15,"text":"Payment amounts: Plant 50% x Rp130 juta = Rp65 juta per termin; Lab/SPL 50% x Rp105 juta = Rp52,5 juta per termin.\n[Sources]\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Budgeting!A39:F44\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Decision_Log\n[/Sources]"}
+{"kind":"slide","id":"sl/gny5sjyp","slide":16,"title":"Empat keputusan W1–W2 menentukan kecepatan delivery","textShapes":17}
+{"kind":"textbox","id":"sh/ytkf2h8j","slide":16,"name":"Text 0","text":"Empat keputusan W1–W2 menentukan kecepatan delivery","textPreview":"Empat keputusan W1–W2 menentukan kecepatan delivery","textChars":51,"textLines":1,"bbox":[67.2,43.2,935.22,43.2]}
+{"kind":"textbox","id":"sh/zutgvm94","slide":16,"name":"Text 1","text":"Decision log mencatat 12 item; prioritas tertinggi perlu ditutup sebelum UX dan development.","textPreview":"Decision log mencatat 12 item; prioritas tertinggi perlu ditutup sebelum UX dan development.","textChars":92,"textLines":1,"bbox":[67.2,86.85,844.8,26.88]}
+{"kind":"textbox","id":"sh/8z2h8bq1","slide":16,"name":"Text 3","text":"Scope sudah terdefinisi; yang tersisa adalah mengunci aturan dan ownership lintas sistem.","textPreview":"Scope sudah terdefinisi; yang tersisa adalah mengunci aturan dan ownership lintas sistem.","textChars":89,"textLines":1,"bbox":[222.4,148.7,835.2,94.54]}
+{"kind":"shape","id":"sh/kv2h4rqp","slide":16,"name":"Shape 5","bbox":[98.56,299.62,273.6,158.4]}
+{"kind":"shape","id":"sh/lwbyxwra","slide":16,"name":"Shape 6","bbox":[98.56,299.62,9.6,158.4]}
+{"kind":"textbox","id":"sh/ip4zel83","slide":16,"name":"Text 7","text":"Field & validation","textPreview":"Field & validation","textChars":18,"textLines":1,"bbox":[119.68,316.9,240,26.88]}
+{"kind":"textbox","id":"sh/3qdg7qpo","slide":16,"name":"Text 8","text":"Field list Plant/Lab, PP rule, photo minimum, serta edit/reopen policy.","textPreview":"Field list Plant/Lab, PP rule, photo minimum, serta edit/reopen policy.","textChars":71,"textLines":1,"bbox":[119.68,350.5,240,96]}
+{"kind":"shape","id":"sh/fm1gzq5o","slide":16,"name":"Shape 9","bbox":[376.96,299.62,273.6,158.4]}
+{"kind":"shape","id":"sh/e1sf65o3","slide":16,"name":"Shape 10","bbox":[376.96,299.62,9.6,158.4]}
+{"kind":"textbox","id":"sh/1ojy10ne","slide":16,"name":"Text 11","text":"Identity & master","textPreview":"Identity & master","textChars":17,"textLines":1,"bbox":[398.08,316.9,240,26.88]}
+{"kind":"textbox","id":"sh/gnax8v6t","slide":16,"name":"Text 12","text":"Format Lot/Request/Sample ID dan boundary shared master.","textPreview":"Format Lot/Request/Sample ID dan boundary shared master.","textChars":56,"textLines":1,"bbox":[398.08,350.5,240,96]}
+{"kind":"shape","id":"sh/nqlg3a5k","slide":16,"name":"Shape 13","bbox":[655.36,299.62,273.6,158.4]}
+{"kind":"shape","id":"sh/2pcfa5oz","slide":16,"name":"Shape 14","bbox":[655.36,299.62,9.6,158.4]}
+{"kind":"textbox","id":"sh/ps3y5knq","slide":16,"name":"Text 15","text":"Bridge & access","textPreview":"Bridge & access","textChars":15,"textLines":1,"bbox":[676.48,316.9,240,26.88]}
+{"kind":"textbox","id":"sh/oruhcf65","slide":16,"name":"Text 16","text":"Payload/event v1.0, portal login/SSO, dan role mapping.","textPreview":"Payload/event v1.0, portal login/SSO, dan role mapping.","textChars":55,"textLines":1,"bbox":[676.48,350.5,240,96]}
+{"kind":"shape","id":"sh/bulg7u5g","slide":16,"name":"Shape 17","bbox":[933.76,299.62,273.6,158.4]}
+{"kind":"shape","id":"sh/atczepob","slide":16,"name":"Shape 18","bbox":[933.76,299.62,9.6,158.4]}
+{"kind":"textbox","id":"sh/mpgj6t8j","slide":16,"name":"Text 19","text":"Deployment & reporting","textPreview":"Deployment & reporting","textChars":22,"textLines":1,"bbox":[954.88,316.9,240,26.88]}
+{"kind":"textbox","id":"sh/7qp0zepo","slide":16,"name":"Text 20","text":"KPI, export, environment, backup, dan retention.","textPreview":"KPI, export, environment, backup, dan retention.","textChars":48,"textLines":1,"bbox":[954.88,350.5,240,96]}
+{"kind":"shape","id":"sh/8by18jq9","slide":16,"name":"Shape 21","bbox":[114.88,531.42,1065.6,134.4]}
+{"kind":"textbox","id":"sh/9c7i1o7u","slide":16,"name":"Text 22","text":"Non-negotiable acceptance gates","textPreview":"Non-negotiable acceptance gates","textChars":31,"textLines":1,"bbox":[138.88,543.9,399.41,30.72]}
+{"kind":"shape","id":"sh/ylwj2987","slide":16,"name":"Shape 23","bbox":[143.68,603.42,30.72,30.72]}
+{"kind":"textbox","id":"sh/zm50veps","slide":16,"name":"Text 24","text":"Scope signed","textPreview":"Scope signed","textChars":12,"textLines":1,"bbox":[182.08,611.36,139.2,15.36]}
+{"kind":"shape","id":"sh/kne14jqd","slide":16,"name":"Shape 25","bbox":[345.28,603.42,30.72,30.72]}
+{"kind":"textbox","id":"sh/lo7ixo7y","slide":16,"name":"Text 26","text":"API contract v1.0","textPreview":"API contract v1.0","textChars":17,"textLines":1,"bbox":[383.68,611.36,139.2,15.36]}
+{"kind":"shape","id":"sh/ih0jedob","slide":16,"name":"Shape 27","bbox":[546.88,603.42,30.72,30.72]}
+{"kind":"textbox","id":"sh/ji9k7ypw","slide":16,"name":"Text 28","text":"Prototype approved","textPreview":"Prototype approved","textChars":18,"textLines":1,"bbox":[585.28,611.36,139.2,15.36]}
+{"kind":"shape","id":"sh/tcbmdcre","slide":16,"name":"Shape 29","bbox":[748.48,603.42,30.72,30.72]}
+{"kind":"textbox","id":"sh/sb2l47at","slide":16,"name":"Text 30","text":"Critical UAT closed","textPreview":"Critical UAT closed","textChars":19,"textLines":1,"bbox":[786.88,611.36,139.2,15.36]}
+{"kind":"shape","id":"sh/rat4b298","slide":16,"name":"Shape 31","bbox":[950.08,603.42,30.72,30.72]}
+{"kind":"textbox","id":"sh/69k32xsn","slide":16,"name":"Text 32","text":"Backup + handover","textPreview":"Backup + handover","textChars":17,"textLines":1,"bbox":[988.48,611.36,163.2,15.36]}
+{"kind":"notes","id":"nt/gny5sjyp","slide":16,"text":"[Sources]\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Decision_Log\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — UAT_Checklist\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Field_Dictionary\n[/Sources]"}
+{"kind":"slide","id":"sl/14bup87q","slide":17,"title":"Keputusan sekarang: approve detailed design dan mobilisasi W1","textShapes":19}
+{"kind":"textbox","id":"sh/rm5czq50","slide":17,"name":"Text 0","text":"Keputusan sekarang: approve detailed design dan mobilisasi W1","textPreview":"Keputusan sekarang: approve detailed design dan mobilisasi W1","textChars":61,"textLines":1,"bbox":[67.2,43.2,935.22,43.2]}
+{"kind":"textbox","id":"sh/6lwvql4v","slide":17,"name":"Text 1","text":"Quotation dan architecture siap; field list, rules, dan deployment decisions perlu segera dikunci.","textPreview":"Quotation dan architecture siap; field list, rules, dan deployment decisions perlu segera dikunci.","textChars":98,"textLines":1,"bbox":[67.2,86.85,844.8,26.88]}
+{"kind":"textbox","id":"sh/gbedwfmx","slide":17,"name":"Text 3","text":"Approval membuka jalur 10 minggu yang terkontrol menuju go-live.","textPreview":"Approval membuka jalur 10 minggu yang terkontrol menuju go-live.","textChars":64,"textLines":1,"bbox":[160.39,175.8,959.22,73.36]}
+{"kind":"shape","id":"sh/jilcvq54","slide":17,"name":"Shape 5","bbox":[72,340.8,225.6,158.4]}
+{"kind":"shape","id":"sh/ihcvml4j","slide":17,"name":"Shape 6","bbox":[83.52,357.12,36.48,36.48]}
+{"kind":"textbox","id":"sh/4by9or6l","slide":17,"name":"Text 7","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[83.52,370.56,36.48,9.6]}
+{"kind":"textbox","id":"sh/pc7qhwn6","slide":17,"name":"Text 8","text":"Saat ini","textPreview":"Saat ini","textChars":8,"textLines":1,"bbox":[228.48,362.88,52.8,11.52]}
+{"kind":"textbox","id":"sh/29grm1of","slide":17,"name":"Text 9","text":"Approve scope MVP + Rp235 juta","textPreview":"Approve scope MVP + Rp235 juta","textChars":30,"textLines":1,"bbox":[87.36,405.12,193.92,69.12]}
+{"kind":"shape","id":"sh/3ap8fm50","slide":17,"name":"Shape 10","bbox":[314.88,340.8,225.6,158.4]}
+{"kind":"shape","id":"sh/gnepkr69","slide":17,"name":"Shape 11","bbox":[326.4,357.12,36.48,36.48]}
+{"kind":"textbox","id":"sh/honqdwnu","slide":17,"name":"Text 12","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[326.4,370.56,36.48,9.6]}
+{"kind":"textbox","id":"sh/ulw7ihoj","slide":17,"name":"Text 13","text":"W1","textPreview":"W1","textChars":2,"textLines":1,"bbox":[471.36,362.88,52.8,11.52]}
+{"kind":"textbox","id":"sh/fm58bm54","slide":17,"name":"Text 14","text":"Tutup field, ID, role, dan bridge contract","textPreview":"Tutup field, ID, role, dan bridge contract","textChars":42,"textLines":1,"bbox":[330.24,405.12,193.92,69.12]}
+{"kind":"shape","id":"sh/0ji9wb6t","slide":17,"name":"Shape 15","bbox":[557.76,340.8,225.6,158.4]}
+{"kind":"shape","id":"sh/14rqpgne","slide":17,"name":"Shape 16","bbox":[569.28,357.12,36.48,36.48]}
+{"kind":"textbox","id":"sh/90nq9gfi","slide":17,"name":"Text 17","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[569.28,370.56,36.48,9.6]}
+{"kind":"textbox","id":"sh/8ze9gbyx","slide":17,"name":"Text 18","text":"W2","textPreview":"W2","textChars":2,"textLines":1,"bbox":[714.24,362.88,52.8,11.52]}
+{"kind":"textbox","id":"sh/ny5876xc","slide":17,"name":"Text 19","text":"Approve prototype dan module navigation","textPreview":"Approve prototype dan module navigation","textChars":39,"textLines":1,"bbox":[573.12,405.12,193.92,69.12]}
+{"kind":"shape","id":"sh/mxw7e1gr","slide":17,"name":"Shape 20","bbox":[800.64,340.8,225.6,158.4]}
+{"kind":"shape","id":"sh/lwnq5gf6","slide":17,"name":"Shape 21","bbox":[812.16,357.12,36.48,36.48]}
+{"kind":"textbox","id":"sh/0vepcbyl","slide":17,"name":"Text 22","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[812.16,370.56,36.48,9.6]}
+{"kind":"textbox","id":"sh/radgfqx0","slide":17,"name":"Text 23","text":"W3–9","textPreview":"W3–9","textChars":4,"textLines":1,"bbox":[957.12,362.88,52.8,11.52]}
+{"kind":"textbox","id":"sh/0z6hcfyx","slide":17,"name":"Text 24","text":"Build, integrate, UAT, close critical defects","textPreview":"Build, integrate, UAT, close critical defects","textChars":45,"textLines":1,"bbox":[816,405.12,193.92,69.12]}
+{"kind":"shape","id":"sh/l0fylkfi","slide":17,"name":"Shape 25","bbox":[1043.52,340.8,225.6,158.4]}
+{"kind":"shape","id":"sh/ex4za5gr","slide":17,"name":"Shape 26","bbox":[1055.04,357.12,36.48,36.48]}
+{"kind":"textbox","id":"sh/zyxgjaxc","slide":17,"name":"Text 27","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[1055.04,370.56,36.48,9.6]}
+{"kind":"textbox","id":"sh/g32x0byd","slide":17,"name":"Text 28","text":"W10","textPreview":"W10","textChars":3,"textLines":1,"bbox":[1200,362.88,52.8,11.52]}
+{"kind":"textbox","id":"sh/h4by9gfy","slide":17,"name":"Text 29","text":"Go-live, training, dan handover","textPreview":"Go-live, training, dan handover","textChars":31,"textLines":1,"bbox":[1058.88,405.12,193.92,69.12]}
+{"kind":"shape","id":"sh/xoj6h83q","slide":17,"name":"Shape 30","bbox":[88.32,585.6,1094.4,91.2]}
+{"kind":"textbox","id":"sh/wna5o3m5","slide":17,"name":"Text 31","text":"Rekomendasi: approve combined Plant + Lab/SPL MVP, pertahankan standalone ownership, dan authorize kick-off dengan skema pembayaran milestone 50/50.","textPreview":"Rekomendasi: approve combined Plant + Lab/SPL MVP, pertahankan standalone ownership, dan authorize kick-off dengan skema pembayaran miles...","textChars":148,"textLines":1,"bbox":[110.4,616.32,1051.2,24.96]}
+{"kind":"notes","id":"nt/14bup87q","slide":17,"text":"[Sources]\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Summary\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Implementation\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Decision_Log\n- D:\\KC PROJECT DOC\\QA_Blueprint_Ekosistem_Plant_Lab.xlsx — Budgeting\n[/Sources]"}
