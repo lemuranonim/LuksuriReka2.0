@@ -6,7 +6,46 @@ import { foundationModule } from "./foundation-modules.mjs";
 
 const { assemblyReveal, changeEffectChoice, compositionPresented, experienceEnabled, experiencePolicy, localInspectionAllowed, parseEffectPreference, stageVisibility, selectVisibleStage } = foundationModule("experience");
 const { pageMeta, routes } = foundationModule("site-content");
+const { navigationIntent, scrollEase } = foundationModule("site-motion");
 const capable = { enabled: true, preference: "auto", reducedMotion: false, saveData: false, slowNetwork: false, coarsePointer: false, webgl: true, failed: false, degraded: false };
+
+test("studio navigation preserves localized pages, query preselection, and cross-page anchors", () => {
+  const current = "https://www.luksurireka.com/produk";
+  assert.deepEqual(navigationIntent("/kontak?need=operations", current), { kind: "route", href: "/kontak?need=operations", key: "/kontak?need=operations" });
+  assert.deepEqual(navigationIntent("/en/products", current), { kind: "route", href: "/en/products", key: "/en/products" });
+  assert.deepEqual(navigationIntent("/#solusi", current), { kind: "route", href: "/#solusi", key: "/" });
+  assert.deepEqual(navigationIntent("/solusi/", current), { kind: "route", href: "/solusi", key: "/solusi" });
+  assert.equal(navigationIntent("/kontak?note=hello%20world", current).key, "/kontak?note=hello+world");
+});
+
+test("only ordinary public same-origin links receive page transitions", () => {
+  const current = "https://www.luksurireka.com/";
+  for (const href of ["", "https://sign.luksurireka.com", "//example.com/karya", "mailto:hello@luksurireka.com", "javascript:alert(1)", "data:text/html,x", "/qa-proposal", "/missing"]) assert.equal(navigationIntent(href, current), null);
+  for (const options of [{ modified: true }, { download: true }, { target: "_blank" }, { target: "report" }, { skip: true }]) assert.equal(navigationIntent("/produk", current, options), null);
+  assert.equal(navigationIntent("/produk", current, { target: "_self" }).kind, "route");
+});
+
+test("same-page navigation scrolls while the accessibility skip link remains native", () => {
+  const current = "https://www.luksurireka.com/";
+  assert.deepEqual(navigationIntent("#kebutuhan", current), { kind: "anchor", hash: "#kebutuhan" });
+  assert.deepEqual(navigationIntent("/", current + "#kebutuhan"), { kind: "top" });
+  assert.equal(navigationIntent("#main", current), null);
+  assert.deepEqual(navigationIntent("#mulai", "https://www.luksurireka.com/kontak?note=hello%20world"), { kind: "anchor", hash: "#mulai" });
+});
+
+test("short scrolling reaches its destination monotonically without overshoot", () => {
+  assert.equal(scrollEase(-1), 0);
+  assert.equal(scrollEase(0), 0);
+  assert.equal(scrollEase(1), 1);
+  assert.equal(scrollEase(2), 1);
+  let previous = 0;
+  for (let time = 0; time <= 1; time += .01) {
+    const next = scrollEase(time);
+    assert.ok(next >= previous && next <= 1);
+    previous = next;
+  }
+  assert.ok(scrollEase(.5) > .5);
+});
 
 test("assembly is bounded, staggered, and finishes without requiring idle frames", () => {
   for (const light of [false, true]) {

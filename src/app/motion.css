@@ -1,0 +1,33 @@
+/* One short motion language for studio routes, sections, and feature steps. */
+:root { --lr-motion-page: 260ms; --lr-motion-panel: 220ms; --lr-motion-ease: cubic-bezier(.22, 1, .36, 1); }
+.lr-route-progress { position: fixed; z-index: 200; inset: 0 0 auto; height: 2px; background: #67e1de; transform-origin: left; transform: scaleX(0); opacity: 0; pointer-events: none; }
+html[data-lr-navigation="pending"] .lr-route-progress { opacity: .8; animation: lr-route-wait 1.8s ease-out both; }
+html[data-lr-navigation="animating"] .lr-route-progress { opacity: 0; transform: scaleX(1); transition: opacity 180ms; }
+@keyframes lr-route-wait { from { transform: scaleX(.08); } to { transform: scaleX(.86); } }
+
+/* Snapshot the viewport, so a footer link never animates a page-height-sized move. */
+html[data-lr-motion="view"] { overflow-x: clip; }
+html[data-lr-motion="view"]::view-transition { pointer-events: none; overflow: clip; }
+html[data-lr-motion="view"]::view-transition-group(root) { animation: none; }
+html[data-lr-motion="view"]::view-transition-old(root) { animation: lr-page-out 160ms ease-out both; }
+html[data-lr-motion="view"]::view-transition-new(root) { animation: lr-page-in var(--lr-motion-page) var(--lr-motion-ease) both; }
+@keyframes lr-page-out { to { opacity: 0; transform: translateY(-3px); } }
+@keyframes lr-page-in { from { opacity: .25; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+.lr-composer-step[data-enter="true"] { animation: lr-feature-in var(--lr-motion-panel) var(--lr-motion-ease) both; }
+@keyframes lr-feature-in { from { opacity: .45; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.lr-foundation .lr-composer-progress > span { transition: background var(--lr-motion-panel); }
+.lr-foundation .lr-need-options > label { transition: border-color 160ms, background 160ms, color 160ms; }
+.lr-foundation .lr-faq-list summary > span { transition: transform var(--lr-motion-panel) var(--lr-motion-ease); }
+.lr-foundation .lr-mobile-menu[open] > nav { animation: lr-feature-in var(--lr-motion-panel) var(--lr-motion-ease) both; }
+@supports (interpolate-size: allow-keywords) and selector(details::details-content) {
+  .lr-foundation .lr-faq-list details { interpolate-size: allow-keywords; }
+  .lr-foundation .lr-faq-list details::details-content { block-size: 0; overflow: clip; transition: block-size var(--lr-motion-panel) var(--lr-motion-ease), content-visibility var(--lr-motion-panel) allow-discrete; }
+  .lr-foundation .lr-faq-list details[open]::details-content { block-size: auto; }
+}
+html[data-lr-motion-paused="true"] .lr-foundation *, html[data-lr-motion-paused="true"] .lr-foundation *::details-content { animation: none !important; transition: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  html::view-transition-group(*), html::view-transition-old(*), html::view-transition-new(*) { animation: none !important; }
+  .lr-route-progress, .lr-composer-step, .lr-foundation .lr-mobile-menu[open] > nav { animation: none !important; }
+  .lr-foundation .lr-faq-list details::details-content { transition: none; }
+}

@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
+import { Suspense } from "react";
+import SiteNavigation from "@/components/site/SiteNavigation";
 import { inter, jetbrainsMono } from "./fonts";
 import "./globals.css";
 import "./foundation.css";
 import "./experience.css";
+import "./motion.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.luksurireka.com"),
@@ -25,6 +28,7 @@ export default async function RootLayout({
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
       >
+        <Suspense fallback={null}><SiteNavigation /></Suspense>
         {children}
       </body>
     </html>

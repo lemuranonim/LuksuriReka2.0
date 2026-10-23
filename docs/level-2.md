@@ -27,6 +27,10 @@ Pengujian lokal sebelumnya mencakup Penuh/Ringan/Diam, context loss nyata, fallb
 
 ## Produksi dan pemeriksaan
 
+Navigasi studio memakai bahasa gerak yang sama: perpindahan halaman 260 ms, langkah Composer/FAQ/menu 220 ms, serta scroll bagian 520 ms. Link Next tetap menyediakan prefetch. Browser yang mendukung View Transitions mempertemukan tampilan lama dan baru; browser lain serta Back/Forward memakai gerak masuk singkat. Pergantian route menunggu konten terpasang, dengan batas tunggu visual dua detik agar navigasi lambat tetap dapat digunakan. Tidak ada penundaan keluar sebelum permintaan navigasi dimulai.
+
+Tautan same-origin hanya diperkaya untuk route publik. Modifier/new tab, unduhan, laporan lama, skip link, WhatsApp, email, serta produk eksternal mempertahankan perilaku aslinya. Pergantian bahasa memperbarui bahasa dokumen. Composer mempertahankan jawaban saat maju/mundur, memindahkan fokus tanpa lompatan, dan menggulir singkat bila judul langkah berada di luar area baca. Reduced motion serta pilihan Tanpa gerak/Jeda yang aktif di beranda juga menonaktifkan gerak navigasi selama sesi.
+
 Build standar mengaktifkan Level 2 dan memakai `.next`. `NEXT_PUBLIC_LR_EXPERIENCE=0` menyediakan pilihan build fondasi. Profil pratinjau lokal memakai `.next-experience` secara terpisah.
 
 Workflow GitHub Actions menjalankan logika fondasi/Level 2, build produksi, dan pemeriksaan HTTP untuk 28 halaman publik, metadata/CSP/heading, tautan internal, pengalihan/404, laporan lama, sitemap/robots, gambar berbagi, serta tiga komposisi SVG ID/EN. Vercel menjalankan deployment melalui integrasi Git yang sudah terhubung ke `master`.
