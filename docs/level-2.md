@@ -13,6 +13,12 @@ Pengalaman studio menggunakan satu komposisi yang berkembang: identitas memberi 
 - Preferensi hanya berada dalam memori, tanpa penyimpanan browser atau pengiriman analitik baru.
 - Inspeksi teknis dibatasi ke localhost dan parameter eksplisit.
 
+## Penyempurnaan gerak — 23 Oktober 2026
+
+Panah pada hero membawa pengunjung ke kebutuhan dalam 520 ms dengan perlambatan di akhir. Wheel, sentuhan, tombol navigasi, Back, dan perpindahan halaman dapat menghentikannya. Riwayat menyimpan posisi keberangkatan dan fokus berpindah ke bagian tujuan setelah tiba. Reduced motion dari OS memakai perpindahan langsung; tautan HTML tetap menjadi fallback tanpa JavaScript.
+
+Komposisi kini dirakit otomatis saat bab visual berganti: dua bagian simbol dan lapisan kedalaman menyatu, tiga bidang solusi masuk bergiliran dengan jalur penghubung, kemudian bidang karya membuka skema alur. Posisi scroll memengaruhi sudut dan jarak bidang pada mode Penuh. Mode Ringan memakai jarak gerak lebih kecil serta perakitan lebih singkat. Tombol “Rakit ulang” tersedia melalui mouse maupun keyboard pada setiap komposisi animasi. Perakitan selesai sekitar 1,3 detik pada Penuh dan 0,65 detik pada Ringan, kemudian render kembali berhenti. Kontrol Jeda/Tanpa gerak dan poster tetap berlaku.
+
 ## Sumber visual dan batas bahan
 
 Identitas memakai studi kontur dari bitmap logo yang tersedia, dengan sumber/hash tercatat. Studi tersebut belum menggantikan sumber vektor identitas resmi. Karya tetap berupa skema berlabel, dan tidak menyatakan bahwa diagram adalah tampilan aplikasi asli.

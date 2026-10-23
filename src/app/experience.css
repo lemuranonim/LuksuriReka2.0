@@ -1,4 +1,4 @@
-/* Level 2 is opt-in. One Canvas follows three reserved HTML composition slots. */
+/* One on-demand Canvas follows three reserved HTML composition slots. */
 .lr-experience { position: relative; isolation: isolate; }
 .lr-experience .lr-home-hero h1 { font-size: clamp(44px, 5vw, 72px); }
 .lr-experience-panel { margin: 0; min-width: 0; }
@@ -6,7 +6,9 @@
 .lr-experience-poster { position: absolute; inset: 0; display: block; width: 100%; height: 100%; opacity: 1; transition: opacity 160ms ease; }
 .lr-experience-frame[data-rendered="true"] .lr-experience-poster { opacity: 0; }
 .lr-experience-coordinates { position: absolute; inset: 16px 18px auto; display: flex; justify-content: space-between; gap: 12px; font: 9px/1.5 var(--font-jetbrains-mono),monospace; letter-spacing: .08em; color: #a5b5bf; pointer-events: none; }
-.lr-experience-panel figcaption { color: var(--lr-muted); font-size: 11px; line-height: 1.8; margin-top: 13px; max-width: 720px; }
+.lr-experience-panel figcaption { display: flex; align-items: start; justify-content: space-between; flex-wrap: wrap; gap: 4px 12px; color: var(--lr-muted); font-size: 11px; line-height: 1.8; margin-top: 13px; max-width: 720px; }
+.lr-composition-replay { display: inline-flex; align-items: center; gap: 6px; min-height: 28px; padding: 2px 0; color: var(--lr-cyan); background: transparent; border: 0; white-space: nowrap; font-size: 10px !important; }
+.lr-composition-replay:hover { text-decoration: underline; text-underline-offset: 4px; }
 .lr-experience-identity { width: 100%; max-width: 550px; }
 .lr-experience-solutions { margin-top: 35px; }
 .lr-experience-solutions .lr-experience-frame { aspect-ratio: 10 / 7; }
@@ -39,7 +41,8 @@
   .lr-experience .lr-hero-copy > .lr-chapter { order: 0; margin-bottom: 0 !important; }
   .lr-experience .lr-hero-copy > h1 { order: 1; }
   .lr-experience-identity { order: 2; width: 224px; max-width: 70%; margin-inline: auto; }
-  .lr-experience-identity figcaption { text-align: center; }
+  .lr-experience-identity figcaption { justify-content: center; text-align: center; gap: 0 12px; }
+  .lr-composition-replay { min-height: 36px; }
   .lr-experience .lr-hero-description { order: 3; margin-top: 0 !important; }
   .lr-experience .lr-hero-copy > .lr-actions { order: 4; margin-top: 0; }
   .lr-experience .lr-hero-footnote { order: 5; margin-top: 12px; }

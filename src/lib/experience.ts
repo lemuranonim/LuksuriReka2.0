@@ -33,6 +33,9 @@ export interface StudioMetrics {
   geometries: number;
   textures: number;
   dpr: number;
+  reveal: number;
+  progress: number;
+  moving: boolean;
 }
 
 export interface ExperienceSignals {
@@ -74,6 +77,14 @@ export function selectVisibleStage<T extends { rect: StageRect }>(stages: T[], v
 
 export const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value));
 
+// A finite assembly, staggered across the three capabilities. No idle render loop.
+export function assemblyReveal(elapsed: number, index = 0, light = false) {
+  const duration = light ? .55 : 1.05;
+  const delay = index * (light ? .04 : .12);
+  const t = clamp((elapsed - delay) / duration, 0, 1);
+  return t * t * (3 - 2 * t);
+}
+
 export interface StudioState {
   stage: ExperienceStage;
   focus: number;
@@ -81,6 +92,7 @@ export interface StudioState {
   progress: number;
   visible: boolean;
   reduced: boolean;
+  replay?: number;
   invalidate?: () => void;
   metrics?: StudioMetrics;
   loseContext?: () => void;

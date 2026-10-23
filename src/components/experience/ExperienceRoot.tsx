@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { Component, createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from "react";
-import { Pause, Play } from "lucide-react";
+import { Pause, Play, RotateCcw } from "lucide-react";
 import { text, type Locale } from "@/lib/site-content";
 import { changeEffectChoice, clamp, compositionPresented, experiencePolicy, localInspectionAllowed, parseEffectPreference, selectVisibleStage, type EffectChoice, type EffectPreference, type ExperienceSignals, type ExperienceStage, type StudioState } from "@/lib/experience";
 
@@ -15,6 +15,7 @@ type EffectContextValue = {
   preference: EffectPreference;
   choose: (preference: EffectPreference) => void;
   togglePause: () => void;
+  replay: (stage: ExperienceStage) => void;
   mode: ReturnType<typeof experiencePolicy>["mode"];
   reason: ReturnType<typeof experiencePolicy>["reason"];
   initialized: boolean;
@@ -64,6 +65,11 @@ export default function ExperienceRoot({ locale, children }: { locale: Locale; c
   const togglePause = useCallback(() => {
     choose(rememberedChoice.preference === "still" ? rememberedChoice.resume : "still");
   }, [choose]);
+  const replay = useCallback((stage: ExperienceStage) => {
+    if (studio.current.stage !== stage || !studio.current.visible) return;
+    studio.current.replay = (studio.current.replay ?? 0) + 1;
+    studio.current.invalidate?.();
+  }, []);
 
   useEffect(() => {
     const params = new URL(window.location.href).searchParams;
@@ -185,7 +191,7 @@ export default function ExperienceRoot({ locale, children }: { locale: Locale; c
     setColors({ ink: styles.getPropertyValue("--lr-ink").trim(), pearl: styles.getPropertyValue("--lr-pearl").trim(), surface: styles.getPropertyValue("--lr-surface").trim(), cyan: styles.getPropertyValue("--lr-cyan").trim(), muted: styles.getPropertyValue("--lr-muted").trim() });
   }, []);
 
-  return <EffectContext.Provider value={{ preference: signals.preference, choose, togglePause, mode: policy.mode, reason: policy.reason, initialized }}>
+  return <EffectContext.Provider value={{ preference: signals.preference, choose, togglePause, replay, mode: policy.mode, reason: policy.reason, initialized }}>
     <div ref={root} className="lr-experience" data-experience-mode={initialized ? policy.mode : "basic"} data-experience-reason={initialized ? policy.reason : "initial"} data-client-ready={initialized ? "true" : "false"}>
       {children}
       <div ref={layer} className="lr-canvas-layer" aria-hidden="true" data-canvas-ready={ready ? "true" : "false"}>
@@ -194,6 +200,12 @@ export default function ExperienceRoot({ locale, children }: { locale: Locale; c
       {inspect && <ExperienceDiagnostics state={studio} mode={policy.mode} reason={policy.reason} renderedStage={renderedStage} />}
     </div>
   </EffectContext.Provider>;
+}
+
+export function ExperienceReplay({ locale, stage }: { locale: Locale; stage: ExperienceStage }) {
+  const context = useContext(EffectContext);
+  const available = context?.initialized && (context.mode === "full" || context.mode === "light");
+  return <button className="lr-composition-replay" type="button" style={{ visibility: available ? "visible" : "hidden" }} disabled={!available} onClick={() => context?.replay(stage)} aria-label={text(locale, "Putar ulang perakitan komposisi", "Replay the composition assembly")}><RotateCcw size={12} aria-hidden="true" />{text(locale, "Rakit ulang", "Replay assembly")}</button>;
 }
 
 export function ExperienceControls({ locale }: { locale: Locale }) {

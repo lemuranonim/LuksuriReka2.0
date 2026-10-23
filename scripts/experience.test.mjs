@@ -4,9 +4,28 @@ import { createHash } from "node:crypto";
 import { test } from "node:test";
 import { foundationModule } from "./foundation-modules.mjs";
 
-const { changeEffectChoice, compositionPresented, experienceEnabled, experiencePolicy, localInspectionAllowed, parseEffectPreference, stageVisibility, selectVisibleStage } = foundationModule("experience");
+const { assemblyReveal, changeEffectChoice, compositionPresented, experienceEnabled, experiencePolicy, localInspectionAllowed, parseEffectPreference, stageVisibility, selectVisibleStage } = foundationModule("experience");
 const { pageMeta, routes } = foundationModule("site-content");
 const capable = { enabled: true, preference: "auto", reducedMotion: false, saveData: false, slowNetwork: false, coarsePointer: false, webgl: true, failed: false, degraded: false };
+
+test("assembly is bounded, staggered, and finishes without requiring idle frames", () => {
+  for (const light of [false, true]) {
+    for (const index of [0, 1, 2]) {
+      assert.equal(assemblyReveal(-1, index, light), 0);
+      assert.equal(assemblyReveal(0, index, light), 0);
+      assert.equal(assemblyReveal(1.5, index, light), 1);
+      let previous = 0;
+      for (let elapsed = 0; elapsed < 2; elapsed += .01) {
+        const value = assemblyReveal(elapsed, index, light);
+        assert.ok(value >= previous && value <= 1);
+        previous = value;
+      }
+    }
+    assert.ok(assemblyReveal(.3, 0, light) > assemblyReveal(.3, 2, light));
+  }
+  assert.equal(assemblyReveal(.7, 2, true), 1);
+  assert.ok(assemblyReveal(.7, 2, false) < 1);
+});
 
 test("production enables Level 2 by default and supports an explicit foundation rollback", () => {
   assert.equal(experienceEnabled(undefined), true);
