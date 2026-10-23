@@ -1,32 +1,26 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { headers } from "next/headers";
+import { inter, jetbrainsMono } from "./fonts";
 import "./globals.css";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-});
+import "./foundation.css";
 
 export const metadata: Metadata = {
-  title: "PT Luksuri Reka Digital Solutions",
-  description: "Advanced Frontend/Backend capabilities, deep UI/UX sensitivity",
+  metadataBase: new URL("https://www.luksurireka.com"),
+  title: "Luksuri Reka — Studio Digital",
+  description: "Studio digital yang menyatukan desain, pengembangan aplikasi, dan otomasi untuk membantu bisnis bekerja lebih baik.",
   icons: {
     icon: "/favicon.ico",
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = (await headers()).get("x-lr-locale") === "id" ? "id" : "en";
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
       >

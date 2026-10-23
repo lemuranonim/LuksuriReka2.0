@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:foundation": "node --test scripts/foundation.test.mjs",
+    "test:foundation:http": "node scripts/check-foundation-http.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",

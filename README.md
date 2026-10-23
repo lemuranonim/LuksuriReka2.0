@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Luksuri Reka · Studio Digital
 
-## Getting Started
+Website studio berdasarkan master prinsip v1.3, fondasi v1.4, dan hasil review keselarasan. Fokus fondasi: identitas yang jelas, bukti karya, solusi sesuai konteks, akses produk, dan percakapan proyek.
 
-First, run the development server:
+## Menjalankan
 
-```bash
+```sh
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Buka `http://localhost:3000`. Halaman Indonesia berada di `/`, pasangan Inggris di `/en`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+npm run test:foundation
+npm run build
+npm run start
+# Terminal kedua, saat preview produksi berjalan:
+npm run test:foundation:http
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Pengujian menggunakan Node bawaan dan TypeScript yang sudah ada, tanpa dependensi pengujian tambahan. `FOUNDATION_TEST_URL` dapat menunjuk port localhost lain. Pengujian HTTP dibatasi ke localhost.
 
-## Learn More
+## Struktur
 
-To learn more about Next.js, take a look at the following resources:
+- `src/lib/site-content.ts`: registry URL, copy ID/EN, solusi, studi kasus, dan kontak.
+- `src/components/site/`: halaman, navigasi, komposisi identitas, Composer, dan adapter event.
+- `src/app/foundation.css`: sistem visual yang dibatasi ke `.lr-foundation`.
+- `src/app/`: entry halaman eksplisit; metadata, sitemap, robots, dan gambar berbagi.
+- `src/lib/composer.ts`: aturan ringkasan dan penyusunan draf kontak tanpa basis data.
+- `scripts/`: pemeriksaan logika dan HTTP.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Laporan/proposal lama tetap memakai entry dan komponen sebelumnya. Komponen 3D lama disimpan untuk tahap pengembangan berikutnya; halaman fondasi tidak mengimpornya.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Catatan keputusan, sumber konten, verifikasi, dan batas pelaksanaan tersedia di [catatan implementasi](outputs/luksuri-reka-implementasi-fondasi.md).
