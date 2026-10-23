@@ -149,5 +149,29 @@ export function pageMeta(page: PageKey, locale: Locale) {
   if (solution) return { title: solution.title[locale], description: solution.benefit[locale] };
   if (study) return { title: `${study.name} — ${text(locale, "Studi Kasus", "Case Study")}`, description: study.summary[locale] };
   const title: Record<string, string> = { home: `Luksuri Reka — ${labels[locale].descriptor}`, work: labels[locale].work, solutions: labels[locale].solutions, products: labels[locale].products, sign: "Luksuri Sign", studio: labels[locale].studio, contact: labels[locale].contact, help: labels[locale].help, privacy: labels[locale].privacy };
-  return { title: title[page], description: text(locale, "Studio digital yang menyatukan desain, pengembangan aplikasi, dan otomasi untuk membantu bisnis bekerja lebih baik.", "A digital studio bringing together design, application development, and automation to help businesses work better.") };
+  const descriptions: Record<Locale, Partial<Record<PageKey, string>>> = {
+    id: {
+      home: "Luksuri Reka menyatukan desain, pengembangan aplikasi, dan otomasi. Jelajahi solusi, karya, dan produk dari studio digital kami.",
+      work: "Jelajahi karya Luksuri Reka: konteks pengguna, peran studio, dan keputusan di balik aplikasi lapangan serta sistem web yang terhubung.",
+      solutions: "Temukan bantuan untuk website, aplikasi operasional, dan integrasi. Lingkup solusi Luksuri Reka mengikuti tujuan dan kondisi bisnis Anda.",
+      products: "Kenali produk dari studio Luksuri Reka, mulai dari Luksuri Sign untuk tanda tangan dan verifikasi dokumen, beserta akses dan bantuannya.",
+      sign: "Pelajari fungsi Luksuri Sign, buka produk tanda tangan dan verifikasi dokumen, atau temukan jalur bantuan dari tim Luksuri Reka.",
+      studio: "Kenali Luksuri Reka, studio digital di Tulungagung yang menyatukan desain, pengembangan aplikasi, dan otomasi melalui proses yang jelas.",
+      contact: "Ceritakan kebutuhan proyek Anda kepada Luksuri Reka melalui WhatsApp, email, atau ringkasan kebutuhan dengan Project Composer.",
+      help: "Temukan akses Luksuri Sign, panduan awal pemeriksaan dokumen, dan kanal bantuan produk maupun proyek dari tim Luksuri Reka.",
+      privacy: "Pelajari bagaimana halaman studio Luksuri Reka mengolah ringkasan Composer, membuka draf kontak, dan menjelaskan penggunaan informasi.",
+    },
+    en: {
+      home: "Luksuri Reka brings design, application development, and automation together. Explore solutions, work, and products from our digital studio.",
+      work: "Explore Luksuri Reka projects through their user context, our role, and the decisions behind field applications and connected web systems.",
+      solutions: "Find support for websites, operations applications, and integration. Luksuri Reka shapes each scope around your business goals and conditions.",
+      products: "Explore products from Luksuri Reka, including Luksuri Sign for document signing and verification, with access and support information.",
+      sign: "Learn about Luksuri Sign, open the document signing and verification product, or find support from the Luksuri Reka team.",
+      studio: "Meet Luksuri Reka, a digital studio in Tulungagung bringing design, application development, and automation together through a clear process.",
+      contact: "Discuss your project with Luksuri Reka through WhatsApp, email, or a short project brief created with our optional Project Composer.",
+      help: "Find Luksuri Sign access, initial guidance for checking documents, and product or project support channels from Luksuri Reka.",
+      privacy: "Learn how Luksuri Reka studio pages process Composer briefs, open contact drafts, and explain the use of information.",
+    },
+  };
+  return { title: title[page], description: descriptions[locale][page] ?? labels[locale].promise };
 }

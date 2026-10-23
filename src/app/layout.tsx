@@ -3,6 +3,7 @@ import { headers } from "next/headers";
 import { inter, jetbrainsMono } from "./fonts";
 import "./globals.css";
 import "./foundation.css";
+import "./experience.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.luksurireka.com"),

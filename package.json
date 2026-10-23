@@ -3,12 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "node scripts/run-production.mjs dev",
+    "build": "node scripts/run-production.mjs build",
+    "start": "node scripts/run-production.mjs start",
+    "dev:foundation": "node scripts/run-production.mjs dev --foundation",
+    "build:foundation": "node scripts/run-production.mjs build --foundation",
+    "start:foundation": "node scripts/run-production.mjs start --foundation",
     "lint": "eslint",
     "test:foundation": "node --test scripts/foundation.test.mjs",
-    "test:foundation:http": "node scripts/check-foundation-http.mjs"
+    "test:foundation:http": "node scripts/check-foundation-http.mjs",
+    "dev:experience": "node scripts/run-experience.mjs dev",
+    "build:experience": "node scripts/run-experience.mjs build",
+    "start:experience": "node scripts/run-experience.mjs start",
+    "test:experience": "node --test scripts/experience.test.mjs",
+    "test:experience:http": "node scripts/check-experience-http.mjs",
+    "test:production": "node scripts/check-production.mjs",
+    "check:experience:bundle": "node scripts/check-experience-bundle.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",

@@ -5,7 +5,7 @@ import ts from "typescript";
 const cache = new Map();
 export function foundationModule(name) {
   if (cache.has(name)) return cache.get(name);
-  if (!["site-content", "composer", "site-analytics"].includes(name)) throw new Error(`Unexpected module: ${name}`);
+  if (!["site-content", "composer", "site-analytics", "experience"].includes(name)) throw new Error(`Unexpected module: ${name}`);
   const source = readFileSync(new URL(`../src/lib/${name}.ts`, import.meta.url), "utf8");
   const { outputText } = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 } });
   const module = { exports: {} };

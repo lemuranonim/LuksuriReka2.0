@@ -18,5 +18,5 @@ export function ProductComposition({ locale }: { locale: Locale }) {
 }
 
 export function SolutionLink({ locale, page, number, name, description }: { locale: Locale; page: "website" | "operations" | "integration"; number: string; name: string; description: string }) {
-  return <Link href={routes[page][locale]} className="lr-solution-link"><span className="lr-solution-number">{number}</span><div><h3>{name}</h3><p>{description}</p></div><ArrowUpRight size={26} strokeWidth={1.3} aria-hidden="true" /></Link>;
+  return <Link href={routes[page][locale]} className="lr-solution-link" data-lr-solution-index={Number(number) - 1}><span className="lr-solution-number">{number}</span><div><h3>{name}</h3><p>{description}</p></div><ArrowUpRight size={26} strokeWidth={1.3} aria-hidden="true" /></Link>;
 }
