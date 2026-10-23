@@ -2,9 +2,11 @@
 
 import { useEffect, useMemo, useRef, type RefObject } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { CatmullRomCurve3, Color, Group, MeshStandardMaterial, Path, Shape, Vector2, Vector3, type DirectionalLight } from "three";
+import { Group, Path, Shape, Vector2, Vector3, type DirectionalLight } from "three";
 import { assemblyReveal, type ExperienceMode, type ExperienceStage, type StudioState } from "@/lib/experience";
 import outline from "./logo-outline.json";
+import SolutionsComposition from "./SolutionsComposition";
+import { extrusion, Plate } from "./StudioPrimitives";
 
 interface Palette { ink: string; pearl: string; surface: string; cyan: string; muted: string }
 interface Props {
@@ -18,13 +20,7 @@ interface Props {
   onSlow: () => void;
 }
 
-const extrusion = { depth: .16, bevelEnabled: true, bevelSegments: 2, steps: 1, bevelSize: .022, bevelThickness: .022, curveSegments: 6 };
 interface MotionState { elapsed: number; reveal: number; progress: number; light: boolean }
-
-function clippedPlane(width: number, height: number, corner = .14) {
-  const x = width / 2, y = height / 2;
-  return new Shape([[-x + corner, -y], [x - corner, -y], [x, -y + corner], [x, y - corner], [x - corner, y], [-x + corner, y], [-x, y - corner], [-x, -y + corner]].map(([a, b]) => new Vector2(a, b)));
-}
 
 function Logo({ palette, motion }: { palette: Palette; motion: RefObject<MotionState> }) {
   const pieces = useRef<Group>(null);
@@ -40,58 +36,12 @@ function Logo({ palette, motion }: { palette: Palette; motion: RefObject<MotionS
       piece.position.set((index ? 1 : -1) * offset * .16 * strength, (index ? -1 : 1) * offset * .65 * strength, offset * .7 * strength);
       piece.rotation.z = (index ? -.08 : .08) * offset * strength;
     });
-  });
+  }, -1);
   return <group ref={pieces}>{shapes.map((shape, index) => <mesh key={index}>
     <extrudeGeometry args={[shape, extrusion]} />
     <meshStandardMaterial attach="material-0" color={palette.pearl} metalness={.3} roughness={.43} />
     <meshStandardMaterial attach="material-1" color={palette.cyan} metalness={.35} roughness={.48} />
   </mesh>)}</group>;
-}
-
-function Plate({ width, height, color, depth = .08 }: { width: number; height: number; color: string; depth?: number }) {
-  const shape = useMemo(() => clippedPlane(width, height), [width, height]);
-  return <mesh><extrudeGeometry args={[shape, { ...extrusion, depth, bevelSize: .016, bevelThickness: .016 }]} /><meshStandardMaterial color={color} roughness={.6} metalness={.18} /></mesh>;
-}
-
-function Connector({ points, color }: { points: [number, number, number][]; color: string }) {
-  const curve = useMemo(() => new CatmullRomCurve3(points.map(point => new Vector3(...point))), [points]);
-  return <mesh><tubeGeometry args={[curve, 12, .013, 5, false]} /><meshBasicMaterial color={color} /></mesh>;
-}
-
-const links: [number, number, number][][] = [
-  [[-1.62, -.95, .05], [-1.62, -1.4, .05], [0, -1.4, .05], [0, -.95, .05]],
-  [[0, -.95, .05], [0, -1.4, .05], [1.62, -1.4, .05], [1.62, -.95, .05]],
-];
-
-function Module({ index, palette, state, motion }: { index: number; palette: Palette; state: RefObject<StudioState>; motion: RefObject<MotionState> }) {
-  const face = useRef<MeshStandardMaterial>(null);
-  const body = useRef<Group>(null);
-  const { invalidate } = useThree();
-  const shape = useMemo(() => clippedPlane(1.27, 1.7, .1), []);
-  const normal = useMemo(() => new Color(palette.pearl), [palette.pearl]);
-  const accent = useMemo(() => new Color(palette.cyan), [palette.cyan]);
-  useFrame((_, delta) => {
-    if (!face.current) return;
-    face.current.color.copy(state.current.focus === index ? accent : normal);
-    if (!body.current || !state.current.visible || state.current.stage !== "solutions") return;
-    const entering = 1 - assemblyReveal(motion.current.elapsed, index, motion.current.light);
-    const strength = motion.current.light ? .25 : 1;
-    const focused = state.current.focus === index && !state.current.reduced;
-    const target = (index === 1 ? .14 : -.04) + (focused ? .2 : 0) - entering * .7 * strength;
-    const change = target - body.current.position.y;
-    body.current.position.y += change * (1 - Math.exp(-Math.min(delta, .05) * 12));
-    body.current.position.x = (index - 1) * (1.62 + entering * .25 * strength);
-    body.current.position.z = .15 + (entering * .5 + motion.current.progress * .22) * strength;
-    body.current.rotation.y = (index - 1) * (-.06 - entering * .2 * strength);
-    if (Math.abs(change) > .001) invalidate();
-  });
-  return <group ref={body} position={[(index - 1) * 1.62, index === 1 ? .14 : -.04, .15]} rotation={[0, (index - 1) * -.06, 0]}>
-    <mesh><extrudeGeometry args={[shape, { ...extrusion, depth: .12 }]} /><meshStandardMaterial ref={face} color={palette.pearl} roughness={.5} metalness={.2} /></mesh>
-    {index === 0 && <group position={[0, .16, .18]}>{[.3, 0, -.3].map((y, i) => <mesh key={y} position={[-.06, y, 0]}><boxGeometry args={[i === 0 ? .7 : .5, .07, .025]} /><meshBasicMaterial color={palette.surface} /></mesh>)}</group>}
-    {index === 1 && <group position={[0, .12, .18]}>{[-.2, .2].flatMap(x => [-.2, .2].map(y => <mesh key={`${x}-${y}`} position={[x, y, 0]}><boxGeometry args={[.25, .25, .025]} /><meshBasicMaterial color={palette.surface} /></mesh>))}</group>}
-    {index === 2 && <group position={[0, .1, .18]}>{[[-.3, -.2], [.3, -.2], [0, .3]].map(([x, y], i) => <mesh key={i} position={[x, y, 0]}><circleGeometry args={[.105, 18]} /><meshBasicMaterial color={palette.surface} /></mesh>)}<Connector points={[[-.3, -.2, 0], [0, .3, 0], [.3, -.2, 0]]} color={palette.surface} /></group>}
-    <mesh position={[0, -.59, .185]}><boxGeometry args={[.65, .025, .02]} /><meshBasicMaterial color={palette.surface} /></mesh>
-  </group>;
 }
 
 function Scene({ state, active, palette, inspect, onReady, onSlow }: Pick<Props, "state" | "active" | "palette" | "inspect" | "onReady" | "onSlow">) {
@@ -103,7 +53,6 @@ function Scene({ state, active, palette, inspect, onReady, onSlow }: Pick<Props,
   const display = useRef<Group>(null);
   const frontPlate = useRef<Group>(null);
   const backPlate = useRef<Group>(null);
-  const network = useRef<Group>(null);
   const workFace = useRef<Group>(null);
   const workflow = useRef<Group>(null);
   const light = useRef<DirectionalLight>(null);
@@ -141,7 +90,7 @@ function Scene({ state, active, palette, inspect, onReady, onSlow }: Pick<Props,
     motion.current = { elapsed: sequence.current.elapsed, reveal, progress: motion.current.progress + (current.progress - motion.current.progress) * amount, light: current.reduced };
     const travel = current.reduced ? 0 : motion.current.progress;
     const opening = (1 - reveal) * (current.reduced ? .2 : 1);
-    const scale = Math.min(viewport.width / 5.7, viewport.height / 4.7);
+    const scale = Math.min(viewport.width / 5.7, viewport.height / (isSolutions ? 4.3 : 4.7));
     scene.current.scale.setScalar(scale);
     const targetX = (isIdentity ? -.08 + travel * .16 : isSolutions ? -.12 + travel * .1 : -.12 + travel * .12) - opening * .08;
     const targetY = (isIdentity ? -.32 - travel * .24 : isSolutions ? -.18 + travel * .2 : -.13 + travel * .16) - opening * .18 + (current.reduced ? 0 : current.pointer.x * .1);
@@ -151,10 +100,10 @@ function Scene({ state, active, palette, inspect, onReady, onSlow }: Pick<Props,
     scene.current.rotation.y += (targetY - scene.current.rotation.y) * amount;
     scene.current.rotation.z += (targetZ - scene.current.rotation.z) * amount;
     const spread = .12 + travel * .38 + opening * .5;
-    targetPosition.set(isIdentity ? 0 : isSolutions ? 0 : -1.66, isIdentity ? .05 : isSolutions ? 1.45 : .83, isIdentity ? .18 + spread * .45 : .42);
+    targetPosition.set(isIdentity ? 0 : isSolutions ? -2.05 : -1.66, isIdentity ? .05 : isSolutions ? -1.52 : .83, isIdentity ? .18 + spread * .45 : .42);
     change += mark.current.position.distanceTo(targetPosition);
     mark.current.position.lerp(targetPosition, amount);
-    const markScale = isIdentity ? 1 : isSolutions ? .21 : .13;
+    const markScale = isIdentity ? 1 : isSolutions ? .08 : .13;
     change += Math.abs(mark.current.scale.x - markScale);
     targetScale.setScalar(markScale);
     mark.current.scale.lerp(targetScale, amount);
@@ -166,7 +115,6 @@ function Scene({ state, active, palette, inspect, onReady, onSlow }: Pick<Props,
       backPlate.current.position.set(-.06 - spread * .22, .04 + spread * .13, -.39 - spread * .85);
       backPlate.current.rotation.z = -.055 - spread * .07;
     }
-    if (network.current) network.current.scale.x = Math.max(.001, assemblyReveal(sequence.current.elapsed - (current.reduced ? .04 : .12), 1, current.reduced));
     if (workFace.current) workFace.current.position.z = .18 + opening * .6 + travel * .12;
     if (workflow.current) workflow.current.children.forEach((node, index) => {
       const offset = 1 - assemblyReveal(sequence.current.elapsed, index, current.reduced);
@@ -189,7 +137,7 @@ function Scene({ state, active, palette, inspect, onReady, onSlow }: Pick<Props,
         }
       });
     }
-    const moving = reveal < 1 || change > .002;
+    const moving = reveal < 1 || change > .002 || (isSolutions && Boolean(current.solutionMoving));
     if (inspect) state.current.metrics = { stage: current.stage, frames: ++frames.current, calls: gl.info.render.calls, triangles: gl.info.render.triangles, geometries: gl.info.memory.geometries, textures: gl.info.memory.textures, dpr: gl.getPixelRatio(), reveal, progress: motion.current.progress, moving };
     if (moving && !current.reduced) {
       const sample = samples.current;
@@ -205,7 +153,7 @@ function Scene({ state, active, palette, inspect, onReady, onSlow }: Pick<Props,
       invalidate();
     } else if (moving) invalidate();
     wasMoving.current = moving;
-  });
+  }, -3);
 
   return <>
     <ambientLight intensity={1.2} />
@@ -215,9 +163,7 @@ function Scene({ state, active, palette, inspect, onReady, onSlow }: Pick<Props,
       <group ref={identity}><group ref={frontPlate} position={[0, 0, -.25]}><Plate width={4.3} height={4.1} color={palette.surface} depth={.1} /></group><group ref={backPlate} position={[0, 0, -.39]} rotation={[0, 0, -.055]}><Plate width={4.5} height={4.3} color="#24515b" depth={.08} /></group></group>
       <group ref={mark}><Logo palette={palette} motion={motion} /></group>
       <group ref={modules} visible={false}>
-        <group position={[0, -.05, -.27]}><Plate width={5.1} height={3.6} color={palette.surface} /></group>
-        {[0, 1, 2].map(index => <Module key={index} index={index} palette={palette} state={state} motion={motion} />)}
-        <group ref={network}>{links.map((points, index) => <Connector key={index} points={points} color={palette.cyan} />)}</group>
+        <SolutionsComposition state={state} motion={motion} palette={palette} inspect={inspect} />
       </group>
       <group ref={display} visible={false}>
         <Plate width={5} height={3.1} color={palette.surface} depth={.13} />

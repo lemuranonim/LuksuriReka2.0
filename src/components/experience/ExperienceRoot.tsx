@@ -16,6 +16,8 @@ type EffectContextValue = {
   choose: (preference: EffectPreference) => void;
   togglePause: () => void;
   replay: (stage: ExperienceStage) => void;
+  solution: number;
+  selectSolution: (index: number) => void;
   mode: ReturnType<typeof experiencePolicy>["mode"];
   reason: ReturnType<typeof experiencePolicy>["reason"];
   initialized: boolean;
@@ -44,6 +46,8 @@ export default function ExperienceRoot({ locale, children }: { locale: Locale; c
   const [renderedStage, setRenderedStage] = useState<ExperienceStage | null>(null);
   const [inspect, setInspect] = useState(false);
   const measured = useRef(false);
+  const selectedSolution = useRef(-1);
+  const [solution, setSolution] = useState(-1);
   const policy = experiencePolicy(signals);
   const animated = policy.mode === "full" || policy.mode === "light";
 
@@ -70,6 +74,20 @@ export default function ExperienceRoot({ locale, children }: { locale: Locale; c
     studio.current.replay = (studio.current.replay ?? 0) + 1;
     studio.current.invalidate?.();
   }, []);
+  const previewSolution = useCallback((index: number) => {
+    studio.current.focus = index;
+    root.current?.querySelectorAll<HTMLElement>(".lr-solution-link[data-lr-solution-index]").forEach(link => {
+      if (Number(link.dataset.lrSolutionIndex) === index) link.dataset.lrPreviewActive = "true";
+      else link.removeAttribute("data-lr-preview-active");
+    });
+    studio.current.invalidate?.();
+  }, []);
+  const selectSolution = useCallback((index: number) => {
+    selectedSolution.current = index;
+    setSolution(index);
+    studio.current.solutionPulse = (studio.current.solutionPulse ?? 0) + 1;
+    previewSolution(index);
+  }, [previewSolution]);
 
   useEffect(() => {
     const params = new URL(window.location.href).searchParams;
@@ -147,12 +165,11 @@ export default function ExperienceRoot({ locale, children }: { locale: Locale; c
     frames.forEach(frame => { observer.observe(frame); resize.observe(frame); });
     const resetFocus = () => {
       const focused = document.activeElement?.closest<HTMLElement>("[data-lr-solution-index]");
-      studio.current.focus = focused ? Number(focused.dataset.lrSolutionIndex) : -1;
-      studio.current.invalidate?.();
+      previewSolution(focused ? Number(focused.dataset.lrSolutionIndex) : selectedSolution.current);
     };
     const focus = (event: Event) => {
       const link = event.target instanceof Element ? event.target.closest<HTMLElement>("[data-lr-solution-index]") : null;
-      if (link) { studio.current.focus = Number(link.dataset.lrSolutionIndex); studio.current.invalidate?.(); }
+      if (link) previewSolution(Number(link.dataset.lrSolutionIndex));
     };
     const focusOut = () => queueMicrotask(resetFocus);
     const pointerOut = (event: PointerEvent) => {
@@ -181,7 +198,7 @@ export default function ExperienceRoot({ locale, children }: { locale: Locale; c
       document.removeEventListener("visibilitychange", schedule); window.removeEventListener("pointermove", pointer);
       element.removeEventListener("pointerover", focus); element.removeEventListener("pointerout", pointerOut); element.removeEventListener("focusin", focus); element.removeEventListener("pointerleave", resetFocus); element.removeEventListener("focusout", focusOut);
     };
-  }, [children, locale, ready, renderedStage, animated, policy.mode]);
+  }, [children, locale, ready, renderedStage, animated, policy.mode, previewSolution]);
 
   const palette = { ink: "#081b29", pearl: "#edf3f4", surface: "#102633", cyan: "#67e1de", muted: "#a5b5bf" };
   const [colors, setColors] = useState(palette);
@@ -191,7 +208,7 @@ export default function ExperienceRoot({ locale, children }: { locale: Locale; c
     setColors({ ink: styles.getPropertyValue("--lr-ink").trim(), pearl: styles.getPropertyValue("--lr-pearl").trim(), surface: styles.getPropertyValue("--lr-surface").trim(), cyan: styles.getPropertyValue("--lr-cyan").trim(), muted: styles.getPropertyValue("--lr-muted").trim() });
   }, []);
 
-  return <EffectContext.Provider value={{ preference: signals.preference, choose, togglePause, replay, mode: policy.mode, reason: policy.reason, initialized }}>
+  return <EffectContext.Provider value={{ preference: signals.preference, choose, togglePause, replay, solution, selectSolution, mode: policy.mode, reason: policy.reason, initialized }}>
     <div ref={root} className="lr-experience" data-experience-mode={initialized ? policy.mode : "basic"} data-experience-reason={initialized ? policy.reason : "initial"} data-client-ready={initialized ? "true" : "false"}>
       {children}
       <div ref={layer} className="lr-canvas-layer" aria-hidden="true" data-canvas-ready={ready ? "true" : "false"}>
@@ -200,6 +217,13 @@ export default function ExperienceRoot({ locale, children }: { locale: Locale; c
       {inspect && <ExperienceDiagnostics state={studio} mode={policy.mode} reason={policy.reason} renderedStage={renderedStage} />}
     </div>
   </EffectContext.Provider>;
+}
+
+export function SolutionPreview({ locale }: { locale: Locale }) {
+  const context = useContext(EffectContext);
+  const available = context?.initialized && (context.mode === "full" || context.mode === "light");
+  const names = [text(locale, "Website", "Website"), text(locale, "Aplikasi", "Apps"), text(locale, "Integrasi", "Integration")];
+  return <div className="lr-solution-preview" role="group" aria-label={text(locale, "Pratinjau kemampuan yang terhubung", "Preview connected capabilities")} style={{ visibility: available ? "visible" : "hidden" }}>{names.map((name, index) => <button key={name} type="button" disabled={!available} aria-pressed={context?.solution === index} data-lr-solution-index={index} onClick={() => context?.selectSolution(index)}><span aria-hidden="true">0{index + 1}</span>{name}</button>)}</div>;
 }
 
 export function ExperienceReplay({ locale, stage }: { locale: Locale; stage: ExperienceStage }) {

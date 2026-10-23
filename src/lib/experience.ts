@@ -38,6 +38,14 @@ export interface StudioMetrics {
   moving: boolean;
 }
 
+export interface SolutionMetrics {
+  phase: "assembly" | "connecting" | "flow" | "settled" | "interaction";
+  focus: number;
+  connections: number[];
+  portError: number | null;
+  moving: boolean;
+}
+
 export interface ExperienceSignals {
   enabled: boolean;
   preference: EffectPreference;
@@ -93,6 +101,9 @@ export interface StudioState {
   visible: boolean;
   reduced: boolean;
   replay?: number;
+  solutionPulse?: number;
+  solutionMoving?: boolean;
+  solutionMetrics?: SolutionMetrics;
   invalidate?: () => void;
   metrics?: StudioMetrics;
   loseContext?: () => void;

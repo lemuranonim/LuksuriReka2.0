@@ -17,7 +17,7 @@ Pengalaman studio menggunakan satu komposisi yang berkembang: identitas memberi 
 
 Panah pada hero membawa pengunjung ke kebutuhan dalam 520 ms dengan perlambatan di akhir. Wheel, sentuhan, tombol navigasi, Back, dan perpindahan halaman dapat menghentikannya. Riwayat menyimpan posisi keberangkatan dan fokus berpindah ke bagian tujuan setelah tiba. Reduced motion dari OS memakai perpindahan langsung; tautan HTML tetap menjadi fallback tanpa JavaScript.
 
-Komposisi kini dirakit otomatis saat bab visual berganti: dua bagian simbol dan lapisan kedalaman menyatu, tiga bidang solusi masuk bergiliran dengan jalur penghubung, kemudian bidang karya membuka skema alur. Posisi scroll memengaruhi sudut dan jarak bidang pada mode Penuh. Mode Ringan memakai jarak gerak lebih kecil serta perakitan lebih singkat. Tombol “Rakit ulang” tersedia melalui mouse maupun keyboard pada setiap komposisi animasi. Perakitan selesai sekitar 1,3 detik pada Penuh dan 0,65 detik pada Ringan, kemudian render kembali berhenti. Kontrol Jeda/Tanpa gerak dan poster tetap berlaku.
+Komposisi kini dirakit otomatis saat bab visual berganti: dua bagian simbol dan lapisan kedalaman menyatu, tiga bidang solusi masuk bergiliran dengan jalur penghubung, kemudian bidang karya membuka skema alur. Posisi scroll memengaruhi sudut dan jarak bidang pada mode Penuh. Mode Ringan memakai jarak gerak lebih kecil serta perakitan lebih singkat. Tombol “Rakit ulang” tersedia melalui mouse maupun keyboard pada setiap komposisi animasi. Perakitan identitas dan karya selesai sekitar 1,3 detik pada Penuh dan 0,65 detik pada Ringan, kemudian render kembali berhenti. Kontrol Jeda/Tanpa gerak dan poster tetap berlaku.
 
 ## Sumber visual dan batas bahan
 
@@ -26,6 +26,12 @@ Identitas memakai studi kontur dari bitmap logo yang tersedia, dengan sumber/has
 Pengujian lokal sebelumnya mencakup Penuh/Ringan/Diam, context loss nyata, fallback dan jalur kontak, keyboard, Composer, anchor/Back, serta viewport desktop dan ponsel. Satu chunk tambahan yang diamati berukuran sekitar 234 KB gzip. Ukuran dan timing sampel lokal/cache tidak menggantikan gerbang perangkat fisik atau Web Vitals lapangan.
 
 ## Produksi dan pemeriksaan
+
+### Penyempurnaan komposisi solusi — 24 Oktober 2026
+
+Tiga bidang memiliki satu urutan yang terkoordinasi: masuk dengan perpindahan/opacity yang halus, jalur dirunut dari soket ke soket, kemudian sinyal melewati jalur lengkap. Sambungan mengikuti posisi, sudut, dan kedalaman bidang ketika disorot; garis tidak lagi diubah dengan meregangkan seluruh grup. Komposisi solusi selesai sekitar 1,9 detik pada Penuh dan 1,25 detik pada Ringan, termasuk lintasan sinyal, lalu kembali berhenti merender.
+
+Tiga tombol pratinjau Website/Aplikasi/Integrasi memberi akses melalui mouse, keyboard, dan sentuhan. Pilihan tersebut mengangkat bidang secara halus, mengirim satu lintasan sinyal, serta menyorot layanan terkait tanpa mengubah tujuan tautannya. Logo kecil berada di sudut bawah agar tidak menimpa label koordinat. Poster SVG memakai bidang dan soket yang sama secara visual. Inspeksi localhost mencatat fase, sambungan lengkap, serta selisih ujung geometri yang diukur saat frame diperbarui.
 
 Navigasi studio memakai bahasa gerak yang sama: perpindahan halaman 260 ms, langkah Composer/FAQ/menu 220 ms, serta scroll bagian 520 ms. Link Next tetap menyediakan prefetch. Browser yang mendukung View Transitions mempertemukan tampilan lama dan baru; browser lain serta Back/Forward memakai gerak masuk singkat. Pergantian route menunggu konten terpasang, dengan batas tunggu visual dua detik agar navigasi lambat tetap dapat digunakan. Tidak ada penundaan keluar sebelum permintaan navigasi dimulai.
 

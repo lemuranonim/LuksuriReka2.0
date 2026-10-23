@@ -29,6 +29,7 @@ export default function ExperienceDiagnostics({ state, mode, reason, renderedSta
       canvasCount: document.querySelectorAll("canvas[data-lr-scene='studio']").length,
       viewport: { width: document.documentElement.clientWidth, height: window.innerHeight },
       renderer: state.current.metrics ?? null,
+      solutions: state.current.stage === "solutions" ? state.current.solutionMetrics ?? null : null,
       contextLossAvailable: Boolean(state.current.loseContext),
       initializationMs: initialization ? Math.round(initialization.duration * 10) / 10 : null,
       resources,

@@ -7,7 +7,58 @@ import { foundationModule } from "./foundation-modules.mjs";
 const { assemblyReveal, changeEffectChoice, compositionPresented, experienceEnabled, experiencePolicy, localInspectionAllowed, parseEffectPreference, stageVisibility, selectVisibleStage } = foundationModule("experience");
 const { pageMeta, routes } = foundationModule("site-content");
 const { navigationIntent, scrollEase } = foundationModule("site-motion");
+const { solutionTimeline, solutionPose, solutionRoute, tracedRoute, pointOnRoute } = foundationModule("solution-motion");
 const capable = { enabled: true, preference: "auto", reducedMotion: false, saveData: false, slowNetwork: false, coarsePointer: false, webgl: true, failed: false, degraded: false };
+
+test("solution assembly connects before its finite signal pass and settles in both modes", () => {
+  for (const light of [false, true]) {
+    assert.deepEqual(solutionTimeline(0, light).reveals, [0, 0, 0]);
+    const connecting = solutionTimeline((light ? .65 : 1) * .65, light);
+    assert.ok(connecting.reveals[0] > connecting.reveals[2]);
+    assert.equal(connecting.flow, 0);
+    const flowing = solutionTimeline((light ? .65 : 1) * 1.5, light);
+    assert.deepEqual(flowing.connections, [1, 1]);
+    assert.ok(flowing.flow > 0 && flowing.flow < 1);
+    const settled = solutionTimeline(light ? 1.3 : 2, light);
+    assert.deepEqual(settled.reveals, [1, 1, 1]);
+    assert.equal(settled.flow, 1);
+    assert.equal(settled.settled, true);
+  }
+});
+
+test("solution cards enter monotonically and sockets follow every focused pose", () => {
+  for (const light of [false, true]) for (const index of [0, 1, 2]) {
+    let previousY = -Infinity;
+    for (let step = 0; step <= 100; step++) {
+      const pose = solutionPose(index, step / 100, 0, .5, light);
+      assert.ok(pose.position[1] >= previousY);
+      previousY = pose.position[1];
+    }
+    for (const focus of [0, .25, 1]) {
+      const pose = solutionPose(index, 1, focus, 1, light);
+      assert.ok(Math.abs(pose.port[0] - pose.position[0] - Math.sin(pose.yaw) * .2) < 1e-12);
+      assert.equal(pose.port[1], pose.position[1] - .775);
+      assert.ok(pose.port.every(Number.isFinite));
+    }
+  }
+});
+
+test("drawn cables preserve their moving sockets and never stretch the entire route", () => {
+  for (const light of [false, true]) for (const focus of [0, 1, 2]) {
+    const poses = [0, 1, 2].map(index => solutionPose(index, 1, index === focus ? 1 : 0, .5, light));
+    for (const index of [0, 1]) {
+      const route = solutionRoute(poses[index], poses[index + 1]);
+      assert.deepEqual(route[0], poses[index].port);
+      assert.deepEqual(route.at(-1), poses[index + 1].port);
+      assert.ok(tracedRoute(route, 0).every(segment => segment.length === 0));
+      const complete = tracedRoute(route, 1);
+      assert.deepEqual(complete[0].start, route[0]);
+      for (let axis = 0; axis < 3; axis++) assert.ok(Math.abs(complete.at(-1).end[axis] - route.at(-1)[axis]) < 1e-12);
+      assert.deepEqual(pointOnRoute(route, 0), route[0]);
+      for (const t of [.1, .5, .9]) assert.ok(pointOnRoute(route, t).every(Number.isFinite));
+    }
+  }
+});
 
 test("studio navigation preserves localized pages, query preselection, and cross-page anchors", () => {
   const current = "https://www.luksurireka.com/produk";
